@@ -13,7 +13,7 @@ import javax.persistence.InheritanceType;
 public class Pessoa {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(length = 150, nullable = false)
 	private String nome;
@@ -40,11 +40,11 @@ public class Pessoa {
 		
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
