@@ -1,0 +1,35 @@
+INSERT INTO pais (codpais, nome, abreviacao) VALUES (1, 'Brasil', 'BRA');
+
+INSERT INTO `homehelp`.`estado` (`codestado`, `nome`, `sigla`, `cod_pais`) VALUES (1, 'Distrito Federal', 'DF', 1);
+
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (1, 'Plano Piloto', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (2, 'Gama', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (3, 'Taguatinga', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (4, 'Brazlândia', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (5, 'Sobradinho', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (6, 'Planaltina', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (7, 'Paranoá', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (8, 'Núcleo Bandeirante', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (9, 'Ceilândia', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (10, 'Guará', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (11, 'Cruzeiro', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (12, 'Samambaia', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (13, 'Santa Maria', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (14, 'São Sebastião', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (15, 'Recanto das Emas', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (16, 'Lago Sul', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (17, 'Riacho Fundo', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (18, 'Lago Norte', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (19, 'Candangolândia', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (20, 'Águas Claras', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (21, 'Riacho Fundo II', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (22, 'Sudoeste/Octogonal', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (23, 'Varjão', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (24, 'Park Way', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (25, 'SCIA', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (26, 'Sobradinho II', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (27, 'Jardim Botânico', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (28, 'Itapoã', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (29, 'SIA', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (30, 'Vicente Pires', 1);
+INSERT INTO `homehelp`.`cidade` (`codcidade`, `nome`, `cod_estado`) VALUES (31, 'Fercal', 1);

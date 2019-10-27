@@ -1,28 +1,39 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Pessoa {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 150, nullable = false)
 	private String nome;
 
+	@Column(length = 100)
 	private String sobrenome;
 
+	@Column(length = 15, nullable = false)
 	private String cpf;
 
+	@Column(length = 10)
 	private String sexo;
 
+	@Column(length = 20, nullable = false)
 	private String telefone;
 
+	@Column(length = 250, nullable = false)
 	private String email;
 
+	@Column(length = 20, nullable = false)
 	private String senha;
 	
 	public Pessoa() {

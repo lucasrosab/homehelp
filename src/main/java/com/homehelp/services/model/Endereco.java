@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +13,10 @@ public class Endereco {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 250 ,nullable = false)
 	private String endereco;
 
+	@Column(length = 100)
 	private String complemento;
 
 	private int numero;

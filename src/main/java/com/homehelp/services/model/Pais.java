@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,8 +12,10 @@ public class Pais {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 150 ,nullable = false)
 	private String nome;
 
+	@Column(length = 5 ,nullable = false)
 	private String abreviacao;
 
 	public Pais() {

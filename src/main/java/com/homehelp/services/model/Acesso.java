@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ public class Acesso {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 50,nullable = false)
 	private String descricao;
 	
 	public Acesso() {

@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ public class Bandeira {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 60 ,nullable = false)
 	private String nome;
 
 	public Bandeira() {

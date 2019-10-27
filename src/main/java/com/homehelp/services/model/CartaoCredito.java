@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,17 +13,22 @@ public class CartaoCredito {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 30 ,nullable = false)
 	private String numero;
 
+	@Column(length = 15 ,nullable = false)
 	private String cpf;
 
+	@Column(length = 10 ,nullable = false)
 	private String validade;
 
+	@Column(length = 5 ,nullable = false)
 	private String codigoSeguranca;
 
 	@ManyToOne
 	private Bandeira bandeira;
 
+	@Column(length = 50 ,nullable = false)
 	private String nomeCartao;
 
 	public CartaoCredito() {

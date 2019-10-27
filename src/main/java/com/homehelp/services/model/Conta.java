@@ -1,10 +1,12 @@
 package com.homehelp.services.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Conta {
@@ -12,13 +14,16 @@ public class Conta {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(length = 45 ,nullable = false)
 	private String numero;
 
+	@Column(length = 45 ,nullable = false)
 	private String agencia;
 
+	@Column(length = 15 ,nullable = false)
 	private String cpf;
 
-	@ManyToOne
+	@OneToOne
 	private Banco banco;
 
 	public Conta() {

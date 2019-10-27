@@ -1,34 +1,29 @@
 package com.homehelp.services.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario extends Pessoa {
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
 
+	@Column(length = 25, nullable = false)
 	private String usuario;
 
-	private Date dataNascimento;
+	@Temporal(TemporalType.DATE)
+	@Column(length = 10, nullable = false)
+	private Calendar dataNascimento;
 
 	private boolean ativo;
 
 	public Usuario() {
 		
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getUsuario() {
@@ -39,11 +34,11 @@ public class Usuario extends Pessoa {
 		this.usuario = usuario;
 	}
 
-	public Date getDataNascimento() {
+	public Calendar getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
