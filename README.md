@@ -1,5 +1,5 @@
 # Service
 
-CRUD Spring Boot + Spring Data JPA
+CRUD Spring Boot + Spring Data JPA + MySQL
 
 Cadastro de Clientes da Aplicação HomeHelp
