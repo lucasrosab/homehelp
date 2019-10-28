@@ -1,10 +1,11 @@
 package com.homehelp.services.controller.form;
 
+import com.homehelp.services.model.Banco;
 import com.homehelp.services.model.Pessoa;
 import com.homehelp.services.repository.PessoaRepository;
 
-public class PessoaForm {
-	
+public class AtualizacaoPessoaForm {
+
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -69,8 +70,16 @@ public class PessoaForm {
 		this.email = email;
 	}
 
-	public Pessoa converter(PessoaRepository pessoaRepository) {
-		return new Pessoa(nome,sobrenome,cpf,sexo,telefone,email,senha);
+	public Pessoa atualizar(Long id, PessoaRepository pessoaRepository) {
+		Pessoa pessoa = pessoaRepository.getOne(id);
+		pessoa.setNome(this.nome);
+		pessoa.setSobrenome(this.sobrenome);
+		pessoa.setCpf(this.cpf);
+		pessoa.setSexo(this.sexo);
+		pessoa.setTelefone(this.telefone);
+		pessoa.setEmail(this.email);
+		pessoa.setSenha(this.senha);
+		return pessoa;
 	}
 
 }

@@ -39,6 +39,18 @@ public class Pessoa {
 	public Pessoa() {
 		
 	}
+	
+	public Pessoa(String nome, String sobrenome, String cpf, String sexo, String telefone, String email, String senha) {
+		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.cpf = cpf;
+		this.sexo = sexo;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+	}
+
 
 	public Long getId() {
 		return id;
