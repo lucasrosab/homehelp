@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.homehelp.services.controller.dto.BancoDto;
+import com.homehelp.services.controller.dto.PessoaDto;
 import com.homehelp.services.controller.form.AtualizacaoBancoForm;
 import com.homehelp.services.controller.form.BancoForm;
 import com.homehelp.services.model.Banco;
+import com.homehelp.services.model.Pessoa;
 import com.homehelp.services.repository.BancoRepository;
 
 
@@ -52,6 +54,16 @@ public class BancoController {
 		
 		URI uri = uriBuilder.path("/banco/{id}").buildAndExpand(banco.getId()).toUri();
 		return ResponseEntity.created(uri).body(new BancoDto(banco));
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity <BancoDto> detalhar(@PathVariable Long id) {
+		Optional<Banco> banco = bBancoRepository.findById(id);
+		if (banco.isPresent()) {
+			return ResponseEntity.ok(new BancoDto(banco.get()));
+		}
+		
+		return ResponseEntity.notFound().build();		
 	}
 	
 	@PutMapping("/{id}")

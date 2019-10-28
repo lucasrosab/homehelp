@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Bandeira {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(length = 60 ,nullable = false)
 	private String nome;
@@ -18,12 +18,16 @@ public class Bandeira {
 	public Bandeira() {
 
 	}
+	
+	public Bandeira(String nome) {
+		this.nome = nome;
+	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
