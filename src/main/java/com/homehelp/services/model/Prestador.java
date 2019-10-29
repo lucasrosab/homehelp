@@ -53,6 +53,20 @@ public class Prestador {
 	public Prestador() {
 		super();
 	}
+	
+	public Prestador(String nome, String sobrenome, String cpf, String sexo, String telefone, String email, String senha, String usuario, Calendar dataNascimento) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.cpf = cpf;
+		this.sexo = sexo;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.usuario = usuario;
+		this.dataNascimento = dataNascimento;
+	}
+
+
 
 	public Long getId() {
 		return id;

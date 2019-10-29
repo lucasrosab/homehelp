@@ -1,11 +1,12 @@
-package com.homehelp.services.controller.form;
+package com.homehelp.services.controller.dto;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import com.homehelp.services.model.Cliente;
-import com.homehelp.services.repository.ClienteRepository;
+import com.homehelp.services.model.Prestador;
 
-public class AtualizacaoClienteForm {
+public class PrestadorDto {
 
 	private String nome;
 	private String sobrenome;
@@ -16,6 +17,20 @@ public class AtualizacaoClienteForm {
 	private String senha;
 	private String usuario;
 	private Calendar dataNascimento;
+	private boolean ativo;
+	
+	public PrestadorDto(Prestador prestador) {
+		this.nome = prestador.getNome();
+		this.sobrenome = prestador.getSobrenome();
+		this.cpf = prestador.getCpf();
+		this.sexo = prestador.getSexo();
+		this.telefone = prestador.getTelefone();
+		this.email = prestador.getEmail();
+		this.senha = prestador.getSenha();
+		this.usuario = prestador.getUsuario();
+		this.dataNascimento = prestador.getDataNascimento();
+		this.ativo = prestador.isAtivo();
+	}
 	
 	public String getNome() {
 		return nome;
@@ -88,19 +103,16 @@ public class AtualizacaoClienteForm {
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	public Cliente atualizar(Long id, ClienteRepository clienteRepository) {
-		Cliente cliente = clienteRepository.getOne(id);
-		cliente.setNome(this.nome);
-		cliente.setSobrenome(this.sobrenome);
-		cliente.setCpf(this.cpf);
-		cliente.setSexo(this.sexo);
-		cliente.setTelefone(this.telefone);
-		cliente.setEmail(this.email);
-		cliente.setSenha(this.senha);
-		cliente.setUsuario(this.usuario);
-		cliente.setDataNascimento(this.dataNascimento);
-		return cliente;
+
+	public boolean isAtivo() {
+		return ativo;
 	}
 
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+	
+	public static List<PrestadorDto> converter(List<Prestador> prestador) {
+		return prestador.stream().map(PrestadorDto::new).collect(Collectors.toList());
+	}
 }

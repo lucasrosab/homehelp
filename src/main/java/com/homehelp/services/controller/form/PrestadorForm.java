@@ -2,10 +2,10 @@ package com.homehelp.services.controller.form;
 
 import java.util.Calendar;
 
-import com.homehelp.services.model.Cliente;
-import com.homehelp.services.repository.ClienteRepository;
+import com.homehelp.services.model.Prestador;
+import com.homehelp.services.repository.PrestadorRepository;
 
-public class AtualizacaoClienteForm {
+public class PrestadorForm {
 
 	private String nome;
 	private String sobrenome;
@@ -89,18 +89,7 @@ public class AtualizacaoClienteForm {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public Cliente atualizar(Long id, ClienteRepository clienteRepository) {
-		Cliente cliente = clienteRepository.getOne(id);
-		cliente.setNome(this.nome);
-		cliente.setSobrenome(this.sobrenome);
-		cliente.setCpf(this.cpf);
-		cliente.setSexo(this.sexo);
-		cliente.setTelefone(this.telefone);
-		cliente.setEmail(this.email);
-		cliente.setSenha(this.senha);
-		cliente.setUsuario(this.usuario);
-		cliente.setDataNascimento(this.dataNascimento);
-		return cliente;
+	public Prestador converter(PrestadorRepository prestadorRepository) {
+		return new Prestador(nome,sobrenome,cpf,sexo,telefone,email,senha,usuario,dataNascimento);
 	}
-
 }

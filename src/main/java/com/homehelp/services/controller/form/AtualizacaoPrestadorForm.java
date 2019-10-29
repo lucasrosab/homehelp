@@ -2,11 +2,10 @@ package com.homehelp.services.controller.form;
 
 import java.util.Calendar;
 
-import com.homehelp.services.model.Cliente;
-import com.homehelp.services.repository.ClienteRepository;
+import com.homehelp.services.model.Prestador;
+import com.homehelp.services.repository.PrestadorRepository;
 
-public class AtualizacaoClienteForm {
-
+public class AtualizacaoPrestadorForm {
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -88,19 +87,18 @@ public class AtualizacaoClienteForm {
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	public Cliente atualizar(Long id, ClienteRepository clienteRepository) {
-		Cliente cliente = clienteRepository.getOne(id);
-		cliente.setNome(this.nome);
-		cliente.setSobrenome(this.sobrenome);
-		cliente.setCpf(this.cpf);
-		cliente.setSexo(this.sexo);
-		cliente.setTelefone(this.telefone);
-		cliente.setEmail(this.email);
-		cliente.setSenha(this.senha);
-		cliente.setUsuario(this.usuario);
-		cliente.setDataNascimento(this.dataNascimento);
-		return cliente;
-	}
 
+	public Prestador atualizar(Long id, PrestadorRepository prestadorRepository) {
+		Prestador prestador = prestadorRepository.getOne(id);
+		prestador.setNome(this.nome);
+		prestador.setSobrenome(this.sobrenome);
+		prestador.setCpf(this.cpf);
+		prestador.setSexo(this.sexo);
+		prestador.setTelefone(this.telefone);
+		prestador.setEmail(this.email);
+		prestador.setSenha(this.senha);
+		prestador.setUsuario(this.usuario);
+		prestador.setDataNascimento(this.dataNascimento);
+		return prestador;
+	}
 }
