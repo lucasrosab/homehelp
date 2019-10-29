@@ -1,0 +1,23 @@
+<h4>Dados Pessoais</h4>
+<hr/>
+<form action="get">
+    <div class="row">
+        <!-- Prestador Nome -->
+        <div class="form-group col-12">
+            <label for="PrestadorNome">Nome</label>
+            <input type="text" class="form-control" id="PrestadorNome" title="Nome do Usuário" disabled readonly>
+        </div>
+        <!-- Prestador Sobrenome -->
+        <div class="form-group col-12">
+            <label for="PrestadorSobrenome">Sobrenome</label>
+            <input type="text" class="form-control" id="PrestadorSobrenome" title="Sobrenome do Usuário" disabled readonly>
+        </div>
+        <!-- Prestador Telefone -->
+        <div class="form-group col-12">
+            <label for="PrestadorTelefone">Telefone</label>
+            <input type="text" class="form-control" id="PrestadorTelefone" title="Telefone do Usuário" disabled readonly>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../../index.html'">Voltar</button>
+    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#EditarDadosPessoaisPrestadorModal">Editar</button>
+</form>

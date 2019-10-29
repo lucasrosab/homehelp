@@ -1,67 +1,22 @@
-package com.homehelp.services.model;
+package com.homehelp.services.controller.form;
 
 import java.util.Calendar;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.homehelp.services.model.Cliente;
+import com.homehelp.services.repository.ClienteRepository;
 
-@Entity
-public class Prestador {
+public class ClienteForm {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(length = 150, nullable = false)
 	private String nome;
-
-	@Column(length = 100)
 	private String sobrenome;
-
-	@Column(length = 15, nullable = false)
 	private String cpf;
-
-	@Column(length = 10)
 	private String sexo;
-
-	@Column(length = 20, nullable = false)
 	private String telefone;
-
-	@Column(length = 250, nullable = false)
 	private String email;
-
-	@Column(length = 20, nullable = false)
 	private String senha;
-	
-	@Column(length = 25, nullable = false)
 	private String usuario;
-
-	@Temporal(TemporalType.DATE)
-	@Column(length = 10, nullable = false)
 	private Calendar dataNascimento;
-
-	private boolean ativo;
-
-	@OneToOne
-	private Conta conta;
-
-	public Prestador() {
-		super();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -133,20 +88,9 @@ public class Prestador {
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
-	public boolean isAtivo() {
-		return ativo;
+	
+	public Cliente converter(ClienteRepository clienteRepository) {
+		return new Cliente(nome,sobrenome,cpf,sexo,telefone,email,senha,usuario,dataNascimento);
 	}
 
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
 }

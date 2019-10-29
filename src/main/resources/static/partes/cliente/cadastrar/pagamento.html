@@ -1,0 +1,38 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="CadastrarPagamentoClienteModal">Cadastrar Pagamento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <form action="post">
+                <div class="row">
+                    <!-- Cliente Cartão de Crédito -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaCartaoCredito">Numero Cartão de Crédito</label>
+                        <input type="text" class="form-control" id="AtualizaCartaoCredito" title="Numero do Cartão de Crédito do Usuário">
+                    </div>                            
+                    <!-- Cliente Validade -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaValidadeCartao">Validade</label>
+                        <input type="text" class="form-control" id="AtualizaValidadeCartao" title="Validade Cartão de Crédito do Usuário">
+                    </div>                  
+                    <!-- Cliente Código de Segurança -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaCodigoSegurancaoCartao">Código de Segurança</label>
+                        <input type="password" class="form-control" id="AtualizaCodigoSegurancaoCartao" title="Código de Segurança do Cartão de Crédito do Usuário">
+                    </div>
+                    <!-- Cliente Nome no Cartão -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaNomeCartao">Nome Impresso no Cartão</label>
+                        <input type="password" class="form-control" id="AtualizaNomeCartao" title="Nome Impresso no Cartão de Crédito do Usuário">
+                    </div>                                                                   
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" id="FecharCadastrarPagamentoCliente" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-outline-success" id="SalvarCadastrarPagamentoCliente">Salvar</button>
+        </div>
+    </div>
+</div>

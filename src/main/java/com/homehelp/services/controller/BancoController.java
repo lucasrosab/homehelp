@@ -20,11 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.homehelp.services.controller.dto.BancoDto;
-import com.homehelp.services.controller.dto.PessoaDto;
 import com.homehelp.services.controller.form.AtualizacaoBancoForm;
 import com.homehelp.services.controller.form.BancoForm;
 import com.homehelp.services.model.Banco;
-import com.homehelp.services.model.Pessoa;
 import com.homehelp.services.repository.BancoRepository;
 
 

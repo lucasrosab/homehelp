@@ -1,0 +1,35 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="EditarDadosPessoaisPrestadorModal">Editar Dados Pessoais</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="get">
+                <div class="row">
+                    <!-- Prestador Nome -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaPrestadorNome">Nome</label>
+                        <input type="text" class="form-control" id="AtualizaPrestadorNome" title="Nome do Prestador">
+                    </div>
+                    <!-- Prestador Sobrenome -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaPrestadorSobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="AtualizaPrestadorSobrenome" title="Sobrenome do Prestador">
+                    </div>
+                    <!-- Prestador Telefone -->
+                    <div class="form-group col-12">
+                        <label for="AtualizaPrestadorTelefone">Telefone</label>
+                        <input type="text" class="form-control" id="AtualizaPrestadorTelefone" title="Telefone do Prestador">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" id="FecharEditarDadosPessoaisPrestador" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-outline-success" id="SalvarEditarDadosPessoaisPrestador">Salvar</button>
+        </div>
+    </div>
+</div>

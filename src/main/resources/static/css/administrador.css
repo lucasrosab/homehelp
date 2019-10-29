@@ -1,0 +1,28 @@
+.bg-homehelp {
+    background-color: #42a5f5 !important;
+    font-size: 25px !important;
+}
+
+.active{
+    color: #000000 !important;
+}
+
+.sidebar-dark .nav-item.active .nav-link {
+    color: #000000 !important;
+}
+
+.sidebar-dark .nav-item.active .nav-link i{
+    color: #000000 !important;
+}
+
+.sidebar-dark .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.81);
+}
+
+.sidebar-dark .nav-item .nav-link i {
+    color: rgba(255, 255, 255, 0.81);
+}
+
+.sidebar-dark .sidebar-heading {
+    color: #000000;
+}

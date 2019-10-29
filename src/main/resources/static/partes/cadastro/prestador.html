@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>HomeHelp</title>
+        
+        <meta name="description" content="HomeHelp">
+        <meta name="author" content="David Lira, Janilson Junior, Lucas Rosa, Matheus Frazão, Novack Borges">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+        
+        <!--Biblioteca JavaScript-->
+        <link rel="stylesheet" href="../../css/lib/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/all.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../img/logo-nome.png" style="width:150px;">
+            </a>
+        </nav>
+        <div class="container-fluid">
+            <form action="get" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%"> 
+                <div class="row">
+                    <div class="col-12">
+                        <h4 style="text-align: center"><i class="fas fa-address-card"></i>&nbsp;Dados Pessoais</h4><hr>
+                        <div class="form-group">
+                            <label for="PrestadorNome">Nome</label>
+                            <input type="text" class="form-control" id="PrestadorNome" title="Nome do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorSobreNome">Sobrenome</label>
+                            <input type="text" class="form-control" id="PrestadorSobreNome" title="Sobreome do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorTelefone">Telefone</label>
+                            <input type="number" class="form-control" id="PrestadorTelefone" title="Telefone do Usuário">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h4 style="text-align: center"><i class="fas fa-envelope"></i>&nbsp;Login</h4><hr>
+                        <div class="form-group">
+                            <label for="PrestadorEmail">E-mail</label>
+                            <input type="email" class="form-control" id="PrestadorEmail" title="Email do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorSenha">Senha</label>
+                            <input type="password" class="form-control" id="PrestadorSenha" title="Senha do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorConfirmacaoSenha">Confirmar Senha</label>
+                            <input type="text" class="form-control" id="PrestadorConfirmacaoSenha" title="Confirmação de senha do Usuário" >
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h4 style="text-align: center"><i class="fas fa-credit-card"></i>Pagamento</h4><hr>
+                        <div class="form-group">
+                            <label for="PrestadorBanco">Banco</label>
+                            <select name="" id="PrestadorBanco" class="form-control">
+                                <option value="1">Banco do Brasil</option>
+                                <option value="2">Caixa Econômica</option>
+                                <option value="3">Santander</option>
+                                <option value="4">Bradesco</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorAgencia">Agência</label>
+                            <input type="number" class="form-control" id="PrestadorAgencia" title="Agência do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorConta">Conta</label>
+                            <input type="number" class="form-control" id="PrestadorConta" title="Conta do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorContaCPF">CPF</label>
+                            <input type="text" class="form-control" id="PrestadorContaCPF" title="CPF da Conta do Prestador">
+                        </div> 
+                    </div>
+                    <div class="col-12">
+                        <h4 style="text-align: center"><i class="fas fa-file-alt"></i>Documentos</h4><hr>
+                        <div class="form-group">
+                            <label for="PrestadorIdentificacao">Documento de Idenficação</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorResidencia">Comprovante de Residência</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="PrestadorNadaConsta">Certidão de Nada Consta</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" align="center">
+                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
+                        <button type="button" class="btn btn-outline-success" onclick="window.location.href='../prestador/index.html';">Cadastrar</button>
+                    </div>
+                </div>    
+            </form>
+        </div>
+        
+        <!--Biblioteca JavaScript-->
+        <script src="../../js/lib/jquery-3.4.1.min.js" async defer></script>
+        <script src="../../js/lib/bootstrap.bundle.min.js" async defer></script>        
+    </body>
+</html>

@@ -1,67 +1,37 @@
-package com.homehelp.services.model;
+package com.homehelp.services.controller.dto;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.homehelp.services.model.Cliente;
 
-@Entity
-public class Prestador {
+public class ClienteDto {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(length = 150, nullable = false)
 	private String nome;
-
-	@Column(length = 100)
 	private String sobrenome;
-
-	@Column(length = 15, nullable = false)
 	private String cpf;
-
-	@Column(length = 10)
 	private String sexo;
-
-	@Column(length = 20, nullable = false)
 	private String telefone;
-
-	@Column(length = 250, nullable = false)
 	private String email;
-
-	@Column(length = 20, nullable = false)
 	private String senha;
-	
-	@Column(length = 25, nullable = false)
 	private String usuario;
-
-	@Temporal(TemporalType.DATE)
-	@Column(length = 10, nullable = false)
 	private Calendar dataNascimento;
-
 	private boolean ativo;
-
-	@OneToOne
-	private Conta conta;
-
-	public Prestador() {
-		super();
+	
+	public ClienteDto(Cliente cliente) {
+		this.nome = cliente.getNome();
+		this.sobrenome = cliente.getSobrenome();
+		this.cpf = cliente.getCpf();
+		this.sexo = cliente.getSexo();
+		this.telefone = cliente.getTelefone();
+		this.email = cliente.getEmail();
+		this.senha = cliente.getSenha();
+		this.usuario = cliente.getUsuario();
+		this.dataNascimento = cliente.getDataNascimento();
+		this.ativo = cliente.isAtivo();
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -141,12 +111,9 @@ public class Prestador {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-
-	public Conta getConta() {
-		return conta;
+	
+	public static List<ClienteDto> converter(List<Cliente> cliente) {
+		return cliente.stream().map(ClienteDto::new).collect(Collectors.toList());
 	}
 
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
 }

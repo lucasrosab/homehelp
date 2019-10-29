@@ -1,0 +1,38 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="EditarDocumentosPrestadorModal">Enviar Documentos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="get">
+                <div class="row">
+                    <!-- Prestador Tipo de Documento -->
+                    <div class="form-group col-12">
+                        <label for="TipoDocumentoPrestador">Tipo de Documento</label>
+                        <select class="custom-select" id="TipoDocumentoPrestador" required>
+                            <option value=""></option>
+                            <option value="1">Documento de Identificação</option>
+                            <option value="2">Comprovante de Residência</option>
+                            <option value="3">Certidão de Nada Consta</option>
+                        </select>
+                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                    </div>
+                    <!-- Prestador Enviar Documento -->
+                    <div class="input-group col-12">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="DocumentoPrestador">
+                            <label class="custom-file-label" for="DocumentoPrestador" data-browse="Pesquisar">Selecione o Arquivo</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" id="FecharEnviarDocumentosPrestador" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-outline-success" id="SalvarEnviarDocumentosPrestador">Salvar</button>
+        </div>
+    </div>
+</div>

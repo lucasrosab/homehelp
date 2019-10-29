@@ -1,19 +1,14 @@
 package com.homehelp.services.model;
 
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
-public class Prestador {
-
+public class Administrador {
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -38,20 +33,11 @@ public class Prestador {
 	@Column(length = 20, nullable = false)
 	private String senha;
 	
-	@Column(length = 25, nullable = false)
-	private String usuario;
+	@Column(nullable = false)
+	private int matricula;
 
-	@Temporal(TemporalType.DATE)
-	@Column(length = 10, nullable = false)
-	private Calendar dataNascimento;
-
-	private boolean ativo;
-
-	@OneToOne
-	private Conta conta;
-
-	public Prestador() {
-		super();
+	public Administrador() {
+		
 	}
 
 	public Long getId() {
@@ -118,35 +104,11 @@ public class Prestador {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public int getMatricula() {
+		return matricula;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public Calendar getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Calendar dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
 	}
 }

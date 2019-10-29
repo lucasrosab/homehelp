@@ -1,0 +1,66 @@
+body{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+header{
+    background-color: black;
+    color: #ffffff;
+}
+
+.espacamento-menu{
+    padding-bottom: 10px;
+}
+
+.espaco-item-menu{
+    padding-top: 10px;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #000000;
+}
+
+.usuario{
+    width: 30px;
+}
+
+.bg-blue{
+    background-color: #42A5F5;
+}
+
+a{
+    color: #000000 !important
+}
+
+a:hover{
+    color: rgb(96, 109, 120) !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #42A5F5 !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link :hover{
+    text-decoration: none;
+}
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    position: absolute;
+    top: 80%;  /* adjust value accordingly */  /* adjust value accordingly */
+    left: 45%;
+}
