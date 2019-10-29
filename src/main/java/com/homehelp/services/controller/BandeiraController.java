@@ -50,7 +50,7 @@ public class BandeiraController {
 		Bandeira bandeira = form.converter(bandeiraRepository);
 		bandeiraRepository.save(bandeira);
 
-		URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(bandeira.getId()).toUri();
+		URI uri = uriBuilder.path("/bandeira/{id}").buildAndExpand(bandeira.getId()).toUri();
 		return ResponseEntity.created(uri).body(new BandeiraDto(bandeira));
 	}
 

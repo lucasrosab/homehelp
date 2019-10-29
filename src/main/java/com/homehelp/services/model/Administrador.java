@@ -39,6 +39,19 @@ public class Administrador {
 	public Administrador() {
 		
 	}
+	
+	public Administrador(String nome, String sobrenome, String cpf, String sexo, String telefone, String email, String senha, int matricula) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.cpf = cpf;
+		this.sexo = sexo;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.matricula = matricula;
+	}
+
+
 
 	public Long getId() {
 		return id;
