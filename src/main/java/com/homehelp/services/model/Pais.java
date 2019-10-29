@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Pais {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(length = 150 ,nullable = false)
 	private String nome;
@@ -22,11 +22,17 @@ public class Pais {
 		
 	}
 
-	public int getId() {
+	public Pais(String nome, String abreviacao) {
+		super();
+		this.nome = nome;
+		this.abreviacao = abreviacao;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
