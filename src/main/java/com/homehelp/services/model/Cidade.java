@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +17,11 @@ public class Cidade {
 	@Column(length = 100 ,nullable = false)
 	private String nome;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Estado estado;
+	
+	@OneToOne(mappedBy = "cidade") 
+	private Endereco endereco;
 
 	public Cidade() {
 		

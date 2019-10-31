@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pais {
@@ -17,6 +18,9 @@ public class Pais {
 
 	@Column(length = 5 ,nullable = false)
 	private String abreviacao;
+	
+	@OneToOne(mappedBy = "pais")
+	private Estado estado;
 
 	public Pais() {
 		

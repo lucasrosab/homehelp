@@ -2,122 +2,198 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <title>HomeHelp</title>
-        
-        <meta name="description" content="HomeHelp">
-        <meta name="author" content="David Lira, Janilson Junior, Lucas Rosa, Matheus Frazão, Novack Borges">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
-        
-        <!--Biblioteca JavaScript-->
-        <link rel="stylesheet" href="../../css/lib/bootstrap.min.css">
-        <link rel="stylesheet" href="../../css/all.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>HomeHelp</title>
+
+<meta name="description" content="HomeHelp">
+<meta name="author"
+	content="David Lira, Janilson Junior, Lucas Rosa, Matheus Frazão, Novack Borges">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+
+<!--Biblioteca JavaScript-->
+<link rel="stylesheet" href="../../css/lib/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/all.css">
+</head>
+<body ng-app="app">
+	<!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="../../index.html">
-                <img src="../../img/logo-nome.png" style="width:150px;">
-            </a>
-        </nav>
-        <div class="container-fluid">
-            <form action="get" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%"> 
-                <div class="row">
-                    <div class="col-12">
-                        <h4 style="text-align: center"><i class="fas fa-address-card"></i>&nbsp;Dados Pessoais</h4><hr>
-                        <div class="form-group">
-                            <label for="PrestadorNome">Nome</label>
-                            <input type="text" class="form-control" id="PrestadorNome" title="Nome do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorSobreNome">Sobrenome</label>
-                            <input type="text" class="form-control" id="PrestadorSobreNome" title="Sobreome do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorTelefone">Telefone</label>
-                            <input type="number" class="form-control" id="PrestadorTelefone" title="Telefone do Usuário">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <h4 style="text-align: center"><i class="fas fa-envelope"></i>&nbsp;Login</h4><hr>
-                        <div class="form-group">
-                            <label for="PrestadorEmail">E-mail</label>
-                            <input type="email" class="form-control" id="PrestadorEmail" title="Email do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorSenha">Senha</label>
-                            <input type="password" class="form-control" id="PrestadorSenha" title="Senha do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorConfirmacaoSenha">Confirmar Senha</label>
-                            <input type="text" class="form-control" id="PrestadorConfirmacaoSenha" title="Confirmação de senha do Usuário" >
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <h4 style="text-align: center"><i class="fas fa-credit-card"></i>Pagamento</h4><hr>
-                        <div class="form-group">
-                            <label for="PrestadorBanco">Banco</label>
-                            <select name="" id="PrestadorBanco" class="form-control">
-                                <option value="1">Banco do Brasil</option>
-                                <option value="2">Caixa Econômica</option>
-                                <option value="3">Santander</option>
-                                <option value="4">Bradesco</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorAgencia">Agência</label>
-                            <input type="number" class="form-control" id="PrestadorAgencia" title="Agência do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorConta">Conta</label>
-                            <input type="number" class="form-control" id="PrestadorConta" title="Conta do Usuário">
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorContaCPF">CPF</label>
-                            <input type="text" class="form-control" id="PrestadorContaCPF" title="CPF da Conta do Prestador">
-                        </div> 
-                    </div>
-                    <div class="col-12">
-                        <h4 style="text-align: center"><i class="fas fa-file-alt"></i>Documentos</h4><hr>
-                        <div class="form-group">
-                            <label for="PrestadorIdentificacao">Documento de Idenficação</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorResidencia">Comprovante de Residência</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="PrestadorNadaConsta">Certidão de Nada Consta</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01" data-browse="Pesquisar">Selecione o Arquivo</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12" align="center">
-                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
-                        <button type="button" class="btn btn-outline-success" onclick="window.location.href='../prestador/index.html';">Cadastrar</button>
-                    </div>
-                </div>    
-            </form>
-        </div>
-        
-        <!--Biblioteca JavaScript-->
-        <script src="../../js/lib/jquery-3.4.1.min.js" async defer></script>
-        <script src="../../js/lib/bootstrap.bundle.min.js" async defer></script>        
-    </body>
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="../../index.html"> <img
+			src="../../img/logo-nome.png" style="width: 150px;">
+		</a>
+	</nav>
+	<div class="container-fluid" ng-controller="CadastroPrestadorCtrl">
+		<form class="needs-validation"
+			style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%"
+			novalidate>
+			<div class="row">
+				<input type="hidden" ng-model="prestador.id" />
+				<!-- Dados Pessoais -->
+				<div class="col-12">
+					<h4 style="text-align: center">
+						<i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
+					</h4>
+					<hr>
+					<!-- Nome do Prestador -->
+					<div class="form-group">
+						<label for="validationCustom01" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Nome*</label> <input
+							type="text" maxlength="50" class="form-control"
+							placeholder="Seu nome" id="PrestadorNome" title="Nome do Prestador"
+							ng-model="prestador.nome" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O nome deve ser preenchido.</div>
+					</div>
+					<!-- Sobrenome do Prestador -->
+					<div class="form-group">
+						<label for="validationCustom02" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Sobrenome*</label>
+						<input type="text" maxlength="50" class="form-control"
+							placeholder="Seu sobrenome" id="PrestadorSobrenome"
+							ng-model="prestador.sobrenome" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O sobrenome deve ser
+							preenchido.</div>
+					</div>
+					<!-- Data de Nascimento do Prestador -->
+					<div class="form-group">
+						<label for="PrestadorDataNascimento" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Data de
+							Nascimento</label> <input type="text" class="form-control"
+							id="PrestadorDataNascimento" title="Data de Nascimento do Cliente"
+							ng-model="prestador.dataNascimento" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">A data de nascimento deve ser
+							preenchida.</div>
+					</div>
+					<!-- Sexo do Prestador -->
+					<div class="form-group">
+						<label for="PrestadorSexo">Sexo</label> <select
+							class="custom-select" ng-model="cliente.sexo"
+							title="Clique aqui para selecionar o sexo" id="PrestadorSexo"
+							required>
+							<option value=""></option>
+							<option value="Masculino">Masculino</option>
+							<option value="Feminino">Feminino</option>
+						</select>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O sexo deve ser selecionado.</div>
+					</div>
+					<!-- CPF do Prestador -->
+					<div class="form-group">
+						<label for="PrestadorCPF">CPF</label> <input type="text"
+							class="form-control" id="PrestadorCPF" title="CPF do Cliente"
+							ng-model="prestador.cpf" placeholder="000.000.000-00" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O CPF deve ser preenchido.</div>
+					</div>
+				</div>
+
+				<!-- Contato -->
+				<div class="col-12">
+					<div class="form-group">
+						<h4 style="text-align: center">
+							<i class="fas fa-envelope"></i>&nbsp;Contato
+						</h4>
+						<hr>
+						<!-- Celular do Prestador -->
+						<label for="PrestadorTelefone" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Telefone*</label>
+						<input type="text" min="8" max="50" class="form-control"
+							placeholder="Seu telefone com ddd" id="PrestadorTelefone"
+							title="Celular do Cliente" ng-model="prestador.telefone" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O telefone deve ser
+							preenchido.</div>
+					</div>
+					<!-- Email do Prestador -->
+					<div class="form-group">
+						<label for="ClienteEmail" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">E-mail*</label> <input
+							type="email" class="form-control"
+							placeholder="exemplo: mail@mail.com" id="PrestadorEmail"
+							title="Email do Usuário" ng-model="prestador.email" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O E-mail deve ser preenchido.
+						</div>
+					</div>
+				</div>
+
+				<!-- Login -->
+				<div class="col-12">
+					<h4 style="text-align: center">
+						<i class="fas fa-user"></i>&nbsp;Login
+					</h4>
+					<hr>
+					<!-- Login do Cliente -->
+					<div class="form-group">
+						<label for="PrestadorUsuario">Usuario</label> <input type="text"
+							class="form-control" id="PrestadorUsuario"
+							placeholder="Letras e/ou números, limite de 20 caracteres"
+							title="Usuario do Cliente" ng-model="prestador.usuario" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">O usuário deve ser preenchido.
+						</div>
+					</div>
+					<!-- Senha do Cliente -->
+					<div class="form-group">
+						<label for="PrestadorSenha" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Senha*</label> <input
+							type="password" class="form-control" placeholder="******"
+							id="PrestadorSenha" title="Senha do Usuário"
+							ng-model="prestador.senha" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">A senha deve ser preenchida.</div>
+					</div>
+
+					<!-- Confirmação de Senha do Prestador -->
+					<div class="form-group">
+						<label for="PrestadorConfirmacaoSenha" data-toggle="tooltip"
+							data-placement="top" title="Campo obrigatório">Confirmar
+							Senha*</label> <input type="password" class="form-control"
+							placeholder="******" id="PrestadorConfirmacaoSenha"
+							title="Confirmação de senha do Usuário" required>
+						<div class="valid-feedback">Tudo certo!</div>
+						<div class="invalid-feedback">A confirmação de senha deve
+							ser preenchida.</div>
+					</div>
+
+				</div>
+				<div class="col-12" align="center">
+					<div class="form-group" align="left">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value=""
+								id="invalidCheck" required> <label
+								class="form-check-label" for="invalidCheck"> Concordo
+								com os termos e condições </label>
+							<div class="invalid-feedback">Você deve concordar com os
+								termos, antes de continuar.</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-outline-primary"
+						onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
+					<button type="button" class="btn btn-outline-success"
+						ng-click="cadastrar()">Cadastrar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!--Biblioteca JavaScript-->
+	<script src="../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../js/lib/bootstrap.bundle.min.js"></script>
+	<script src="../../js/lib/angular.min.js"></script>
+
+	<!-- Controllers AngularJS -->
+	<script src="../../controllers/main.js"></script>
+	<script src="../../controllers/prestador.js"></script>
+</body>
 </html>

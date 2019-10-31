@@ -1,45 +1,44 @@
-app.controller("CadastroClienteCtrl", function ($scope, $http) {
+app.controller("CadastroPrestadorCtrl", function ($scope, $http) {
      
-	$scope.cliente = {}
-	$scope.clientes = []
-	$scope.clienteDetalhado = []
+	$scope.prestador = {}
+	$scope.prestadores = []
+	$scope.prestadorDetalhado = []
 	
     $scope.cadastrar = function (){
 		$http({
             method: "POST",  
-            url: "/cliente",  
+            url: "/prestador",  
             datatype: "json",  
-            data: JSON.stringify($scope.cliente)
+            data: JSON.stringify($scope.prestador)
     	  }).then(function mySuccess(response) {
-    	    $scope.clientes = response.data;
-    	    window.location.href='../../partes/cliente/index.html'
+    	    $scope.prestadores = response.data;
+    	    $scope.prestador = {}
+    	    window.location.href='../../partes/prestador/index.html'
     	  }, function myError(response) {
-    	    $scope.cliente = response.statusText;
-    	    $('.alert').alert()
+    	    $scope.prestadores = response.statusText;
     	  });
     };
     
-    function exibirPessoa (){
+    function exibir(){
     	$http({
     		  method: 'GET',
-    		  url: '/cliente',
+    		  url: '/prestador',
     		}).then(function successCallback(response) {
-    			$scope.clientes = response.data
+    			$scope.prestadores = response.data
     		  }, function errorCallback(response) {
     		    // called asynchronously if an error occurs
     		    // or server returns response with an error status.
     		  });
     }
     
-    exibirPessoa();
+    exibir();
     
     function detalhar(){
     	$http({
     		  method: 'GET',
-    		  url: '/cliente/' + 1,
+    		  url: '/prestador/' + 1,
     		}).then(function successCallback(response) {
-    			$scope.clienteDetalhado = response.data
-    			console.log($scope.clienteDetalhado)
+    			$scope.prestadorDetalhado = response.data
     		  }, function errorCallback(response) {
     		    // called asynchronously if an error occurs
     		    // or server returns response with an error status.

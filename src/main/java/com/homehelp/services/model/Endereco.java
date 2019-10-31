@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Endereco {
 
 	private int numero;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Cidade cidade;
 	
 	public Endereco() {

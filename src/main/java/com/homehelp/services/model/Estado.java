@@ -1,5 +1,6 @@
 package com.homehelp.services.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.OneToOne;
 public class Estado {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(length = 150 ,nullable = false)
 	private String nome;
@@ -19,18 +20,21 @@ public class Estado {
 	@Column(length = 5 ,nullable = false)
 	private String sigla;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Pais pais;
+	
+	@OneToOne(mappedBy = "estado")
+	private Cidade cidade;
 
 	public Estado() {
 		
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
