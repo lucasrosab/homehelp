@@ -1,11 +1,14 @@
 package com.homehelp.services.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -24,6 +27,9 @@ public class Endereco {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cidade cidade;
+	
+	@OneToMany(mappedBy = "endereco")
+	private List<Favorito> favorito;
 	
 	public Endereco() {
 		
@@ -68,4 +74,8 @@ public class Endereco {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+
+	public List<Favorito> getFavorito() {
+		return favorito;
+	} 
 }

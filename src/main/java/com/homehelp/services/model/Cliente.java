@@ -1,12 +1,14 @@
 package com.homehelp.services.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -43,6 +45,12 @@ public class Cliente {
 	@Temporal(TemporalType.DATE)
 	@Column(length = 10, nullable = false)
 	private Calendar dataNascimento;
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Solicitacao> solicitacao;
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Favorito> favorito;
 
 	private boolean ativo = true;
 	
@@ -62,6 +70,8 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 
+
+	
 	public Long getId() {
 		return id;
 	}
@@ -140,6 +150,14 @@ public class Cliente {
 
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+
+	public List<Solicitacao> getSolicitacao() {
+		return solicitacao;
+	}
+	
+	public List<Favorito> getFavorito() {
+		return favorito;
 	}
 
 	public boolean isAtivo() {

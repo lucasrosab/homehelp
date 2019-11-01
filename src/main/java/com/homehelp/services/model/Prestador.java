@@ -1,12 +1,14 @@
 package com.homehelp.services.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -44,6 +46,11 @@ public class Prestador {
 	@Temporal(TemporalType.DATE)
 	@Column(length = 10, nullable = false)
 	private Calendar dataNascimento;
+	
+	@OneToMany(mappedBy = "prestador")
+	private List<Solicitacao> solicitacao;
+	
+	private boolean status;
 
 	private boolean ativo;
 
@@ -65,10 +72,8 @@ public class Prestador {
 		this.usuario = usuario;
 		this.dataNascimento = dataNascimento;
 	}
-
-
-
-	public Long getId() {
+	
+	public Long getId() { 
 		return id;
 	}
 
@@ -146,6 +151,18 @@ public class Prestador {
 
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public List<Solicitacao> getSolicitacao() {
+		return solicitacao;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public boolean isAtivo() {
