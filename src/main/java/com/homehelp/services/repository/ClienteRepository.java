@@ -6,4 +6,6 @@ import com.homehelp.services.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 
+	Cliente findByNome(String codCliente);
+
 }

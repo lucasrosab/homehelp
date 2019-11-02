@@ -7,8 +7,6 @@ public class AtualizacaoBancoForm {
 
 	private String nome;
 
-	private int prefixo;
-
 	public String getNome() {
 		return nome;
 	}
@@ -17,18 +15,9 @@ public class AtualizacaoBancoForm {
 		this.nome = nome;
 	}
 
-	public int getPrefixo() {
-		return prefixo;
-	}
-
-	public void setPrefixo(int prefixo) {
-		this.prefixo = prefixo;
-	}
-
 	public Banco atualizar(Long id, BancoRepository bancoRepository) {
 		Banco banco = bancoRepository.getOne(id);
 		banco.setNome(this.nome);
-		banco.setPrefixo(this.prefixo);
 		return banco;
 	}
 }

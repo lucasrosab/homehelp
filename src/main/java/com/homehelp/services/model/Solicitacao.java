@@ -21,8 +21,17 @@ public class Solicitacao {
 	
 	private String horario;
 	
+	private String status;
+	
 	public Solicitacao() {
 		super();
+	}
+
+	public Solicitacao(Prestador prestador, Cliente cliente, String horario) {
+		super();
+		this.prestador = prestador;
+		this.cliente = cliente;
+		this.horario = horario;
 	}
 
 	public Long getId() {
@@ -41,6 +50,14 @@ public class Solicitacao {
 		this.prestador = prestador;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public String getHorario() {
 		return horario;
 	}
@@ -48,4 +65,14 @@ public class Solicitacao {
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
 }

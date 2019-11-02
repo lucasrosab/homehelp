@@ -6,4 +6,6 @@ import com.homehelp.services.model.Prestador;
 
 public interface PrestadorRepository extends JpaRepository<Prestador, Long> {
 
+	Prestador findByNome(String codPrestador);
+
 }
