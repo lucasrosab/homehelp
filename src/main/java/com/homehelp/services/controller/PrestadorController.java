@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.homehelp.services.controller.dto.PrestadorAtivoDto;
 import com.homehelp.services.controller.dto.PrestadorDto;
 import com.homehelp.services.controller.form.AtualizacaoPrestadorForm;
 import com.homehelp.services.controller.form.PrestadorForm;
@@ -47,15 +48,22 @@ public class PrestadorController {
 		URI uri = uriBuilder.path("/prestador/{id}").buildAndExpand(prestador.getId()).toUri();
 		return ResponseEntity.created(uri).body(new PrestadorDto(prestador));
 	}
-
+	
+	//Detalhar um prestador pela id dele
 	@GetMapping("/{id}")
 	public ResponseEntity <PrestadorDto> detalhar(@PathVariable Long id) {
 		Optional<Prestador> prestador = prestadorRepository.findById(id);
 		if (prestador.isPresent()) {
 			return ResponseEntity.ok(new PrestadorDto(prestador.get()));
-		}
-		
+		}	
 		return ResponseEntity.notFound().build();		
+	}
+
+	//Listar os prestadores pelo status ativo
+	@GetMapping("/ativo")
+	public List <PrestadorAtivoDto> prestadorAtivo() {
+		List<Prestador> prestador = prestadorRepository.findAll();
+		return PrestadorAtivoDto.converter(prestador);		
 	}
 	
 	@PutMapping("/{id}")

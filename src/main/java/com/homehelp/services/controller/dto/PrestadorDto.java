@@ -1,6 +1,5 @@
 package com.homehelp.services.controller.dto;
 
-import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,9 +13,9 @@ public class PrestadorDto {
 	private String sexo;
 	private String telefone;
 	private String email;
-	private String senha;
+	private String senha; 
 	private String usuario;
-	private Calendar dataNascimento;
+	private String dataNascimento;
 	private boolean ativo;
 	
 	public PrestadorDto(Prestador prestador) {
@@ -27,7 +26,6 @@ public class PrestadorDto {
 		this.telefone = prestador.getTelefone();
 		this.email = prestador.getEmail();
 		this.senha = prestador.getSenha();
-		this.usuario = prestador.getUsuario();
 		this.dataNascimento = prestador.getDataNascimento();
 		this.ativo = prestador.isAtivo();
 	}
@@ -96,11 +94,11 @@ public class PrestadorDto {
 		this.usuario = usuario;
 	}
 
-	public Calendar getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

@@ -9,17 +9,17 @@ public class SolicitacaoDto {
 
 	private Long id;
 	private String horario;
-	private String nomeCliente;
-	private String nomePrestador;
+	private String cliente;
+	private String prestador;
 	private String status;
 	
 	public SolicitacaoDto(Solicitacao solicitacao) {
 		this.id = solicitacao.getId();
 		this.horario = solicitacao.getHorario();
-		this.nomeCliente = solicitacao.getCliente().getNome();
-		this.nomePrestador = solicitacao.getPrestador().getNome();
+		this.cliente = solicitacao.getCliente().getNome();
+		this.prestador = solicitacao.getPrestador().getNome();
 		this.status = solicitacao.getStatus();
-	}
+	} 
 
 	public Long getId() {
 		return id;
@@ -37,20 +37,20 @@ public class SolicitacaoDto {
 		this.horario = horario;
 	}
 
-	public String getNomeCliente() {
-		return nomeCliente;
+	public String getCliente() {
+		return cliente;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
 	}
 
-	public String getNomePrestador() {
-		return nomePrestador;
+	public String getPrestador() {
+		return prestador;
 	}
 
-	public void setNomePrestador(String nomePrestador) {
-		this.nomePrestador = nomePrestador;
+	public void setPrestador(String prestador) {
+		this.prestador = prestador;
 	}
 
 	public String getStatus() {

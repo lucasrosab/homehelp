@@ -1,7 +1,5 @@
 package com.homehelp.services.controller.form;
 
-import java.util.Calendar;
-
 import com.homehelp.services.model.Prestador;
 import com.homehelp.services.repository.PrestadorRepository;
 
@@ -14,8 +12,7 @@ public class PrestadorForm {
 	private String telefone;
 	private String email;
 	private String senha;
-	private String usuario;
-	private Calendar dataNascimento;
+	private String dataNascimento;
 	
 	public String getNome() {
 		return nome;
@@ -73,23 +70,15 @@ public class PrestadorForm {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public Calendar getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	
 	public Prestador converter(PrestadorRepository prestadorRepository) {
-		return new Prestador(nome,sobrenome,cpf,sexo,telefone,email,senha,usuario,dataNascimento);
+		return new Prestador(nome,sobrenome,cpf,sexo,telefone,email,senha,dataNascimento);
 	}
 }

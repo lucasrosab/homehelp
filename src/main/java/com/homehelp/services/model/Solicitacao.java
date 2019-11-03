@@ -21,7 +21,9 @@ public class Solicitacao {
 	
 	private String horario;
 	
-	private String status;
+	private String endereco;
+	
+	private String status = "Disponivel";
 	
 	public Solicitacao() {
 		super();
@@ -32,6 +34,23 @@ public class Solicitacao {
 		this.prestador = prestador;
 		this.cliente = cliente;
 		this.horario = horario;
+	}
+
+	public Solicitacao(Prestador prestador, Cliente cliente, String horario, String status) {
+		super();
+		this.prestador = prestador;
+		this.cliente = cliente;
+		this.horario = horario;
+		this.status = status;
+	}
+
+	public Solicitacao(Long id, Prestador prestador, Cliente cliente, String horario, String status) {
+		super();
+		this.id = id;
+		this.prestador = prestador;
+		this.cliente = cliente;
+		this.horario = horario;
+		this.status = status;
 	}
 
 	public Long getId() {
@@ -64,6 +83,14 @@ public class Solicitacao {
 
 	public void setHorario(String horario) {
 		this.horario = horario;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getStatus() {

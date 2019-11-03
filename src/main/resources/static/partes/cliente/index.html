@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../../css/all.css">
         <link rel="stylesheet" href="../../css/pagina-inicial-cliente.css">
     </head>
-    <body ng-app="app">
+    <body ng-app="app" ng-controller="SolicitacaoCtrl">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->        
@@ -45,19 +45,64 @@
                 </div>
             </nav>
         </header>
-        <div id="map"></div>
-        <div class="container-fluid">
-            <div class="row" id="menu">
-                <div class="col-12 align-self-center">
-                    <button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#SolicitacaoModal">&nbsp;&nbsp;&nbsp;Contratar Reparo&nbsp;&nbsp;&nbsp;</button>
-                </div>
-            </div>
+        <div class="container">
+			<div class="row">	
+				<div class="col-2 card text-center">
+				  <img src="../../img/administrador.jpg" class="card-img-top" alt="...">
+				  <div class="card-body">
+				  <h5 class="card-title">Hidráulica</h5>
+				    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button>
+				  </div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2 card text-center">
+				  <img src="../../img/administrador.jpg" class="card-img-top" alt="...">
+				  <div class="card-body">
+				  <h5 class="card-title">Reparos</h5>
+				    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button>
+				  </div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2 card text-center">
+				  <img src="../../img/administrador.jpg" class="card-img-top" alt="...">
+				  <div class="card-body">
+				  <h5 class="card-title">Acabamento</h5>
+				    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>
+				  </div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2 card text-center">
+				  <img src="../../img/administrador.jpg" class="card-img-top" alt="...">
+				  <div class="card-body">
+				  	<h5 class="card-title">Eletricista</h5>
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>
+				  </div>
+				</div>
+				<div class="col-1"></div>
+	        </div>    
+	        
+            <!-- Hidráulica -->
+            <div class="modal fade" id="HidraulicaModal" tabindex="-1" role="dialog" aria-labelledby="HidraulicaModal" aria-hidden="true"><div ng-include="'cadastrar/hidraulica.html'"></div></div>
             
-            <!-- Solicitar Prestador -->
-            <div class="modal fade" id="SolicitacaoModal" tabindex="-1" role="dialog" aria-labelledby="SolicitacaoModal" aria-hidden="true"><div ng-include="'cadastrar/pedido.html'"></div></div>
+            <!-- Reparos -->
+            <div class="modal fade" id="ReparosModal" tabindex="-1" role="dialog" aria-labelledby="ReparosModal" aria-hidden="true"><div ng-include="'cadastrar/reparos.html'"></div></div>
+            
+            <!-- Acabamento -->
+            <div class="modal fade" id="AcabamentoModal" tabindex="-1" role="dialog" aria-labelledby="AcabamentoModal" aria-hidden="true"><div ng-include="'cadastrar/acabamento.html'"></div></div>
+            
+            <!-- Eletricista -->
+            <div class="modal fade" id="EletricistaModal" tabindex="-1" role="dialog" aria-labelledby="EletricistaModal" aria-hidden="true"><div ng-include="'cadastrar/eletricista.html'"></div></div>
+            
+            
+            
+            
+            
+            
             
             <!-- Informação Profissionais -->
             <div class="modal fade" id="InformacaoProfissionalModal" tabindex="-1" role="dialog" aria-labelledby="InformacaoProfissionalModal" aria-hidden="true"><div ng-include="'conteudo/solicitacao/prestador.html'"></div></div>
+            
+            
         </div>
 
 
@@ -65,13 +110,10 @@
         <script src="../../js/lib/jquery-3.4.1.min.js"></script>
         <script src="../../js/lib/bootstrap.bundle.min.js"></script>        
         <script src="../../js/lib/angular.min.js"></script>
-        
-        <!-- API Google Maps -->
-        <script src="../../js/cliente.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap" async defer></script>
-        
+               
         <!-- Componentes AngularJS -->
         <script src="../../controllers/main.js" type="text/javascript"></script>
+        <script src="../../controllers/solicitacao.js" type="text/javascript"></script>
 
     </body>
 </html>
