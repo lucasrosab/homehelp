@@ -41,6 +41,7 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
     		  url: '/prestador/ativo',
     		}).then(function successCallback(response) {
     			$scope.profissionalDisponivel = response.data
+    			console.log($scope.profissionalDisponivel)
     		  }, function errorCallback(response) {
     		    // called asynchronously if an error occurs
     		    // or server returns response with an error status.

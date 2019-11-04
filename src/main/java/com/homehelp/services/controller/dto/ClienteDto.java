@@ -15,8 +15,7 @@ public class ClienteDto {
 	private String telefone;
 	private String email;
 	private String senha;
-	private String usuario;
-	private Calendar dataNascimento;
+	private String dataNascimento;
 	private boolean ativo;
 	
 	public ClienteDto(Cliente cliente) {
@@ -27,7 +26,6 @@ public class ClienteDto {
 		this.telefone = cliente.getTelefone();
 		this.email = cliente.getEmail();
 		this.senha = cliente.getSenha();
-		this.usuario = cliente.getUsuario();
 		this.dataNascimento = cliente.getDataNascimento();
 		this.ativo = cliente.isAtivo();
 	}
@@ -88,19 +86,11 @@ public class ClienteDto {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public Calendar getDataNascimento() {
+	public String getDataNascimento() { 
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(String dataNascimento) { 
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -108,7 +98,7 @@ public class ClienteDto {
 		return ativo;
 	}
 
-	public void setAtivo(boolean ativo) {
+	public void setAtivo(boolean ativo) { 
 		this.ativo = ativo;
 	}
 	

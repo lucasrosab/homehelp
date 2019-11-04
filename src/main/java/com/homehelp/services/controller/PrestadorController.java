@@ -21,7 +21,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.homehelp.services.controller.dto.PrestadorAtivoDto;
 import com.homehelp.services.controller.dto.PrestadorDto;
+import com.homehelp.services.controller.dto.PrestadorStatusDto;
 import com.homehelp.services.controller.form.AtualizacaoPrestadorForm;
+import com.homehelp.services.controller.form.AtualizacaoStatusPrestadorForm;
 import com.homehelp.services.controller.form.PrestadorForm;
 import com.homehelp.services.model.Prestador;
 import com.homehelp.services.repository.PrestadorRepository;
@@ -77,6 +79,29 @@ public class PrestadorController {
 		
 		return ResponseEntity.notFound().build();
 	}
+	
+	@PutMapping("/status/{id}")
+	@Transactional
+	public ResponseEntity<PrestadorStatusDto> atualizarStatus(@PathVariable Long id, @RequestBody @Valid AtualizacaoStatusPrestadorForm form) {
+		Optional<Prestador> prestador = prestadorRepository.findById(id);
+		if (prestador.isPresent()) {
+			Prestador prestadores = form.atualizar(id, prestadorRepository);
+			return ResponseEntity.ok(new PrestadorStatusDto(prestadores));
+		}
+		
+		return ResponseEntity.notFound().build();
+	}
+	
+	//Detalhar um prestador pela id dele
+	@GetMapping("/status/{id}")
+	public ResponseEntity <PrestadorStatusDto> recuperarStatus(@PathVariable Long id) {
+		Optional<Prestador> prestador = prestadorRepository.findById(id);
+		if (prestador.isPresent()) {
+			return ResponseEntity.ok(new PrestadorStatusDto(prestador.get()));
+		}	
+		return ResponseEntity.notFound().build();		
+	}
+	
 	
 	@DeleteMapping("/{id}")
 	@Transactional

@@ -1,7 +1,5 @@
 package com.homehelp.services.controller.form;
 
-import java.util.Calendar;
-
 import com.homehelp.services.model.Cliente;
 import com.homehelp.services.repository.ClienteRepository;
 
@@ -14,8 +12,7 @@ public class AtualizacaoClienteForm {
 	private String telefone;
 	private String email;
 	private String senha;
-	private String usuario;
-	private Calendar dataNascimento;
+	private String dataNascimento;
 	
 	public String getNome() {
 		return nome;
@@ -73,19 +70,11 @@ public class AtualizacaoClienteForm {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public Calendar getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	
@@ -98,7 +87,6 @@ public class AtualizacaoClienteForm {
 		cliente.setTelefone(this.telefone);
 		cliente.setEmail(this.email);
 		cliente.setSenha(this.senha);
-		cliente.setUsuario(this.usuario);
 		cliente.setDataNascimento(this.dataNascimento);
 		return cliente;
 	}

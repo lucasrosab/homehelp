@@ -1,14 +1,10 @@
 package com.homehelp.services.model;
 
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Type;
 
@@ -38,13 +34,8 @@ public class Cliente {
 
 	@Column(length = 20, nullable = false)
 	private String senha;
-	
-	@Column(length = 25, nullable = false)
-	private String usuario;
 
-	@Temporal(TemporalType.DATE)
-	@Column(length = 10, nullable = false)
-	private Calendar dataNascimento;
+	private String dataNascimento;
 	
 	@Column(columnDefinition = "TINYINT") 
 	@Type(type = "org.hibernate.type.NumericBooleanType")
@@ -54,7 +45,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nome, String sobrenome, String cpf, String sexo, String telefone, String email, String senha, String usuario, Calendar dataNascimento) {
+	public Cliente(String nome, String sobrenome, String cpf, String sexo, String telefone, String email, String senha, String dataNascimento) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
@@ -62,7 +53,6 @@ public class Cliente {
 		this.telefone = telefone;
 		this.email = email;
 		this.senha = senha;
-		this.usuario = usuario;
 		this.dataNascimento = dataNascimento;
 	}
 	
@@ -155,19 +145,11 @@ public class Cliente {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public Calendar getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
