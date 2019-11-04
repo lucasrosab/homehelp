@@ -35,6 +35,22 @@
 			style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%"
 			novalidate>
 			<div class="row">
+				<div class="col-12">
+					<div class="row justify-content-end">					
+						<div class="alert alert-success alert-dismissible fade show" role="alert" id="sucesso">
+							Cadastrado com sucesso
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="alert alert-danger alert-dismissible fade show" role="alert" id="erro">
+							Por favor, preencher todos os dados
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+				</div>
 				<input type="hidden" ng-model="prestador.id" />
 				<!-- Dados Pessoais -->
 				<div class="col-12">

@@ -3,6 +3,9 @@ app.controller("CadastroClienteCtrl", function ($scope, $http) {
 	$scope.cliente = {}
 	$scope.clientes = []
 	$scope.clienteDetalhado = []
+
+	$('#sucesso').hide();
+	$('#erro').hide();
 	
     $scope.cadastrar = function (){
 		$http({
@@ -12,10 +15,11 @@ app.controller("CadastroClienteCtrl", function ($scope, $http) {
             data: JSON.stringify($scope.cliente)
     	  }).then(function mySuccess(response) {
     	    $scope.clientes = response.data;
+    	    $('#sucesso').show()
     	    window.location.href='../../partes/cliente/index.html'
     	  }, function myError(response) {
-    	    $scope.cliente = response.statusText;
-    	    $('.alert').alert()
+    	    $('#erro').show()
+    	    $scope.cliente = {}
     	  });
     };
     

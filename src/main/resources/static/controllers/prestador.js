@@ -4,6 +4,9 @@ app.controller("CadastroPrestadorCtrl", function ($scope, $http) {
 	$scope.prestadores = []
 	$scope.prestadorDetalhado = []
 	
+	$('#sucesso').hide();
+	$('#erro').hide();
+	
     $scope.cadastrar = function (){
 		$http({
             method: "POST",  
@@ -13,9 +16,11 @@ app.controller("CadastroPrestadorCtrl", function ($scope, $http) {
     	  }).then(function mySuccess(response) {
     	    $scope.prestadores = response.data;
     	    $scope.prestador = {}
+    	    $('#sucesso').show()
     	    window.location.href='../../partes/prestador/index.html'
     	  }, function myError(response) {
-    	    $scope.prestadores = response.statusText;
+      	    $('#erro').show()
+      	    $scope.prestador = {}
     	  });
     };
     
