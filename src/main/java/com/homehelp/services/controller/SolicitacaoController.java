@@ -89,5 +89,12 @@ public class SolicitacaoController {
 		
 		return ResponseEntity.notFound().build();
 	}
+	
+	//Listar as solicitacoes ativas
+	@GetMapping("/ativa")
+	public List <SolicitacaoDto> solicitacaoAtivo() {
+		List<Solicitacao> solicitacao = solicitacaoRepository.findAll();
+		return SolicitacaoDto.converter(solicitacao);		
+	}
 
 }

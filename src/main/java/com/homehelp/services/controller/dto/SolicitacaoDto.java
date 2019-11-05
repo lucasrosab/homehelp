@@ -12,12 +12,14 @@ public class SolicitacaoDto {
 	private String cliente;
 	private String prestador;
 	private String status;
+	private String endereco;
 	
 	public SolicitacaoDto(Solicitacao solicitacao) {
 		this.id = solicitacao.getId();
 		this.horario = solicitacao.getHorario();
 		this.cliente = solicitacao.getCliente().getNome();
 		this.prestador = solicitacao.getPrestador().getNome();
+		this.endereco = solicitacao.getEndereco();
 		this.status = solicitacao.getStatus();
 	} 
 
@@ -61,8 +63,15 @@ public class SolicitacaoDto {
 		this.status = status;
 	}
 
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
 	public static List<SolicitacaoDto> converter(List<Solicitacao> solicitacao) {
 		return solicitacao.stream().map(SolicitacaoDto::new).collect(Collectors.toList());
 	}
-
 }

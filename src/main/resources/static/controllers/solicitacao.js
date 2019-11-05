@@ -2,11 +2,13 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
 	
 	$scope.solicitacao = {}
 	$scope.solicitacoesCliente = []
+	$scope.solicitacoesAtivas = []
 	$scope.profissionalDisponivel = []
 	
+	//Solicitar Reparo de Hidráulica
 	$scope.solicitarHidraulica = function(){
-		$scope.solicitacao.codCliente = "Lucas Rosa Barbosa"
-		$scope.solicitacao.codPrestador = "Lucas Rosa"
+		$scope.solicitacao.codCliente = "Lucas"
+		$scope.solicitacao.codPrestador = "Matheus"
 
 		$http({
             method: "POST",  
@@ -17,12 +19,13 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
     	    $scope.solicitacoesCliente = response.data;
     	    console.log("Salvou")
     	    $scope.solicitacao = {}
-    	    window.location.href='../../partes/prestador/index.html'
+    	    window.location.href='../../partes/cliente/conteudo/solicitacao/solicitacao.html'
     	  }, function myError(response) {
     	    $scope.prestadores = response.statusText;
     	  });
 	}
 	
+	//Solicitações criadas pelo usuário
 	function minhasSolicitacoes() {
     	$http({
   		  method: 'GET',
@@ -35,6 +38,7 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
   		  });
 	}
 	
+	//Solicitações disponível para o profissional	
 	function profissionalDisponivel(){
     	$http({
     		  method: 'GET',
@@ -49,5 +53,17 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
 	}
 	
 	profissionalDisponivel(); 	
+	
+	function solicitacaoDisponivel(){
+    	$http({
+		  method: 'GET',
+		  url: '/solicitacao/ativa',
+		}).then(function successCallback(response) {
+			$scope.solicitacoesCliente = response.data
+		  }, function errorCallback(response) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		  });
+	}
 	
 });
