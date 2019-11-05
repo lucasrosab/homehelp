@@ -1,18 +1,18 @@
 <h4>Login</h4>
 <hr/>
-<form action="get">
+<form action>
     <div class="row">
         <!-- Cliente Email -->
         <div class="form-group col-12">
-            <label for="ClienteEmail">Email</label>
-            <input type="email" class="form-control" id="ClienteEmail" title="Email do Usuário" placeholder="{{clienteDetalhado.email}}" disabled readonly>
-        </div>                            
+            <label for="DadosClienteEmail">Email</label>
+            <input type="email" class="form-control" id="DadosClienteEmail" title="Email" placeholder="{{clienteDetalhado.email}}" disabled readonly>
+        </div>
         <!-- Cliente Senha -->
         <div class="form-group col-12">
-            <label for="ClienteSenha">Senha</label>
-            <input type="password" class="form-control" id="ClienteSenha" title="Senha do Usuário" placeholder="{{clienteDetalhado.senha}}" disabled readonly>
-        </div>                           
+            <label for="DadosClienteSenha">Senha</label>
+            <input type="password" class="form-control" id="DadosClienteSenha" title="Senha" placeholder="{{clienteDetalhado.senha}}" disabled readonly>
+        </div>
     </div>
-    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../../index.html';">Voltar</button>
-    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#EditarLoginModal">Editar</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html';">Voltar</button>
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditarLoginModal">Editar</button>
 </form>

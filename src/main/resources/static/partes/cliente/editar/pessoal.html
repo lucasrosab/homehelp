@@ -7,22 +7,32 @@
             </button>
         </div>
         <div class="modal-body">
-            <form action="get">
+            <form>
                 <div class="row">
                     <!-- Cliente Nome -->
                     <div class="form-group col-12">
-                        <label for="ClienteNome">Nome</label>
-                        <input type="text" class="form-control" id="AtualizaClienteNome" title="Nome do Usuário">
+                        <label for="AtualizaClienteNome">Nome</label>
+                        <input type="text" class="form-control" id="AtualizaClienteNome" title="Nome">
                     </div>
                     <!-- Cliente Sobrenome -->
                     <div class="form-group col-12">
-                        <label for="ClienteSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="AtualizaClienteSobrenome" title="Sobrenome do Usuário">
+                        <label for="AtualizaClienteSobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="AtualizaClienteSobrenome" title="Sobrenome">
                     </div>
-                    <!-- Cliente Telefone -->
-                    <div class="form-group col-12">
-                        <label for="ClienteTelefone">Telefone</label>
-                        <input type="text" class="form-control" id="AtualizaClienteTelefone" title="Telefone do Usuário">
+                    <!-- Data de Nascimento do Cliente -->
+                    <div class="form-group">
+                        <label for="AtualizaClienteDataNascimento">Data de Nascimento</label>
+                        <input type="text" class="form-control" id="AtualizaClienteDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true">
+                    </div>
+                    <!-- Sexo do Cliente -->
+                    <div class="form-group">
+                        <label for="AtualizaClienteSexo">Sexo</label>
+                        <select class="custom-select" title="Selecione o Sexo" id="AtualizaClienteSexo">
+                            <option value=""></option>
+                            <option value="Masculino" title="Masculino">Masculino</option>
+                            <option value="Feminino" title="Feminino">Feminino</option>
+                            <option value="Outros" title="Feminino">Outros e Indefinido</option>
+                        </select>
                     </div>
                 </div>
             </form>

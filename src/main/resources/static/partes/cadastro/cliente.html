@@ -7,216 +7,141 @@
 <!--<![endif]-->
 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>HomeHelp</title>
+    <title>HomeHelp</title>
 
-<meta name="description" content="HomeHelp">
-<meta name="author"
-	content="David Lira, Janilson Junior, Lucas Rosa, Matheus Frazão, Novack Borges">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="HomeHelp">
+    <meta name="author" content="David Lira, Janilson Junior, Lucas Rosa, Matheus Frazão, Novack Borges">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
 
-<!-- Bibliotecas CSS -->
-<link href="../../css/lib/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
-<link href="../../css/all.css" rel="stylesheet" type="text/css" />
-<link href="../../css/cliente.css" rel="stylesheet" type="text/css" />
+    <!-- Bibliotecas CSS -->
+    <link href="../../css/lib/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/cliente.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body ng-app="app">
-	<!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="../../index.html"> <img
-			src="../../img/logo-nome.png" alt="Logo" style="width: 150px;" />
-		</a>
-	</nav>
-	<div class="container-fluid" ng-controller="CadastroClienteCtrl">
-		<form class="needs-validation"
-			style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%"
-			novalidate>
-			<div class="row">
-				<div class="col-12">
-					<div class="row justify-content-end">					
-						<div class="alert alert-success alert-dismissible fade show" role="alert" id="sucesso">
-							Cadastrado com sucesso
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="alert alert-danger alert-dismissible fade show" role="alert" id="erro">
-							Por favor, preencher todos os dados
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-					</div>
-				</div>
-				<input type="hidden" ng-model="cliente.id" />
-				<!-- Dados Pessoais -->
-				<div class="col-12">
-					<h4 style="text-align: center">
-						<i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
-					</h4>
-					<hr>
-					<!-- Nome do Cliente -->
-					<div class="form-group">
-						<label for="validationCustom01" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Nome*</label> <input
-							type="text" maxlength="50" class="form-control"
-							placeholder="Seu nome" id="ClienteNome" title="Nome do Cliente"
-							ng-model="cliente.nome" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O nome deve ser preenchido.</div>
-					</div>
-					<!-- Sobrenome do Cliente -->
-					<div class="form-group">
-						<label for="validationCustom02" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Sobrenome*</label>
-						<input type="text" maxlength="50" class="form-control"
-							placeholder="Seu sobrenome" id="validationCustom02"
-							ng-model="cliente.sobrenome" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O sobrenome deve ser
-							preenchido.</div>
-					</div>
-					<!-- Data de Nascimento do Cliente -->
-					<div class="form-group">
-						<label for="ClienteDataNascimento" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Data de
-							Nascimento</label> <input type="text" class="form-control"
-							id="ClienteDataNascimento" title="Data de Nascimento do Cliente"
-							ng-model="cliente.dataNascimento" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">A data de nascimento deve ser
-							preenchida.</div>
-					</div>
-					<!-- Sexo do Cliente -->
-					<div class="form-group">
-						<label for="ClienteSexo">Sexo</label> <select
-							class="custom-select" ng-model="cliente.sexo"
-							title="Clique aqui para selecionar o sexo" id="ClienteSexo"
-							required>
-							<option value=""></option>
-							<option value="Masculino">Masculino</option>
-							<option value="Feminino">Feminino</option>
-						</select>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O sexo deve ser selecionado.</div>
-					</div>
-					<!-- CPF do Cliente -->
-					<div class="form-group">
-						<label for="ClienteCPF">CPF</label> <input type="text"
-							class="form-control" id="ClienteCPF" title="CPF do Cliente"
-							ng-model="cliente.cpf" placeholder="000.000.000-00" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O CPF deve ser preenchido.</div>
-					</div>
-				</div>
+    <!--[if lt IE 7]>
+				<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+			<![endif]-->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="../../index.html"> <img src="../../img/logo-nome.png" alt="Logo" style="width: 150px;" /></a>
+    </nav>
+    <div class="container" ng-controller="CadastroClienteCtrl">
+        <form class="needs-validation" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" novalidate>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row justify-content-end">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="sucesso">
+                            Cadastrado com sucesso
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+                        </div>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="erro">
+                            Por favor, preencher todos os dados
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" ng-model="cliente.id" />
+                <!-- Dados Pessoais -->
+                <div class="col-12">
+                    <h4 style="text-align: center">
+                        <i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
+                    </h4>
+                    <hr>
+                    <!-- Nome do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteNome">Nome*</label>
+                        <input type="text" maxlength="50" class="form-control" placeholder="Nome" id="ClienteNome" title="Nome" ng-model="cliente.nome">
+                    </div>
+                    <!-- Sobrenome do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteSobrenome">Sobrenome*</label>
+                        <input type="text" maxlength="50" class="form-control" placeholder="Sobrenome" id="ClienteSobrenome" title="Sobrenome" ng-model="cliente.sobrenome">
+                    </div>
+                    <!-- Data de Nascimento do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteDataNascimento">Data de Nascimento</label>
+                        <input type="text" class="form-control" id="ClienteDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" ng-model="cliente.dataNascimento">
+                    </div>
+                    <!-- Sexo do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteSexo">Sexo</label>
+                        <select class="custom-select" ng-model="cliente.sexo" title="Selecione o Sexo" id="ClienteSexo">
+                            <option value=""></option>
+                            <option value="Masculino" title="Masculino">Masculino</option>
+                            <option value="Feminino" title="Feminino">Feminino</option>
+                            <option value="Outros" title="Feminino">Outros e Indefinido</option>
+                        </select>
+                    </div>
+                    <!-- CPF do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteCPF">CPF</label>
+                        <input type="text" class="form-control" id="ClienteCPF" title="CPF" data-mask="000.000.000-00" placeholder="000.000.000-00" data-mask-selectonfocus="true" ng-model="cliente.cpf">
+                    </div>
+                </div>
 
-				<!-- Contato -->
-				<div class="col-12">
-					<div class="form-group">
-						<h4 style="text-align: center">
-							<i class="fas fa-envelope"></i>&nbsp;Contato
-						</h4>
-						<hr>
-						<!-- Celular do Cliente -->
-						<label for="ClienteTelefone" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Telefone*</label>
-						<input type="text" min="8" max="50" class="form-control"
-							placeholder="Seu telefone com ddd" id="ClienteTelefone"
-							title="Celular do Cliente" ng-model="cliente.telefone" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O telefone deve ser
-							preenchido.</div>
-					</div>
-					<!-- Email do Cliente -->
-					<div class="form-group">
-						<label for="ClienteEmail" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">E-mail*</label> <input
-							type="email" class="form-control"
-							placeholder="exemplo: mail@mail.com" id="PrestadorEmail"
-							title="Email do Usuário" ng-model="cliente.email" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O E-mail deve ser preenchido.
-						</div>
-					</div>
-				</div>
+                <!-- Contato -->
+                <div class="col-12">
+                    <div class="form-group">
+                        <h4 style="text-align: center">
+                            <i class="fas fa-envelope"></i>&nbsp;Contato
+                        </h4>
+                        <hr>
+                        <!-- Celular do Cliente -->
+                        <label for="ClienteTelefone">Celular*</label>
+                        <input type="text" class="form-control" id="ClienteTelefone" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="cliente.telefone">
+                    </div>
+                    <!-- Email do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteEmail">E-mail*</label>
+                        <input type="email" class="form-control" placeholder="Email" id="ClienteEmail" title="Email" ng-model="cliente.email">
+                    </div>
+                </div>
 
-				<!-- Login -->
-				<div class="col-12">
-					<h4 style="text-align: center">
-						<i class="fas fa-user"></i>&nbsp;Login
-					</h4>
-					<hr>
-					<!-- Login do Cliente -->
-					<div class="form-group">
-						<label for="ClienteUsuario">Usuario</label> <input type="text"
-							class="form-control" id="ClienteUsuario"
-							placeholder="Letras e/ou números, limite de 20 caracteres"
-							title="Usuario do Cliente" ng-model="cliente.usuario" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">O usuário deve ser preenchido.
-						</div>
-					</div>
-					<!-- Senha do Cliente -->
-					<div class="form-group">
-						<label for="ClienteSenha" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Senha*</label> <input
-							type="password" class="form-control" placeholder="******"
-							id="ClienteSenha" title="Senha do Usuário"
-							ng-model="cliente.senha" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">A senha deve ser preenchida.</div>
-					</div>
+                <!-- Login -->
+                <div class="col-12">
+                    <h4 style="text-align: center">
+                        <i class="fas fa-user"></i>&nbsp;Login
+                    </h4>
+                    <hr>
+                    <!-- Senha do Cliente -->
+                    <div class="form-group">
+                        <label for="ClienteSenha">Senha*</label>
+                        <input type="password" class="form-control" placeholder="******" id="ClienteSenha" title="Senha" ng-model="cliente.senha">
+                    </div>
+                </div>
+                <!-- Termos e Condições -->
+                <div class="col-12" align="center">
+                    <div class="form-group" align="left">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                            <label class="form-check-label" for="invalidCheck">Concordo com os termos e condições </label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
+                    <button type="button" class="btn btn-success" ng-click="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-					<!-- Confirmação de Senha do Cliente -->
-					<div class="form-group">
-						<label for="ClienteConfirmacaoSenha" data-toggle="tooltip"
-							data-placement="top" title="Campo obrigatório">Confirmar
-							Senha*</label> <input type="password" class="form-control"
-							placeholder="******" id="ClienteConfirmacaoSenha"
-							title="Confirmação de senha do Usuário" required>
-						<div class="valid-feedback">Tudo certo!</div>
-						<div class="invalid-feedback">A confirmação de senha deve
-							ser preenchida.</div>
-					</div>
+    <!-- Bibliotecas JavaScript -->
+    <script src="../../js/lib/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../js/lib/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="../../js/lib/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="../../js/lib/angular.min.js" type="text/javascript"></script>
 
-				</div>
-				<div class="col-12" align="center">
-					<div class="form-group" align="left">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value=""
-								id="invalidCheck" required> <label
-								class="form-check-label" for="invalidCheck"> Concordo
-								com os termos e condições </label>
-							<div class="invalid-feedback">Você deve concordar com os
-								termos, antes de continuar.</div>
-						</div>
-					</div>
-					<button type="button" class="btn btn-outline-primary"
-						onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
-					<button type="button" class="btn btn-outline-success"
-						ng-click="cadastrar()">Cadastrar</button>
-				</div>
-			</div>
-		</form>
-	</div>
-
-
-
-	<!-- Bibliotecas JavaScript -->
-	<script src="../../js/lib/jquery-3.4.1.min.js" type="text/javascript"></script>
-	<script src="../../js/lib/bootstrap.bundle.min.js"
-		type="text/javascript"></script>
-	<script src="../../js/lib/angular.min.js" type="text/javascript"></script>
-	<!-- Componentes AngularJS -->
-	<script src="../../controllers/main.js" type="text/javascript"></script>
-	<script src="../../controllers/cliente.js" type="text/javascript"></script>
+    <!-- Componentes AngularJS -->
+    <script src="../../controllers/main.js" type="text/javascript"></script>
+    <script src="../../controllers/cliente.js" type="text/javascript"></script>
 </body>
 
 </html>
