@@ -4,8 +4,13 @@ app.controller("CadastroClienteCtrl", function($scope, $http) {
     $scope.clientes = []
     $scope.clienteDetalhado = []
 
-    $('#sucesso').hide();
-    $('#erro').hide();
+    //Função para carregar o tipo de mensagem ao cadastrar
+    function mensagem(mensagem, status) {
+        $scope.mensagem = mensagem
+        $scope.status = status
+        $('.toast').toast({ delay: 3000 });
+        $('.toast').toast('show');
+    }
 
     //Cadastrar o Cliente
     $scope.cadastrar = function() {
@@ -16,10 +21,10 @@ app.controller("CadastroClienteCtrl", function($scope, $http) {
             data: JSON.stringify($scope.cliente)
         }).then(function mySuccess(response) {
             $scope.clientes = response.data;
-            $('#sucesso').show()
+            mensagem("Cadastrado com Sucesso", "Sucesso")
             window.location.href = '../../partes/cliente/index.html'
         }, function myError(response) {
-            $('#erro').show()
+            mensagem("Preencha todos os campos", "Erro")
             $scope.cliente = {}
         });
     };

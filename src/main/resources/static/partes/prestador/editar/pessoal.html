@@ -7,29 +7,39 @@
             </button>
         </div>
         <div class="modal-body">
-            <form action="get">
+            <form>
                 <div class="row">
-                    <!-- Prestador Nome -->
-                    <div class="form-group col-12">
-                        <label for="AtualizaPrestadorNome">Nome</label>
-                        <input type="text" class="form-control" id="AtualizaPrestadorNome" title="Nome do Prestador">
+                    <!-- Nome do Prestador -->
+                    <div class="form-group">
+                        <label for="AtualizarPrestadorNome">Nome</label>
+                        <input type="text" maxlength="50" class="form-control" placeholder="Nome" id="AtualizarPrestadorNome" title="Nome" ng-model="prestador.nome" required>
                     </div>
-                    <!-- Prestador Sobrenome -->
-                    <div class="form-group col-12">
-                        <label for="AtualizaPrestadorSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="AtualizaPrestadorSobrenome" title="Sobrenome do Prestador">
+                    <!-- Sobrenome do Prestador -->
+                    <div class="form-group">
+                        <label for="AtualizarPrestadorSobrenome">Sobrenome</label>
+                        <input type="text" maxlength="50" class="form-control" placeholder="Sobrenome" id="AtualizarPrestadorSobrenome" ng-model="prestador.sobrenome">
                     </div>
-                    <!-- Prestador Telefone -->
-                    <div class="form-group col-12">
-                        <label for="AtualizaPrestadorTelefone">Telefone</label>
-                        <input type="text" class="form-control" id="AtualizaPrestadorTelefone" title="Telefone do Prestador">
+                    <!-- Data de Nascimento do Prestador -->
+                    <div class="form-group">
+                        <label for="AtualizarPrestadorDataNascimento">Data de Nascimento</label>
+                        <input type="text" class="form-control" id="AtualizarPrestadorDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" ng-model="prestador.dataNascimento">
+                    </div>
+                    <!-- Sexo do Prestador -->
+                    <div class="form-group">
+                        <label for="AtualizarPrestadorSexo">Sexo</label>
+                        <select class="custom-select" ng-model="prestador.sexo" title="Selecionar o Sexo" id="AtualizarPrestadorSexo">
+                            <option value=""></option>
+                            <option value="Masculino" title="Masculino">Masculino</option>
+                            <option value="Feminino" title="Feminino">Feminino</option>
+                            <option value="Outros" title="Outros e Indefinido">Outros e Indefinido</option>
+                        </select>
                     </div>
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-outline-danger" id="FecharEditarDadosPessoaisPrestador" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-outline-success" id="SalvarEditarDadosPessoaisPrestador">Salvar</button>
+            <button type="button" class="btn btn-danger" id="FecharEditarDadosPessoaisPrestador" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-success" id="SalvarEditarDadosPessoaisPrestador">Salvar</button>
         </div>
     </div>
 </div>

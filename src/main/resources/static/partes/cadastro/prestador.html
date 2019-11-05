@@ -30,27 +30,24 @@
         <a class="navbar-brand" href="../../index.html"> <img src="../../img/logo-nome.png" style="width: 150px;"></a>
     </nav>
     <div class="container" ng-controller="CadastroPrestadorCtrl">
+
+        <div class="toast" style="position: absolute; top: 15px; right: 15px;">
+            <div class="toast-header">
+                <strong class="mr-auto">{{status}}</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="toast-body">
+                {{mensagem}}
+            </div>
+        </div>
+
         <form class="needs-validation" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" novalidate ng-submit="cadastrar()">
             <div class="row">
-                <div class="col-12">
-                    <div class="row justify-content-end">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="sucesso">
-                            Cadastrado com sucesso
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-                        </div>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="erro">
-                            Por favor, preencher todos os dados
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-                        </div>
-                    </div>
-                </div>
                 <input type="hidden" ng-model="prestador.id" />
                 <!-- Dados Pessoais -->
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <h4 style="text-align: center">
                         <i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
                     </h4>
@@ -91,7 +88,7 @@
                 </div>
 
                 <!-- Contato -->
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="form-group">
                         <h4 style="text-align: center">
                             <i class="fas fa-envelope"></i>&nbsp;Contato
@@ -106,10 +103,7 @@
                         <label for="ClienteEmail">E-mail*</label>
                         <input type="email" class="form-control" placeholder="Email" id="PrestadorEmail" title="Email" ng-model="prestador.email">
                     </div>
-                </div>
-
-                <!-- Login -->
-                <div class="col-12">
+                    <!-- Login -->
                     <h4 style="text-align: center">
                         <i class="fas fa-user"></i>&nbsp;Login
                     </h4>

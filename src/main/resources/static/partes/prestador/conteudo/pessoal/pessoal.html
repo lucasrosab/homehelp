@@ -1,23 +1,33 @@
 <h4>Dados Pessoais</h4>
 <hr/>
-<form action="get">
+<form>
     <div class="row">
         <!-- Prestador Nome -->
         <div class="form-group col-12">
-            <label for="PrestadorNome">Nome</label>
-            <input type="text" class="form-control" id="PrestadorNome" title="Nome do Usu�rio" placeholder="{{prestadorDetalhado.nome}}" disabled readonly>
+            <label for="DadosPrestadorNome">Nome</label>
+            <input type="text" class="form-control" id="DadosPrestadorNome" title="Nome" placeholder="{{prestadorDetalhado.nome}}" disabled readonly>
         </div>
         <!-- Prestador Sobrenome -->
         <div class="form-group col-12">
-            <label for="PrestadorSobrenome">Sobrenome</label>
-            <input type="text" class="form-control" id="PrestadorSobrenome" title="Sobrenome do Usuário" placeholder="{{prestadorDetalhado.sobrenome}}" disabled readonly>
+            <label for="DadosPrestadorSobrenome">Sobrenome</label>
+            <input type="text" class="form-control" id="DadosPrestadorSobrenome" title="Sobrenome" placeholder="{{prestadorDetalhado.sobrenome}}" disabled readonly>
+        </div>
+        <!-- Prestador Data de Nascimento -->
+        <div class="form-group">
+            <label for="DadosPrestadorDataNascimento">Data de Nascimento</label>
+            <input type="text" class="form-control" id="DadosPrestadorDataNascimento" title="Nome" placeholder="{{prestadorDetalhado.dataNascimento}}" disabled readonly>
         </div>
         <!-- Prestador Telefone -->
         <div class="form-group col-12">
-            <label for="PrestadorTelefone">Telefone</label>
-            <input type="text" class="form-control" id="PrestadorTelefone" title="Telefone do Usuário" placeholder="{{prestadorDetalhado.telefone}}" disabled readonly>
+            <label for="DadosPrestadorTelefone">Celular</label>
+            <input type="text" class="form-control" id="DadosPrestadorTelefone" title="Celular" placeholder="{{prestadorDetalhado.telefone}}" disabled readonly>
+        </div>
+        <!-- Prestador Sexo -->
+        <div class="form-group col-12">
+            <label for="DadosPrestadorSexo">Celular</label>
+            <input type="text" class="form-control" id="DadosPrestadorSexo" title="Sexo" placeholder="{{prestadorDetalhado.sexo}}" disabled readonly>
         </div>
     </div>
-    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../../index.html'">Voltar</button>
-    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#EditarDadosPessoaisPrestadorModal">Editar</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html'">Voltar</button>
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditarDadosPessoaisPrestadorModal">Editar</button>
 </form>

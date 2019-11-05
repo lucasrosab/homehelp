@@ -1,18 +1,18 @@
 <h4>Login</h4>
 <hr/>
-<form action="get">
+<form>
     <div class="row">
         <!-- Prestador Email -->
         <div class="form-group col-12">
-            <label for="PrestadorEmail">Email</label>
-            <input type="email" class="form-control" id="PrestadorEmail" title="Prestador Email" placeholder="{{prestadorDetalhado.email}}" disabled readonly>
-        </div>                            
+            <label for="DadosEmail">Email</label>
+            <input type="email" class="form-control" id="DadosEmail" title="Email" placeholder="{{prestadorDetalhado.email}}" disabled readonly>
+        </div>
         <!-- Prestador Senha -->
         <div class="form-group col-12">
-            <label for="PrestadorSenha">Senha</label>
-            <input type="password" class="form-control" id="PrestadorSenha" title="Prestador Senha" placeholder="{{prestadorDetalhado.senha}}" disabled readonly>
-        </div>                           
+            <label for="DadosSenha">Senha</label>
+            <input type="password" class="form-control" id="DadosSenha" title="Senha" placeholder="{{prestadorDetalhado.senha}}" disabled readonly>
+        </div>
     </div>
-    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../../index.html';">Voltar</button>
-    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#EditarLoginPrestadorModal">Editar</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html';">Voltar</button>
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditarLoginPrestadorModal">Editar</button>
 </form>

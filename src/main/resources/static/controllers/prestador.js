@@ -4,14 +4,18 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
     $scope.prestadores = []
     $scope.prestadorDetalhado = []
 
-    $('#sucesso').hide();
-    $('#erro').hide();
+    //Função para carregar o tipo de mensagem ao cadastrar
+    function mensagem(mensagem, status) {
+        $scope.mensagem = mensagem
+        $scope.status = status
+        $('.toast').toast({ delay: 3000 });
+        $('.toast').toast('show');
+    }
 
     //Cadastrar Prestador
     $scope.cadastrar = function() {
-        console
-        /*
-		$http({
+
+        $http({
             method: "POST",
             url: "/prestador",
             datatype: "json",
@@ -19,12 +23,12 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
         }).then(function mySuccess(response) {
             $scope.prestadores = response.data;
             $scope.prestador = {}
-            $('#sucesso').show()
+            mensagem("Cadastrado com Sucesso", "Sucesso")
             window.location.href = '../../partes/prestador/index.html'
         }, function myError(response) {
-            $('#erro').show()
+            mensagem("Preencha todos os campos", "Erro")
             $scope.prestador = {}
-        });*/
+        });
     };
 
     function exibir() {
@@ -39,7 +43,7 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
         });
     }
 
-    //exibir();
+    exibir();
 
     function detalhar() {
         $http({
@@ -53,6 +57,6 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
         });
     }
 
-    //detalhar()
+    detalhar()
 
 });
