@@ -2,7 +2,9 @@ app.controller("DemandasCtrl", function($scope, $http) {
 	
 	$scope.demandasDisponiveis = []
 	$scope.isAtivo = []
+	$scope.prestador = {}
 	
+	//Exibe todas as demandas disponíveis
 	function demandas() {
     	$http({
   		  method: 'GET',
@@ -16,21 +18,26 @@ app.controller("DemandasCtrl", function($scope, $http) {
 	
 	demandas();
 	
+	//Responsável pela alteração do status do prestador
 	$scope.status = function(){
-		$scope.status = 'true'
-		
+		if($scope.isAtivo.status) {
+			$scope.prestador = { status : false}
+		} else {
+			$scope.prestador = { status : true}
+		}
 		$http({
             method: "PUT",  
             url: "/prestador/status/" + 1,  
             datatype: "json",  
-            data: JSON.stringify($scope.status)
+            data: JSON.stringify($scope.prestador)
     	  }).then(function mySuccess(response) {
-    		  console.log("Sucesso: " + response.data)
+    		  statusPrestador();
     	  }, function myError(response) {
-    	    console.log("Erro: " + response.statusText)
+    	    
     	  });
 	}
-
+	
+	//Carrega o status do prestador
 	function statusPrestador() {
     	$http({
     		  method: 'GET',

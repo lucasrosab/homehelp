@@ -5,7 +5,7 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
 	$scope.solicitacoesAtivas = []
 	$scope.profissionalDisponivel = []
 	
-	//Solicitar Reparo de Hidráulica
+	//Solicitar Hidráulica
 	$scope.solicitarHidraulica = function(){
 		$scope.solicitacao.codCliente = "Lucas"
 		$scope.solicitacao.codPrestador = "Matheus"
@@ -24,6 +24,28 @@ app.controller("SolicitacaoCtrl", function($scope,$http) {
     	    $scope.prestadores = response.statusText;
     	  });
 	}
+	
+	//Solicitar Reparo
+	$scope.solicitarReparos = function(){
+		$scope.solicitacao.codCliente = "Lucas"
+		$scope.solicitacao.codPrestador = "Matheus"
+
+		$http({
+            method: "POST",  
+            url: "/solicitacao",  
+            datatype: "json",  
+            data: JSON.stringify($scope.solicitacao)
+    	  }).then(function mySuccess(response) {
+    	    $scope.solicitacoesCliente = response.data;
+    	    console.log("Salvou")
+    	    $scope.solicitacao = {}
+    	    window.location.href='../../partes/cliente/conteudo/solicitacao/solicitacao.html'
+    	  }, function myError(response) {
+    	    $scope.prestadores = response.statusText;
+    	  });
+	}
+	
+	
 	
 	//Solicitações criadas pelo usuário
 	function minhasSolicitacoes() {
