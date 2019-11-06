@@ -24,6 +24,10 @@ public class Solicitacao {
 	private String endereco;
 	
 	private String status = "Disponivel";
+
+	@Column(columnDefinition = "TINYINT") 
+	@Type(type = "org.hibernate.type.NumericBooleanType")
+	private boolean ativo = true;
 	
 	public Solicitacao() {
 		super();
@@ -101,5 +105,12 @@ public class Solicitacao {
 		this.status = status;
 	}
 
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
 
 }

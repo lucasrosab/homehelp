@@ -18,7 +18,7 @@ public class Administrador {
 	@Column(length = 100)
 	private String sobrenome;
 
-	@Column(length = 15, nullable = false)
+	@Column(length = 15, unique = true, nullable = false)
 	private String cpf;
 
 	@Column(length = 10)
