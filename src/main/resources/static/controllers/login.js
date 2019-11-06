@@ -4,12 +4,16 @@ app.controller("LoginCtrl", function($scope, $rootScope, $http) {
     $rootScope.dadosUsuario = []
         //Retorna os dados solicitados com base nos parametros passados
     $scope.acessar = function() {
-        $http({
+        console.log($scope.usuario)
+        console.log($scope.usuario.email)
+        console.log($scope.usuario.senha)
+
+    	$http({
             method: 'GET',
-            url: '/login/' + $scope.usuario,
+            url: '/login?email=' + $scope.usuario.email + '&senha=' + $scope.usuario.senha,
         }).then(function successCallback(response) {
             $rootScope.dadosUsuario = response.data
-            console.log("Sucesso")
+            console.log($rootScope.dadosUsuario)
         }, function errorCallback(response) {
             console.log("Erro")
         });

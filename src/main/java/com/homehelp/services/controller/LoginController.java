@@ -19,26 +19,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.homehelp.services.controller.dto.BandeiraDto;
 import com.homehelp.services.controller.dto.ClienteDto;
 import com.homehelp.services.controller.form.AtualizacaoClienteForm;
 import com.homehelp.services.controller.form.ClienteForm;
+import com.homehelp.services.model.Bandeira;
 import com.homehelp.services.model.Cliente;
 import com.homehelp.services.repository.ClienteRepository;
 
 @RestController
 @RequestMapping("/login")
-public class ClienteController {
+public class LoginController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-	@GetMapping("/{email}/{senha}")
-	public ResponseEntity<ClienteDto> detalhar(@PathVariable String email, @PathVariable String senha) {
-		Optional<Cliente> cliente = clienteRepository.findByLogin(email, senha);
-		if (cliente.isPresent()) {
-			return ResponseEntity.ok(new ClienteDto(cliente.get()));
-		}
-
-		return ResponseEntity.notFound().build();
+	//Retorna os dados do usuario logado 
+	@GetMapping
+	public List<ClienteDto> lista(String email, String senha) {
+		List<Cliente> cliente = clienteRepository.findByEmailAndSenha(email, senha); 
+		return ClienteDto.converter(cliente);  
 	}
 }
