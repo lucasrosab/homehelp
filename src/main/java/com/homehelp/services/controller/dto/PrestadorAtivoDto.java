@@ -9,7 +9,6 @@ public class PrestadorAtivoDto {
 
 	private Long id;
 	private String prestador;
-	private String endereco;
 	private boolean status;
 	
 	public PrestadorAtivoDto(Prestador prestador) {

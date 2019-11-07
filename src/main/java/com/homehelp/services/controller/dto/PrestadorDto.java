@@ -6,7 +6,8 @@ import java.util.stream.Collectors;
 import com.homehelp.services.model.Prestador;
 
 public class PrestadorDto {
-
+	
+	private Long id;
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -14,11 +15,11 @@ public class PrestadorDto {
 	private String telefone;
 	private String email;
 	private String senha; 
-	private String usuario;
 	private String dataNascimento;
 	private boolean ativo;
 	
 	public PrestadorDto(Prestador prestador) {
+		this.id = prestador.getId();
 		this.nome = prestador.getNome();
 		this.sobrenome = prestador.getSobrenome();
 		this.cpf = prestador.getCpf();
@@ -30,6 +31,14 @@ public class PrestadorDto {
 		this.ativo = prestador.isAtivo();
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -84,14 +93,6 @@ public class PrestadorDto {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
 	}
 
 	public String getDataNascimento() {

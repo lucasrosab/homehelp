@@ -22,8 +22,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.homehelp.services.controller.dto.PrestadorAtivoDto;
 import com.homehelp.services.controller.dto.PrestadorDto;
 import com.homehelp.services.controller.dto.PrestadorStatusDto;
+import com.homehelp.services.controller.form.AtualizacaoPrestadorDesativarForm;
 import com.homehelp.services.controller.form.AtualizacaoPrestadorForm;
-import com.homehelp.services.controller.form.AtualizacaoStatusPrestadorForm;
+import com.homehelp.services.controller.form.AtualizacaoPrestadorPorDadosForm;
+import com.homehelp.services.controller.form.AtualizacaoPrestadorPorLoginForm;
+import com.homehelp.services.controller.form.AtualizacaoPrestadorStatusForm;
 import com.homehelp.services.controller.form.PrestadorForm;
 import com.homehelp.services.model.Prestador;
 import com.homehelp.services.repository.PrestadorRepository;
@@ -35,12 +38,41 @@ public class PrestadorController {
 	@Autowired
 	private PrestadorRepository prestadorRepository;
 	
+	//Listar todos os prestadores
 	@GetMapping
 	public List<PrestadorDto> listar(){
 		List<Prestador> prestador = prestadorRepository.findAll();
 		return PrestadorDto.converter(prestador);
 	}
 	
+	//Detalhar um prestador pela ID Dinamica 
+	@GetMapping("/{id}")
+	public ResponseEntity <PrestadorDto> detalhar(@PathVariable Long id) {
+		Optional<Prestador> prestador = prestadorRepository.findById(id);
+		if (prestador.isPresent()) {
+			return ResponseEntity.ok(new PrestadorDto(prestador.get()));
+		}	
+		return ResponseEntity.notFound().build();		
+	}
+	
+	//Recupera o status do Prestador
+	@GetMapping("/status/{id}")
+	public ResponseEntity <PrestadorStatusDto> recuperarStatus(@PathVariable Long id) {
+		Optional<Prestador> prestador = prestadorRepository.findById(id);
+		if (prestador.isPresent()) {
+			return ResponseEntity.ok(new PrestadorStatusDto(prestador.get()));
+		}	
+		return ResponseEntity.notFound().build();		
+	}
+	
+	//Listar todos os prestadores pelo status ativo
+	@GetMapping("/ativo")
+	public List <PrestadorAtivoDto> prestadorAtivo() {
+		List<Prestador> prestador = prestadorRepository.findAll();
+		return PrestadorAtivoDto.converter(prestador);		
+	}
+	
+	//Cadastrar um prestador
 	@PostMapping
 	@Transactional
 	public ResponseEntity<PrestadorDto> cadastrar(@RequestBody @Valid PrestadorForm form, UriComponentsBuilder uriBuilder) {
@@ -51,23 +83,7 @@ public class PrestadorController {
 		return ResponseEntity.created(uri).body(new PrestadorDto(prestador));
 	}
 	
-	//Detalhar um prestador pela id dele
-	@GetMapping("/{id}")
-	public ResponseEntity <PrestadorDto> detalhar(@PathVariable Long id) {
-		Optional<Prestador> prestador = prestadorRepository.findById(id);
-		if (prestador.isPresent()) {
-			return ResponseEntity.ok(new PrestadorDto(prestador.get()));
-		}	
-		return ResponseEntity.notFound().build();		
-	}
-
-	//Listar os prestadores pelo status ativo
-	@GetMapping("/ativo")
-	public List <PrestadorAtivoDto> prestadorAtivo() {
-		List<Prestador> prestador = prestadorRepository.findAll();
-		return PrestadorAtivoDto.converter(prestador);		
-	}
-	
+	//Atualizar um prestador
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<PrestadorDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorForm form) {
@@ -80,9 +96,46 @@ public class PrestadorController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@PutMapping("/status/{id}")
+	//Atualizar todos os dados pessoais do prestador pela ID
+	@PutMapping("/pres/dados/{id}")
 	@Transactional
-	public ResponseEntity<PrestadorStatusDto> atualizarStatus(@PathVariable Long id, @RequestBody @Valid AtualizacaoStatusPrestadorForm form) {
+	public ResponseEntity<PrestadorDto> atualizarDadosPessoais(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorPorDadosForm form) {
+		Optional<Prestador> optional = prestadorRepository.findById(id);
+		if (optional.isPresent()) {
+			Prestador prestador = form.atualizar(id, prestadorRepository);
+			return ResponseEntity.ok(new PrestadorDto(prestador));
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
+	//Atualizar todos os dados de login do prestador pela ID
+	@PutMapping("/pres/login/{id}")
+	@Transactional
+	public ResponseEntity<PrestadorDto> atualizarDadosLogin(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorPorLoginForm form) {
+		Optional<Prestador> optional = prestadorRepository.findById(id);
+		if (optional.isPresent()) {
+			Prestador prestador = form.atualizar(id, prestadorRepository);
+			return ResponseEntity.ok(new PrestadorDto(prestador));
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
+	//Desativar o prestador
+	@PutMapping("/pres/desativar/{id}")
+	@Transactional
+	public ResponseEntity<PrestadorDto> desativar(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorDesativarForm form) {
+		Optional<Prestador> optional = prestadorRepository.findById(id);
+		if (optional.isPresent()) {
+			Prestador prestador = form.atualizar(id, prestadorRepository);
+			return ResponseEntity.ok(new PrestadorDto(prestador));
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
+	//Atualiza o status de um prestador
+	@PutMapping("/pres/status/{id}")
+	@Transactional
+	public ResponseEntity<PrestadorStatusDto> atualizarStatus(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorStatusForm form) {
 		Optional<Prestador> prestador = prestadorRepository.findById(id);
 		if (prestador.isPresent()) {
 			Prestador prestadores = form.atualizar(id, prestadorRepository);
@@ -92,17 +145,7 @@ public class PrestadorController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	//Detalhar um prestador pela id dele
-	@GetMapping("/status/{id}")
-	public ResponseEntity <PrestadorStatusDto> recuperarStatus(@PathVariable Long id) {
-		Optional<Prestador> prestador = prestadorRepository.findById(id);
-		if (prestador.isPresent()) {
-			return ResponseEntity.ok(new PrestadorStatusDto(prestador.get()));
-		}	
-		return ResponseEntity.notFound().build();		
-	}
-	
-	
+	//Deletar todos os dados do prestador pela ID
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<?> remover(@PathVariable Long id) {

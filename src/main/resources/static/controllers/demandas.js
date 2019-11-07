@@ -27,7 +27,7 @@ app.controller("DemandasCtrl", function($scope, $http) {
         }
         $http({
             method: "PUT",
-            url: "/prestador/status/" + 1,
+            url: "/prestador/pres/status/" + 1,
             datatype: "json",
             data: JSON.stringify($scope.prestador)
         }).then(function mySuccess(response) {

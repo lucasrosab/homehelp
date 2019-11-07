@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class CartaoCredito {
@@ -24,9 +23,6 @@ public class CartaoCredito {
 
 	@Column(length = 5 ,nullable = false)
 	private String codigoSeguranca;
-
-	@ManyToOne
-	private Bandeira bandeira;
 
 	@Column(length = 50 ,nullable = false)
 	private String nomeCartao;
@@ -73,14 +69,6 @@ public class CartaoCredito {
 
 	public void setCodigoSeguranca(String codigoSeguranca) {
 		this.codigoSeguranca = codigoSeguranca;
-	}
-
-	public Bandeira getBandeira() {
-		return bandeira;
-	}
-
-	public void setBandeira(Bandeira bandeira) {
-		this.bandeira = bandeira;
 	}
 
 	public String getNomeCartao() {

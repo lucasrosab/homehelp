@@ -3,21 +3,21 @@ package com.homehelp.services.controller.form;
 import com.homehelp.services.model.Prestador;
 import com.homehelp.services.repository.PrestadorRepository;
 
-public class AtualizacaoStatusPrestadorForm {
-
-	private boolean status;
+public class AtualizacaoPrestadorDesativarForm {
 	
-	public boolean isStatus() {
-		return status;
+	public boolean ativo;
+
+	public boolean isAtivo() {
+		return ativo;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
-
+	
 	public Prestador atualizar(Long id, PrestadorRepository prestadorRepository) {
 		Prestador prestador = prestadorRepository.getOne(id);
-		prestador.setStatus(this.status);
+		prestador.setAtivo(this.ativo);
 		return prestador;
 	}
 }

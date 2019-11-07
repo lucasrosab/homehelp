@@ -1,6 +1,5 @@
 package com.homehelp.services.controller.dto;
 
-import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,6 +7,7 @@ import com.homehelp.services.model.Cliente;
 
 public class ClienteDto {
 
+	private Long id;
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -19,6 +19,7 @@ public class ClienteDto {
 	private boolean ativo;
 	
 	public ClienteDto(Cliente cliente) {
+		this.id = cliente.getId();
 		this.nome = cliente.getNome();
 		this.sobrenome = cliente.getSobrenome();
 		this.cpf = cliente.getCpf();
@@ -30,6 +31,14 @@ public class ClienteDto {
 		this.ativo = cliente.isAtivo();
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}

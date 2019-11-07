@@ -12,8 +12,14 @@ app.controller("LoginCtrl", function($scope, $rootScope, $http) {
             method: 'GET',
             url: '/login?email=' + $scope.usuario.email + '&senha=' + $scope.usuario.senha,
         }).then(function successCallback(response) {
-            $rootScope.dadosUsuario = response.data
+            $rootScope.dadosUsuario = response.data  
             console.log($rootScope.dadosUsuario)
+            
+            if ($rootScope.dadosUsuario = []) {
+            	console.log("Errou")
+            } else {
+            	console.log("Teste")
+            }
         }, function errorCallback(response) {
             console.log("Erro")
         });

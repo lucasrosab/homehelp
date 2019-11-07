@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Conta {
@@ -21,9 +20,6 @@ public class Conta {
 
 	@Column(length = 15 ,nullable = false)
 	private String cpf;
-
-	@OneToOne
-	private Banco banco;
 
 	public Conta() {
 		
@@ -59,13 +55,5 @@ public class Conta {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public Banco getBanco() {
-		return banco;
-	}
-
-	public void setBanco(Banco banco) {
-		this.banco = banco;
 	}
 }
