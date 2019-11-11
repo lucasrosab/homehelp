@@ -7,24 +7,24 @@
             </button>
         </div>
         <div class="modal-body">
-            <form action="get">
+            <form ng-submit="atualizarDadosLogin()">
                 <div class="row">
                     <!-- Prestador Email -->
                     <div class="form-group col-12">
                         <label for="AtualizaPrestadorEmail">Email</label>
-                        <input type="email" class="form-control" id="AtualizaPrestadorEmail" title="Email">
+                        <input type="email" class="form-control" id="AtualizaPrestadorEmail" title="Email" ng-model="atualizarLogin.email">
                     </div>
                     <!-- Prestador Senha -->
                     <div class="form-group col-12">
                         <label for="AtualizaPrestadorSenha">Senha</label>
-                        <input type="password" class="form-control" id="AtualizaPrestadorSenha" title="Senha">
+                        <input type="password" class="form-control" id="AtualizaPrestadorSenha" title="Senha" ng-model="atualizarLogin.senha">
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" id="FecharEditarLoginPrestador" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-success" id="SalvarEditarLoginPrestador">Salvar</button>
-        </div>
+   				<div class="modal-footer">
+				    <button type="button" class="btn btn-danger" id="FecharEditarLoginPrestador" data-dismiss="modal">Fechar</button>
+				    <button type="submit" class="btn btn-success" id="SalvarEditarLoginPrestador">Salvar</button>
+				</div>
+			</form>
+		</div>
     </div>
 </div>

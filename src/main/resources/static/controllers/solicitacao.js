@@ -1,9 +1,11 @@
-app.controller("SolicitacaoCtrl", function($scope, $http) {
+app.controller("SolicitacaoCtrl", function($scope, $rootScope, $http) {
 
     $scope.solicitacao = {}
     $scope.solicitacoesCliente = []
     $scope.solicitacoesAtivas = []
     $scope.profissionalDisponivel = []
+    $scope.sessaoCliente = $rootScope.dadosUsuario
+    console.log($scope.sessaoCliente)
 
     //Solicitar Hidráulica
     $scope.solicitarHidraulica = function() {

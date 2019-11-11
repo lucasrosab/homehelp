@@ -7,39 +7,43 @@
             </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form ng-submit="editarDadosPessoais()">
                 <div class="row">
                     <!-- Cliente Nome -->
                     <div class="form-group col-12">
                         <label for="AtualizaClienteNome">Nome</label>
-                        <input type="text" class="form-control" id="AtualizaClienteNome" title="Nome">
+                        <input type="text" class="form-control" id="AtualizaClienteNome" title="Nome" ng-model="atualizaCliente.nome">
                     </div>
                     <!-- Cliente Sobrenome -->
                     <div class="form-group col-12">
                         <label for="AtualizaClienteSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="AtualizaClienteSobrenome" title="Sobrenome">
+                        <input type="text" class="form-control" id="AtualizaClienteSobrenome" title="Sobrenome" ng-model="atualizaCliente.sobrenome">
                     </div>
                     <!-- Data de Nascimento do Cliente -->
                     <div class="form-group col-12">
                         <label for="AtualizaClienteDataNascimento">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="AtualizaClienteDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true">
+                        <input type="text" class="form-control" id="AtualizaClienteDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" ng-model="atualizaCliente.dataNascimento">
                     </div>
                     <!-- Sexo do Cliente -->
                     <div class="form-group col-12">
                         <label for="AtualizaClienteSexo">Sexo</label>
-                        <select class="custom-select" title="Selecione o Sexo" id="AtualizaClienteSexo">
+                        <select class="custom-select" title="Selecione o Sexo" id="AtualizaClienteSexo" ng-model="atualizaCliente.sexo">
                             <option value=""></option>
                             <option value="Masculino" title="Masculino">Masculino</option>
                             <option value="Feminino" title="Feminino">Feminino</option>
                             <option value="Outros" title="Feminino">Outros e Indefinido</option>
                         </select>
                     </div>
+					<div class="form-group col-12">	
+					    <label for="ClienteTelefone">Celular</label>
+					    <input type="text" class="form-control" id="AtualizaClienteTelefone" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="atualizaCliente.telefone">
+					</div>
                 </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" id="FecharEditarDadosPessoais" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-success" id="SalvarEditarDadosPessoais">Salvar</button>
-        </div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-danger" id="FecharEditarDadosPessoais" data-dismiss="modal">Fechar</button>
+		            <button type="submit" class="btn btn-success" id="SalvarEditarDadosPessoais">Salvar</button>
+		        </div>
+        	</form>
+		</div>
     </div>
 </div>

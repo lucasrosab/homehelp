@@ -3,7 +3,9 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
     $scope.prestador = {}
     $scope.prestadores = []
     $scope.prestadorDetalhado = []
-
+    $scope.atualizarDados = {}
+    $scope.atualizarLogin = {}
+    
     //Função para carregar o tipo de mensagem ao cadastrar
     function mensagem(mensagem, status) {
         $scope.mensagem = mensagem
@@ -30,7 +32,8 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
             $scope.prestador = {}
         });
     };
-
+    
+    //Exibe todos os prestadores cadastrados
     function exibir() {
         $http({
             method: 'GET',
@@ -44,7 +47,8 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
     }
 
     exibir();
-
+    
+    //Carrega todos os dados do prestador logado
     function detalhar() {
         $http({
             method: 'GET',
@@ -58,5 +62,43 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
     }
 
     detalhar()
+    
+    //Atualizar os dados pessoais do prestador "logado"
+    $scope.atualizarDadosPessoais = function() {
+
+        $http({
+            method: "PUT",
+            url: "/prestador/pres/dados/"+ 1,
+            datatype: "json",
+            data: JSON.stringify($scope.atualizarDados)
+        }).then(function mySuccess(response) {
+            $scope.atualizarDados = response.data;
+            $scope.atualizarDados = {}
+            detalhar()
+        }, function myError(response) {
+        	console.log("Erro")
+        });
+    };
+    
+    //Atualizar os dados pessoais do prestador "logado"
+    $scope.atualizarDadosLogin = function() {
+
+        $http({
+            method: "PUT",
+            url: "/prestador/pres/login/"+ 1,
+            datatype: "json",
+            data: JSON.stringify($scope.atualizarLogin)
+        }).then(function mySuccess(response) {
+            $scope.atualizarLogin = response.data;
+            $scope.atualizarLogin = {}
+            detalhar()
+        }, function myError(response) {
+        	console.log("Erro")
+        });
+    };
+    
+    
+    
+    
 
 });
