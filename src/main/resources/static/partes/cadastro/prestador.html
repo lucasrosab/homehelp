@@ -45,22 +45,19 @@
 
         <form class="needs-validation" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" novalidate ng-submit="cadastrar()">
             <div class="row">
-                <input type="hidden" ng-model="prestador.id" />
                 <!-- Dados Pessoais -->
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <h4 style="text-align: center">
-                        <i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
-                    </h4>
+                    <!-- Titulo Dados Pessoais -->
+                    <div class="form-group">
+	                    <h5 style="text-align: center">
+	                        <i class="fas fa-address-card"></i>&nbsp;Dados Pessoais
+	                    </h5>
+                    </div>
                     <hr>
                     <!-- Nome do Prestador -->
                     <div class="form-group">
-                        <label for="PrestadorNome">Nome*</label>
+                        <label for="PrestadorNome">Nome</label>
                         <input type="text" maxlength="50" class="form-control" placeholder="Nome" id="PrestadorNome" title="Nome" ng-model="prestador.nome" required>
-                    </div>
-                    <!-- Sobrenome do Prestador -->
-                    <div class="form-group">
-                        <label for="PrestadorSobrenome">Sobrenome*</label>
-                        <input type="text" maxlength="50" class="form-control" placeholder="Sobrenome" id="PrestadorSobrenome" ng-model="prestador.sobrenome">
                     </div>
                     <!-- Data de Nascimento do Prestador -->
                     <div class="form-group">
@@ -71,44 +68,60 @@
                     <div class="form-group">
                         <label for="PrestadorSexo">Sexo</label>
                         <select class="custom-select" ng-model="prestador.sexo" title="Selecionar o Sexo" id="PrestadorSexo">
-								<option value=""></option>
-								<option value="Masculino" title="Masculino">Masculino</option>
-								<option value="Feminino" title="Feminino">Feminino</option>
-								<option value="Outros" title="Outros e Indefinido">Outros e Indefinido</option>
-							</select>
+							<option value=""></option>
+							<option value="Masculino" title="Masculino">Masculino</option>
+							<option value="Feminino" title="Feminino">Feminino</option>
+							<option value="Outros" title="Outros e Indefinido">Outros e Indefinido</option>
+						</select>
                     </div>
                     <!-- CPF do Prestador -->
                     <div class="form-group">
                         <label for="PrestadorCPF">CPF</label>
                         <input type="text" class="form-control" id="PrestadorCPF" title="CPF" data-mask="000.000.000-00" placeholder="000.000.000-00" data-mask-selectonfocus="true" ng-model="prestador.cpf">
                     </div>
+                    <!-- Tipo de Prestador -->
+                    <div class="form-group">
+                        <label for="PrestadorTipo">Tipo de serviço a ser prestado</label>
+                        <select class="custom-select" ng-model="prestador.tipo" title="Selecionar tipo de serviço" id="PrestadorTipo">
+							<option value=""></option>
+							<option value="Hidráulico" title="Hidráulico">Hidráulico</option>
+							<option value="Reparos" title="Reparos">Reparos</option>
+							<option value="Acabamento" title="Acabamento">Acabamento</option>
+							<option value="Elétrico" title="Elétrico">Elétrico</option>
+						</select>
+                    </div>
+                    
                 </div>
 
                 <!-- Contato -->
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <!-- Titulo Contato -->
                     <div class="form-group">
-                        <h4 style="text-align: center">
+                        <h5 style="text-align: center">
                             <i class="fas fa-envelope"></i>&nbsp;Contato
-                        </h4>
-                        <hr>
-                        <!-- Celular do Prestador -->
-                        <label for="PrestadorTelefone">Celular*</label>
+                        </h5>
+                    </div>
+					<hr>	
+					<!-- Celular do Prestador -->
+                    <div class="form-group">
+                        <label for="PrestadorTelefone">Celular</label>
                         <input type="text" class="form-control" id="PrestadorTelefone" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="prestador.telefone">
                     </div>
                     <!-- Email do Prestador -->
                     <div class="form-group">
-                        <label for="ClienteEmail">E-mail*</label>
+                        <label for="ClienteEmail">E-mail</label>
                         <input type="email" class="form-control" placeholder="Email" id="PrestadorEmail" title="Email" ng-model="prestador.email">
                     </div>
-                    <!-- Login -->
-                    <h4 style="text-align: center">
+                    <!-- Titulo Login -->
+                    <h5 style="text-align: center">
                         <i class="fas fa-user"></i>&nbsp;Login
-                    </h4>
+                    </h5>
                     <hr>
                     <!-- Senha do Cliente -->
                     <div class="form-group">
-                        <label for="PrestadorSenha">Senha*</label>
+                        <label for="PrestadorSenha">Senha</label>
                         <input type="password" class="form-control" placeholder="******" id="PrestadorSenha" title="Senha" ng-model="prestador.senha">
+                        <small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small>
                     </div>
                 </div>
                 <div class="col-12" align="center">

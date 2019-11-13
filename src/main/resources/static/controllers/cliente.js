@@ -29,7 +29,6 @@ app.controller("CadastroClienteCtrl", function($scope, $rootScope, $http) {
             window.location.href = '../../partes/cliente/index.html'
         }, function myError(response) {
             mensagem("Preencha todos os campos", "Erro")
-            $scope.cliente = {}
         });
     };
 

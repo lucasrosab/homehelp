@@ -29,7 +29,6 @@ app.controller("CadastroPrestadorCtrl", function($scope, $http) {
             window.location.href = '../../partes/prestador/index.html'
         }, function myError(response) {
             mensagem("Preencha todos os campos", "Erro")
-            $scope.prestador = {}
         });
     };
     

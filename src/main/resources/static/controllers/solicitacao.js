@@ -4,8 +4,8 @@ app.controller("SolicitacaoCtrl", function($scope, $rootScope, $http) {
     $scope.solicitacoesCliente = []
     $scope.solicitacoesAtivas = []
     $scope.profissionalDisponivel = []
-    $scope.sessaoCliente = $rootScope.dadosUsuario
-    console.log($scope.sessaoCliente)
+    $rootScope.dadosUsuario
+    console.log($rootScope.dadosUsuario)
 
     //Solicitar Hidráulica
     $scope.solicitarHidraulica = function() {
@@ -47,13 +47,11 @@ app.controller("SolicitacaoCtrl", function($scope, $rootScope, $http) {
         });
     }
 
-
-
     //Solicitações criadas pelo usuário
     function minhasSolicitacoes() {
         $http({
             method: 'GET',
-            url: '/solicitacao/cliente/' + 1,
+            url: '/solicitacao',
         }).then(function successCallback(response) {
             $scope.solicitacoesCliente = response.data
         }, function errorCallback(response) {
@@ -61,7 +59,9 @@ app.controller("SolicitacaoCtrl", function($scope, $rootScope, $http) {
             // or server returns response with an error status.
         });
     }
-
+    
+    minhasSolicitacoes()
+    
     //Solicitações disponível para o profissional	
     function profissionalDisponivel() {
         $http({
@@ -69,7 +69,6 @@ app.controller("SolicitacaoCtrl", function($scope, $rootScope, $http) {
             url: '/prestador/ativo',
         }).then(function successCallback(response) {
             $scope.profissionalDisponivel = response.data
-            console.log($scope.profissionalDisponivel)
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

@@ -8,16 +8,18 @@ app.controller("LoginCtrl", function($scope, $rootScope, $http) {
             method: 'GET',
             url: '/login?email=' + $scope.usuario.email + '&senha=' + $scope.usuario.senha,
         }).then(function successCallback(response) {
-            $rootScope.dadosUsuario = response.data  
-            if ($rootScope.dadosUsuario.length == 0) {
+            $scope.usuarioLogin = response.data
+        	var teste = $scope.usuarioLogin  
+            if ($scope.usuarioLogin.length == 0) {
             	console.log("Errou")
-            	window.location.href = '../../partes/cliente/index.html'
             } else {
             	console.log("Teste")
+            	//window.location.href = '../../partes/cliente/index.html'
             }
+            console.log($rootScope.dadosUsuario)
         }, function errorCallback(response) {
             console.log("Erro")
         });
     }
-
+    
 });

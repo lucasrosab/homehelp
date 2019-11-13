@@ -10,6 +10,7 @@ public class SolicitacaoDto {
 	private Long id;
 	private String horario;
 	private String cliente;
+	private Long idcliente;
 	private String prestador;
 	private String status;
 	private String endereco;
@@ -17,6 +18,7 @@ public class SolicitacaoDto {
 	public SolicitacaoDto(Solicitacao solicitacao) {
 		this.id = solicitacao.getId();
 		this.horario = solicitacao.getHorario();
+		this.idcliente = solicitacao.getCliente().getId();
 		this.cliente = solicitacao.getCliente().getNome();
 		this.prestador = solicitacao.getPrestador().getNome();
 		this.endereco = solicitacao.getEndereco();
@@ -47,6 +49,14 @@ public class SolicitacaoDto {
 		this.cliente = cliente;
 	}
 
+	public Long getIdcliente() {
+		return idcliente;
+	}
+
+	public void setIdcliente(Long idcliente) {
+		this.idcliente = idcliente;
+	}
+
 	public String getPrestador() {
 		return prestador;
 	}
@@ -62,7 +72,7 @@ public class SolicitacaoDto {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+	
 	public String getEndereco() {
 		return endereco;
 	}

@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <form class="needs-validation" style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" novalidate>
+        <form class="needs-validation" novalidate style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" ng-submit="cadastrar()">
             <div class="row">
                 <input type="hidden" ng-model="cliente.id" />
                 <!-- Dados Pessoais -->
@@ -55,13 +55,8 @@
                     <hr>
                     <!-- Nome do Cliente -->
                     <div class="form-group">
-                        <label for="ClienteNome">Nome*</label>
+                        <label for="ClienteNome">Nome</label>
                         <input type="text" maxlength="50" class="form-control" placeholder="Nome" id="ClienteNome" title="Nome" ng-model="cliente.nome">
-                    </div>
-                    <!-- Sobrenome do Cliente -->
-                    <div class="form-group">
-                        <label for="ClienteSobrenome">Sobrenome*</label>
-                        <input type="text" maxlength="50" class="form-control" placeholder="Sobrenome" id="ClienteSobrenome" title="Sobrenome" ng-model="cliente.sobrenome">
                     </div>
                     <!-- Data de Nascimento do Cliente -->
                     <div class="form-group">
@@ -93,12 +88,12 @@
                         </h4>
                         <hr>
                         <!-- Celular do Cliente -->
-                        <label for="ClienteTelefone">Celular*</label>
+                        <label for="ClienteTelefone">Celular</label>
                         <input type="text" class="form-control" id="ClienteTelefone" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="cliente.telefone">
                     </div>
                     <!-- Email do Cliente -->
                     <div class="form-group">
-                        <label for="ClienteEmail">E-mail*</label>
+                        <label for="ClienteEmail">E-mail</label>
                         <input type="email" class="form-control" placeholder="Email" id="ClienteEmail" title="Email" ng-model="cliente.email">
                     </div>
 
@@ -109,8 +104,9 @@
                     <hr>
                     <!-- Senha do Cliente -->
                     <div class="form-group">
-                        <label for="ClienteSenha">Senha*</label>
+                        <label for="ClienteSenha">Senha</label>
                         <input type="password" class="form-control" placeholder="******" id="ClienteSenha" title="Senha" ng-model="cliente.senha">
+                        <small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small>
                     </div>
                 </div>
                 <!-- Termos e Condições -->
@@ -122,7 +118,7 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="window.location.href='../cadastro/opcao.html';">Voltar</button>
-                    <button type="button" class="btn btn-success" ng-click="cadastrar()">Cadastrar</button>
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
                 </div>
             </div>
         </form>
