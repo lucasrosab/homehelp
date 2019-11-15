@@ -1,0 +1,59 @@
+<header>
+	<!-- Menu Superior-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+		<a class="navbar-brand" href="/cliente/inicio"><img
+			src="../../img/logo-nome.png"
+			class="d-inline-block align-top img-fluid float-left"
+			alt="logo-homehelp" style="width: 150px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/cliente/solicitacoes">Minhas Solicitações &nbsp;<i class="fas fa-archive"></i></a>
+				</li>
+				<li class="nav-item dropdown ">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+						<img src="../../img/administrador.jpg" class="d-inline-block align-top img-fluid float-left usuario rounded-circle" alt="usuario-homehelp" width="125px"> &nbsp;&nbsp;Lucas Rosa
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/cliente/dados-pessoais">Dados Pessoais</a>
+						<a class="dropdown-item" href="/cliente/pagamento">Pagamento</a>
+						<a class="dropdown-item" href="/cliente/configuracao">Configurações</a>
+						<a class="dropdown-item" href="/login">Sair</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<div class="container">
+	<div class="row">
+		<!-- Cliente Cartão de Crédito -->
+		<div class="form-group col-12">
+		    <label for="AtualizaCartaoCredito">Numero Cartão de Crédito</label>
+		    <input type="text" class="form-control" id="AtualizaCartaoCredito" title="Numero do Cartão de Crédito do Usuário">
+		</div>
+		<!-- Cliente Validade -->
+		<div class="form-group col-12">
+		    <label for="AtualizaValidadeCartao">Validade</label>
+		    <input type="text" class="form-control" id="AtualizaValidadeCartao" title="Validade Cartão de Crédito do Usuário">
+		</div>
+		<!-- Cliente Código de Segurança -->
+		<div class="form-group col-12">
+		    <label for="AtualizaCodigoSegurancaoCartao">Código de Segurança</label>
+		    <input type="password" class="form-control" id="AtualizaCodigoSegurancaoCartao" title="Código de Segurança do Cartão de Crédito do Usuário">
+		</div>
+		<!-- Cliente Nome no Cartão -->
+		<div class="form-group col-12">
+		    <label for="AtualizaNomeCartao">Nome Impresso no Cartão</label>
+		    <input type="password" class="form-control" id="AtualizaNomeCartao" title="Nome Impresso no Cartão de Crédito do Usuário">
+		</div>
+        <button type="button" class="btn btn-danger" id="FecharEditarPagamentoCliente">Voltar</button>
+        <button type="button" class="btn btn-success" id="SalvarEditarPagamentoCliente">Salvar</button>
+	</div>
+</div>
