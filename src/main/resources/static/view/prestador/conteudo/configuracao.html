@@ -29,45 +29,11 @@
 		</div>
 	</nav>
 </header>
-<div class="container-fluid">
-	<div class="row" id="menu">
-		<div class="col-12">
-			<h2>Status</h2>
-		</div>
-		<div class="col-12 ">
-			<div class="row justify-content-center">
-				<div class="col-4">
-					<button type="button" class="btn btn-lg btn-block"
-						ng-class="isAtivo.status ? 'btn-success' : 'btn-dark'"
-						id="StatusPrestador" value="{{isAtivo.status}}"
-						ng-click="status()">{{valor}}</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-12">
-			<h2>Solicitações Disponíveis</h2>
-		</div>
-		<div class="col-12 table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">Cliente</th>
-						<th scope="col">Endereço</th>
-						<th scope="col">Horário</th>
-						<th scope="col">Opção</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="demanda in demandasDisponiveis">
-						<td>{{demanda.cliente}}</td>
-						<td>{{demanda.endereco}}</td>
-						<td>{{demanda.horario}}</td>
-						<td>
-							<button type="button" class="btn btn-success">Aceitar</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
+
+
+
+<h4>Configuração</h4>
+<hr>
+<h5>Excluir Conta <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ExcluirPrestador"><i class="fas fa-info-circle"></i></button></h5>
+<p>Desejo excluir minha conta </p>
+<button type="button" class="btn btn-danger">Excluir Conta</button>

@@ -1,3 +1,4 @@
+<link href="css/menu.css" rel="stylesheet"/>
 <header>
 	<!-- Menu Superior-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
@@ -23,7 +24,7 @@
 						<a class="dropdown-item" href="/cliente/dados-pessoais">Dados Pessoais</a>
 						<a class="dropdown-item" href="/cliente/pagamento">Pagamento</a>
 						<a class="dropdown-item" href="/cliente/configuracao">Configurações</a> 
-						<a class="dropdown-item" href="/login">Sair</a>
+						<a class="dropdown-item" href="/">Sair</a>
 					</div>
 				</li>
 			</ul>
@@ -32,42 +33,49 @@
 </header>
 <div class="container">
 	<div class="row" style="padding-top: 10px;">
-		<div class="col-2 card text-center">
-			<img src="../../img/administrador.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Hidráulica</h5>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button>
+		<div class="col-12 col-xl-3">
+			<div class="card text-center">
+				<img src="img/hidraulica.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Hidráulica</h5>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button>
+				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
-		<div class="col-2 card text-center">
-			<img src="../../img/administrador.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Reparos</h5>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button>
+		
+		<div class="col-12 col-xl-3">
+			<div class="card text-center">
+				<img src="img/reparo.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Reparos</h5>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button>
+				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
-		<div class="col-2 card text-center">
-			<img src="../../img/administrador.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Acabamento</h5>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>
+
+		<div class="col-12 col-xl-3">
+			<div class="card text-center">
+				<img src="img/acabamento.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Acabamento</h5>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>
+				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
-		<div class="col-2 card text-center">
-			<img src="../../img/administrador.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">Eletricista</h5>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>
+		
+		<div class="col-12 col-xl-3">
+			<div class="card text-center">
+				<img src="img/eletrica.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Eletricista</h5>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>
+				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
 	</div>
 
 	<!-- Hidráulica -->
-	<div class="modal fade" id="HidraulicaModal" tabindex="-1" role="dialog" aria-labelledby="HidraulicaModal" aria-hidden="true">
+	<div class="modal" id="HidraulicaModal" tabindex="-1" role="dialog" aria-labelledby="HidraulicaModal" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
@@ -75,15 +83,37 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		            <div class="row">
-		                <div class="col-4 form-group">
-		                    <label for="horario">Horário</label>
-		                    <input type="text" class="form-control" id="horario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="solicitacao.horario">
-		                </div>
-		                <div class="col-8 form-group">
-		                    <label for="endereco">Endereço</label>
-		                    <input type="text" class="form-control" id="endereco" ng-model="solicitacao.endereco">
-		                </div>
+		        	<form novalidade name="formSolicitaHidraulica">
+			            <div class="row">
+			                <div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioHidraulica">Horário</label>
+			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horário" required>
+			                </div>
+			                <div class="col-12 col-xl-6 form-group">
+			                    <label for="EnderecoHidraulica">Endereço</label>
+			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEndereco" ng-model="hidraulica.endereco" required disabled readonly>
+			                    <small id="passwordHelpBlock" class="form-text text-muted">
+									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button>aqui</a>
+								</small>
+			                </div>
+			                <div class="col-12 col-xl-4 form-group">
+			                    <label for="TipoHidraulica">Tipo de Serviço</label>
+			                    <select class="custom-select" ng-model="hidraulica.tipo" name="txtTipo" required>
+									<option value=""></option>
+									<option value="Instalação de Tomada">Instalação de Tomada</option>
+									<option value="Troca de chuveiro">Troca de chuveiro</option>
+								</select>
+			                </div>
+			                <div class="col-12 col-xl-12 form-group">
+								<div class="row justify-content-center">
+									<div class="col-2">
+										<button type="button" class="btn btn-success" ng-disabled="formSolicitaHidraulica.$invalid" ng-click="solicitarHidraulica()">Contratar</button>
+									</div>
+								</div>
+			                </div>
+			           </div>
+	               </form>
+	               <!-- 
 		                <div class="col-12 table-responsive">
 		                    <table class="table table-dark">
 		                        <thead>
@@ -106,7 +136,8 @@
 		                        </tbody>
 		                    </table>
 		                </div>
-		            </div>
+		         
+		         -->
 		        </div>
 		    </div>
 		</div>
@@ -249,9 +280,6 @@
 		    </div>
 		</div>
 	</div>
-
-	<!-- Informação Profissionais -->
-	<div class="modal fade" id="InformacaoProfissionalModal" tabindex="-1" role="dialog" aria-labelledby="InformacaoProfissionalModal" aria-hidden="true">
-		
-	</div>
 </div>
+
+<script src="js/lib/jquery.mask.min.js"></script>

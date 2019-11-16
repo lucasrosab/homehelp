@@ -18,16 +18,20 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	
 	//Salvar Prestador 
 	$scope.salvarPrestador = function(){
-		$http({method: 'POST',url: 'http://localhost:8080/prestador',data:$scope.prestador})
-	    .then(function successCallback(response) {
-	    	carregarPrestadores();
-            mensagem("Cadastrado com Sucesso", "Sucesso")
-            $location.path('/login')
-	    }, function errorCallback(response) {
-	    	mensagem("Preencha todos os campos", "Erro")
-	    	console.log(response.data)
-	    	console.log(response.status)
-	    });
+		if($scope.formCadastroPrestador.$valid){
+			$http({method: 'POST',url: 'http://localhost:8080/prestador',data:$scope.prestador})
+		    .then(function successCallback(response) {
+		    	carregarPrestadores();
+		    	$scope.formCadastroPrestador.$setPristine(true)
+		    	$('#InfoCadPrestadorModal').modal('show');
+		    }, function errorCallback(response) {
+		    	mensagem("Preencha todos os campos", "Erro")
+		    	console.log(response.data)
+		    	console.log(response.status)
+		    });
+		} else {
+			console.log("Erro")
+		}
 	}	 
 	
 	//Alterar Prestador
@@ -61,6 +65,13 @@ app.controller("PrestadorController", function($scope, $http, $location){
         $scope.status = status
         $('.toast').toast({ delay: 3000 });
         $('.toast').toast('show');
+    }
+    
+    $scope.InfoPrestador = function() {
+		$('#InfoCadPrestadorModal').modal('hide')
+	    $('body').removeClass('modal-open');
+		$('.modal-backdrop').remove(); 
+		$location.path('/')
     }
 
 })

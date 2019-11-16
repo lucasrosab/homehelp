@@ -20,7 +20,7 @@ public class Cliente {
 	@Column(length = 10, nullable = false)
 	private String dataNascimento;
 
-	@Column(length = 20, nullable = false)
+	@Column(length = 30, nullable = false)
 	private String sexo;
 	
 	@Column(length = 20, nullable = false)

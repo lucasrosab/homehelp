@@ -1,3 +1,4 @@
+<link href="css/menu.css" rel="stylesheet"/>
 <header>
 	<!-- Menu Superior-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
@@ -23,7 +24,7 @@
 						<a class="dropdown-item" href="/cliente/dados-pessoais">Dados Pessoais</a>
 						<a class="dropdown-item" href="/cliente/pagamento">Pagamento</a>
 						<a class="dropdown-item" href="/cliente/configuracao">Configurações</a>
-						<a class="dropdown-item" href="/login">Sair</a>
+						<a class="dropdown-item" href="/">Sair</a>
 					</div>
 				</li>
 			</ul>
@@ -33,6 +34,12 @@
 
 <div class="container">
 	<div class="row">
+		<div class="form-group col-12" style="margin-top: 2%">
+			<h2>
+				Pagamento&nbsp;<i class="fas fa-archive"></i>
+			</h2>
+			<hr>
+		</div>
 		<!-- Cliente Cartão de Crédito -->
 		<div class="form-group col-12">
 		    <label for="AtualizaCartaoCredito">Numero Cartão de Crédito</label>
@@ -53,7 +60,9 @@
 		    <label for="AtualizaNomeCartao">Nome Impresso no Cartão</label>
 		    <input type="password" class="form-control" id="AtualizaNomeCartao" title="Nome Impresso no Cartão de Crédito do Usuário">
 		</div>
-        <button type="button" class="btn btn-danger" id="FecharEditarPagamentoCliente">Voltar</button>
-        <button type="button" class="btn btn-success" id="SalvarEditarPagamentoCliente">Salvar</button>
+		<div class="form-group col-12">
+			<a class="btn btn-primary" href="/cliente/inicio">Voltar</a>
+			<button type="button" class="btn btn-success" id="SalvarEditarPagamentoCliente">Salvar</button>
+		</div>
 	</div>
 </div>

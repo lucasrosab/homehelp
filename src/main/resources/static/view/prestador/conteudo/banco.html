@@ -29,45 +29,17 @@
 		</div>
 	</nav>
 </header>
-<div class="container-fluid">
-	<div class="row" id="menu">
-		<div class="col-12">
-			<h2>Status</h2>
-		</div>
-		<div class="col-12 ">
-			<div class="row justify-content-center">
-				<div class="col-4">
-					<button type="button" class="btn btn-lg btn-block"
-						ng-class="isAtivo.status ? 'btn-success' : 'btn-dark'"
-						id="StatusPrestador" value="{{isAtivo.status}}"
-						ng-click="status()">{{valor}}</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-12">
-			<h2>Solicitações Disponíveis</h2>
-		</div>
-		<div class="col-12 table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">Cliente</th>
-						<th scope="col">Endereço</th>
-						<th scope="col">Horário</th>
-						<th scope="col">Opção</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="demanda in demandasDisponiveis">
-						<td>{{demanda.cliente}}</td>
-						<td>{{demanda.endereco}}</td>
-						<td>{{demanda.horario}}</td>
-						<td>
-							<button type="button" class="btn btn-success">Aceitar</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+
+
+
+
+<h4>Pagamento</h4>
+<hr>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-money-check-alt"></i>&nbsp; Banco do Brasil</h5>
+    </div>
 </div>
+<br>
+<button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html';">Voltar</button>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditarPagamentoPrestadorModal">Editar</button>

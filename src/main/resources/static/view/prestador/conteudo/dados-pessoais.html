@@ -1,7 +1,34 @@
-<nav class="navbar navbar-light bg-light">
-	<a class="navbar-brand" href="/"> <img
-		src="../../img/logo-nome.png" style="width: 150px;"></a>
-</nav>
+<link href="css/menu.css" rel="stylesheet"/>
+<header>
+	<!-- Menu Superior-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+		<a class="navbar-brand" href="/prestador/inicio">
+			<img src="../../img/logo-nome.png" class="d-inline-block align-top img-fluid float-left" alt="logo-homehelp" width="150px">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/prestador/reparos">Meus Reparos&nbsp;<i class="fas fa-toolbox"></i></a>
+				</li>
+				<li class="nav-item dropdown ">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+						<img src="../../img/administrador.jpg" class="d-inline-block align-top img-fluid float-left usuario rounded-circle" alt="usuario-homehelp" width="125px"> &nbsp;&nbsp;Matheus Lopes
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/prestador/dados-pessoais">Dados Pessoais</a>
+					 	<a class="dropdown-item" href="/prestador/banco">Dados Bancários</a>
+				 		<a class="dropdown-item" href="/prestador/profissional">Profissional</a>
+				 		<a class="dropdown-item" href="/prestador/configuracao">Configuração</a> 
+						<a class="dropdown-item" href="/">Sair</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
 <div class="container">
 	<div class="toast" style="position: absolute; top: 15px; right: 15px;">
 		<div class="toast-header">
@@ -129,42 +156,3 @@
 		</div>
 	</form>
 </div>
-
-<!-- Modal Login -->
-<div class="modal" id="InfoCadPrestadorModal" tabindex="-1" role="dialog" aria-labelledby="InfoCadPrestadorModal" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="InfoCadPrestadorModal">Informação</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>		
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-12 col-xl-12" style="width: 18rem;">
-						<p>Você foi cadastrado com sucesso!</p>
-						<p>Porém, para que seu cadastro seja finalizado e liberado, voce deverá realizar os seguintes passos a seguir:</p>
-						<ol>
-							<li>Enviar os documentos abaixo em anexo para o seguinte email: verificacao.prestador@gmail.com</li>
-							<ul>
-								<li>Comprovante de Residência</li>
-								<li>Atestado de Nada Consta Criminal</li>
-								<li>Identidade</li>
-							</ul>
-							<li>Após o envio, aguardar o prazo de 2 dias úteis para a homologação</li>
-						</ol>
-						<p>Será enviado um email, informando a liberação da sua conta, caso esteja tudo de acordo.</p>
-					</div>
-				</div>
-			</div>
-		   <div class="modal-footer">
-				<button class="btn btn-primary" type="button" id="InfoCardastroPres" ng-click="InfoPrestador()">Voltar</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<script src="js/lib/jquery.mask.min.js"></script>

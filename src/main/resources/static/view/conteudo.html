@@ -1,3 +1,6 @@
+<!-- Estilos -->
+<link href="css/index.css" rel="stylesheet"/>
+
 <div id="page-top">    
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
@@ -15,7 +18,7 @@
                         <a class="nav-link js-scroll-trigger font-black" href="#Contato">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/login" class="btn btn-outline-dark js-scroll-trigger font-black">Login&nbsp;<i class="fas fa-sign-in-alt"></i></a>
+                       <button type="button" class="btn btn-outline-dark js-scroll-trigger font-black" data-toggle="modal" data-target="#TipoLoginModal">Login&nbsp;<i class="fas fa-sign-in-alt"></i></button>
                     </li>
                 </ul>
             </div>
@@ -136,3 +139,40 @@
         </div>
     </footer>
 </div>
+
+<!-- Modal Login -->
+<div class="modal" id="TipoLoginModal" tabindex="-1" role="dialog" aria-labelledby="TipoLoginModal" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="TipoLoginModal">Escolha o Tipo de Login</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>		
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-12 col-xl-6">
+						<div class="card">
+							<div class="card-body" align="center">
+								<h5 class="card-title">Cliente</h5>
+								<button class="btn btn-primary" type="button" id="AcessoLoginCliente" ng-click="loginCliente()">Acessar</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xl-6">
+						<div class="card">
+							<div class="card-body" align="center">
+								<h5 class="card-title">Prestador</h5>
+								<button class="btn btn-primary" type="button" id="AcessoLoginPrestador" ng-click="loginPrestador()">Acessar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Configuração JS -->
+<script src="js/index.js"></script>
