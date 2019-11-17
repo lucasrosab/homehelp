@@ -87,13 +87,13 @@
 			            <div class="row">
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Horário</label>
-			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horário" required>
+			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horario" required>
 			                </div>
 			                <div class="col-12 col-xl-6 form-group">
 			                    <label for="EnderecoHidraulica">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEndereco" ng-model="hidraulica.endereco" required disabled readonly>
 			                    <small id="passwordHelpBlock" class="form-text text-muted">
-									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button>aqui</a>
+									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
 								</small>
 			                </div>
 			                <div class="col-12 col-xl-4 form-group">
@@ -106,9 +106,9 @@
 			                </div>
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
-									<div class="col-2">
+									<div class="col-12 col-xl-2">
 										<button type="button" class="btn btn-success" ng-disabled="formSolicitaHidraulica.$invalid" ng-click="solicitarHidraulica()">Contratar</button>
-									</div>
+									</div>	
 								</div>
 			                </div>
 			           </div>

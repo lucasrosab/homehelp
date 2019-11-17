@@ -1,31 +1,34 @@
 app.controller("SolicitacaoController", function($scope, $http, $location){
 	
-	$scope.prestador = {};
-	$scope.prestadores = [];
+	$scope.hidraulica = {};
+	$scope.reparo = {};
+	$scope.acabamento = {};
+	$scope.eletricista = {};
+	
+	$scope.solicitacoes = [];
+	
 	//-----------------------------------------------------------------------------------------------//
-	//Carregar todos os prestadores
-	carregarPrestadores = function(){
-		 $http({method: 'GET',url: 'http://localhost:8080/prestador'})
+	//Carregar todas as solicitacões no geral
+	carregarTodasSolicitacoes = function(){
+		 $http({method: 'GET', url: 'http://localhost:8080/solicitacoes'})
 		 .then(function successCallback(response) {
-		     $scope.prestadores = response.data
+			 $scope.solicitacoes = response.data
 		 }, function errorCallback(response) {
 	    	 console.log(response.data)
 	    	 console.log(response.status)
 		 });
 	};
 	
-	carregarPrestadores();
+	carregarTodasSolicitacoes();
 	
-	//Salvar Prestador 
-	$scope.salvarPrestador = function(){
-		if($scope.formCadastroPrestador.$valid){
-			$http({method: 'POST',url: 'http://localhost:8080/prestador',data:$scope.prestador})
+	//Solicitar Hidráulica 
+	$scope.solicitarHidraulica = function(){
+		if($scope.formSolicitaHidraulica.$valid){
+			$http({method: 'POST',url: 'http://localhost:8080/solicitacao',data:$scope.prestador})
 		    .then(function successCallback(response) {
-		    	carregarPrestadores();
-		    	$scope.formCadastroPrestador.$setPristine(true)
-		    	$('#InfoCadPrestadorModal').modal('show');
+		    	mensagem("Sua solicitação foi criada com sucesso", Sucesso)
 		    }, function errorCallback(response) {
-		    	mensagem("Preencha todos os campos", "Erro")
+		    	
 		    	console.log(response.data)
 		    	console.log(response.status)
 		    });
