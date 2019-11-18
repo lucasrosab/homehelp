@@ -5,7 +5,7 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todos os prestadores
 	carregarPrestadores = function(){
-		 $http({method: 'GET',url: 'http://localhost:8080/prestador'})
+		 $http({method: 'GET',url: 'http://localhost:8080/pres/todos'})
 		 .then(function successCallback(response) {
 		     $scope.prestadores = response.data
 		 }, function errorCallback(response) {
@@ -19,7 +19,7 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	//Salvar Prestador 
 	$scope.salvarPrestador = function(){
 		if($scope.formCadastroPrestador.$valid){
-			$http({method: 'POST',url: 'http://localhost:8080/prestador',data:$scope.prestador})
+			$http({method: 'POST',url: 'http://localhost:8080/pres/novo',data:$scope.prestador})
 		    .then(function successCallback(response) {
 		    	carregarPrestadores();
 		    	$scope.formCadastroPrestador.$setPristine(true)
@@ -47,7 +47,7 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	//Excluir Prestador
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirPrestador= function(prestador){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/prestador' + prestador.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + prestador.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.prestadores.indexOf(cliente)
 	   	 $scope.prestadores.splice(pos, 1);

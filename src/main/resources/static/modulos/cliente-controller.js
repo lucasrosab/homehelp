@@ -5,7 +5,7 @@ app.controller("ClienteController", function($scope, $http, $location){
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todos os clientes
 	carregarClientes = function(){
-		 $http({method: 'GET',url: 'http://localhost:8080/cliente'})
+		 $http({method: 'GET',url: 'http://localhost:8080/cli/todos'})
 		 .then(function successCallback(response) {
 		     $scope.clientes = response.data
 		 }, function errorCallback(response) {
@@ -19,7 +19,7 @@ app.controller("ClienteController", function($scope, $http, $location){
 	//Salvar Cliente 
 	$scope.salvarCliente= function(){
 		if($scope.formCadastroCliente.$valid){
-			$http({method: 'POST',url: 'http://localhost:8080/cliente',data:$scope.cliente})
+			$http({method: 'POST',url: 'http://localhost:8080/cli/novo',data:$scope.cliente})
 		    .then(function successCallback(response) {
 		        //$scope.clientes.push(response.data)
 		    	carregarClientes();
@@ -47,7 +47,7 @@ app.controller("ClienteController", function($scope, $http, $location){
 	//Excluir Cliente
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirCliente= function(cliente){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/cliente' + cliente.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/cli/excluir/' + cliente.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.clientes.indexOf(cliente)
 	   	 $scope.clientes.splice(pos, 1);
