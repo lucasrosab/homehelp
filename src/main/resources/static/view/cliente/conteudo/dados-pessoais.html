@@ -19,7 +19,6 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/cliente/dados-pessoais">Dados Pessoais</a>
-						<a class="dropdown-item" href="/cliente/pagamento">Pagamento</a>
 						<a class="dropdown-item" href="/cliente/configuracao">Configurações</a> 
 						<a class="dropdown-item" href="/">Sair</a>
 					</div>
@@ -40,9 +39,9 @@
 		<div class="toast-body">{{mensagem}}</div>
 	</div>
 	
-	<form class="needs-validation" novalidate style="background-color: #ffffff5e; margin-top: 2%; height: 100%;">
+	<form class="needs-validation" novalidate name="formUpdateDadosCliente" style="background-color: #ffffff5e; margin-top: 2%; height: 100%;">
 		<div class="row">
-			<input type="hidden" value="{{}}" />
+			<input type="hidden" value="{{value="{{clientedetalhe.id}}"}}"/>
 			<!-- Dados Pessoais -->
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 				<div class="form-group">
@@ -54,25 +53,25 @@
 				<!-- Nome do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteNome">Nome Completo</label> 
-					<input type="text" maxlength="50" class="form-control" placeholder="Nome" id="DadosClienteNome" title="Nome">
+					<input type="text" maxlength="50" class="form-control" placeholder="Nome" id="DadosClienteNome" title="Nome" value="{{clientedetalhe.nome}}">
 				</div>
 				
 				<!-- Data de Nascimento do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteDataNascimento">Data de Nascimento</label> 
-					<input type="text" class="form-control" id="DadosClienteDataNascimento" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" readonly disabled>
+					<input type="text" class="form-control" id="DadosClienteDataNascimento" title="Data de Nascimento" value="{{clientedetalhe.dataNascimento}}" readonly disabled>
 				</div>
 				
 				<!-- Sexo do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteSexo">Sexo</label> 
-					<input type="text" class="form-control" id="DadosClienteSexo" title="Sexo" readonly disabled>
+					<input type="text" class="form-control" id="DadosClienteSexo" title="Sexo" value="{{clientedetalhe.sexo}}" readonly disabled>
 				</div>
 				
 				<!-- CPF do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteCPF">CPF</label> 
-					<input type="text" class="form-control" id="DadosClienteCPF" title="CPF" data-mask="000.000.000-00" placeholder="000.000.000-00" data-mask-selectonfocus="true" readonly disabled>
+					<input type="text" class="form-control" id="DadosClienteCPF" title="CPF" value="{{clientedetalhe.cpf}}" readonly disabled>
 				</div>
 				
 				<div class="form-group">
@@ -84,7 +83,7 @@
 				<!-- Cidade do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteCidade">Cidade</label>  
-					<select class="custom-select" title="Selecione a Cidade" id="DadosClienteCidade">
+					<select class="custom-select" title="Selecione a Cidade" id="DadosClienteCidade" value="{{clientedetalhe.sexo}}">
 						<option value=""></option>
 						<option value="Asa Sul" title="Asa Sul">Asa Sul</option>
 						<option value="Asa Norte" title="Asa Norte">Asa Norte</option>
@@ -94,7 +93,7 @@
 				<!-- Endereço do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteEndereco">Endereço Completo</label> 
-					<input type="text" maxlength="50" class="form-control" placeholder="Endereço" id="DadosClienteEndereco" title="Nome">
+					<input type="text" maxlength="50" class="form-control" placeholder="Endereço" id="DadosClienteEndereco" title="Nome" value="{{clientedetalhe.endereco}}">
 				</div>
 			</div>
 
@@ -109,13 +108,13 @@
 				<!-- Celular do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteCelular">Celular</label> 
-					<input type="text" class="form-control" id="DadosClienteCelular" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true">	
+					<input type="text" class="form-control" id="DadosClienteCelular" title="Celular" value="{{clientedetalhe.celular}}">	
 				</div>
 				
 				<!-- Email do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteEmail">E-mail</label> 
-					<input type="email" class="form-control" placeholder="Email" id="DadosClienteEmail" title="Email">
+					<input type="email" class="form-control" placeholder="Email" id="DadosClienteEmail" title="Email" value="{{clientedetalhe.email}}">
 				</div>
 
 				<!-- Login -->
@@ -126,7 +125,7 @@
 				<!-- Senha do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteSenha">Senha</label> 
-					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" title="Senha"> 
+					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" title="Senha" value="{{clientedetalhe.senha}}"> 
 					<small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small>
 				</div>
 				

@@ -10,6 +10,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location){
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todas as solicitacões no geral
 	carregarTodasSolicitacoes = function(){
+		
 		 $http({method: 'GET', url: 'http://localhost:8080/solicitacoes'})
 		 .then(function successCallback(response) {
 			 $scope.solicitacoes = response.data
@@ -23,19 +24,55 @@ app.controller("SolicitacaoController", function($scope, $http, $location){
 	
 	//Solicitar Hidráulica 
 	$scope.solicitarHidraulica = function(){
-		if($scope.formSolicitaHidraulica.$valid){
-			$http({method: 'POST',url: 'http://localhost:8080/solicitacao',data:$scope.prestador})
+		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.hidraulica})
+	    .then(function successCallback(response) {
+	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
+	    }, function errorCallback(response) {
+	    	
+	    	console.log(response.data)
+	    	console.log(response.status)
+	    });
+	}	 
+	
+	//Solicitar Reparos 
+	$scope.solicitarReparos = function(){
+		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.reparo})
+	    .then(function successCallback(response) {
+	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
+	    }, function errorCallback(response) {
+	    	
+	    	console.log(response.data)
+	    	console.log(response.status)
+	    });
+	}	
+	
+	//Solicitar Acabamento 
+	$scope.solicitarAcabamento = function(){
+			$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.acabamento})
 		    .then(function successCallback(response) {
-		    	mensagem("Sua solicitação foi criada com sucesso", Sucesso)
+		    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
 		    }, function errorCallback(response) {
 		    	
 		    	console.log(response.data)
 		    	console.log(response.status)
 		    });
-		} else {
-			console.log("Erro")
-		}
-	}	 
+	}
+	
+	//Solicitar Eletricista 
+	$scope.solicitarEletricista = function(){
+
+		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.eletricista})
+	    .then(function successCallback(response) {
+	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
+	    }, function errorCallback(response) {
+	    	
+	    	console.log(response.data)
+	    	console.log(response.status)
+	    });
+
+	}	
+	
+	
 	
 	//Alterar Prestador
 	$scope.alterarPrestador = function(prestador){

@@ -2,6 +2,7 @@ app.controller("ClienteController", function($scope, $http, $location){
 	
 	$scope.cliente = {};
 	$scope.clientes = [];
+	$scope.clientedetalhe = [];
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todos os clientes
 	carregarClientes = function(){
@@ -16,12 +17,24 @@ app.controller("ClienteController", function($scope, $http, $location){
 	
 	carregarClientes();
 	
+	//Dados do Cliente Logado
+	clienteLogadoDetalhe = function(){
+		$http({method: 'GET',url: 'http://localhost:8080/cli/buscar/'+ 1})
+		 .then(function successCallback(response) {
+		     $scope.clientedetalhe = response.data
+		 }, function errorCallback(response) {
+	    	 console.log(response.data)
+	    	 console.log(response.status)
+		 });
+	}
+	
+	clienteLogadoDetalhe();
+	
 	//Salvar Cliente 
 	$scope.salvarCliente= function(){
 		if($scope.formCadastroCliente.$valid){
 			$http({method: 'POST',url: 'http://localhost:8080/cli/novo',data:$scope.cliente})
 		    .then(function successCallback(response) {
-		        //$scope.clientes.push(response.data)
 		    	carregarClientes();
 	            mensagem("Cadastrado com Sucesso", "Sucesso")
 	            $location.path('/login')

@@ -12,20 +12,19 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4">Bem Vindo de Volta!</h1>
 								</div>
-								<form class="user">
+								<form class="user" ng-submit="autenticarPrestador()">
 									<div class="form-group">
 										<input type="email" class="form-control form-control-user"
 											id="exampleInputEmail" aria-describedby="emailHelp"
-											placeholder="Usuário" ng-model="usuario.email">
+											placeholder="Usuário" ng-model="userPrestador.email">
 									</div>
 									<div class="form-group">
 										<input type="password" class="form-control form-control-user"
 											id="exampleInputPassword" placeholder="Senha"
-											ng-model="usuario.senha">
+											ng-model="userPrestador.senha">	
 									</div>
 
-									<button type="button" class="btn btn-primary"
-										ng-click="acessar()">Login</button>
+									<button type="submit" class="btn btn-primary">Login</button>
 								</form>
 								<hr>
 								<div class="text-center">

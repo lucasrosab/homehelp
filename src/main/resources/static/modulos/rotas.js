@@ -21,8 +21,8 @@ app.config(function($routeProvider,$locationProvider) {
 	//Prestador
 	.when("/login/prestador", {templateUrl : 'view/prestador/login.html', controller: 'LoginController'})
 	.when("/recuperar-prestador", {templateUrl : 'view/prestador/reset.html'})
-	.when("/prestador/inicio", {templateUrl : 'view/prestador/index.html'})
-	.when("/prestador/dados-pessoais", {templateUrl : 'view/prestador/conteudo/dados-pessoais.html'})
+	.when("/prestador/inicio", {templateUrl : 'view/prestador/index.html', controller: 'DemandaController'})
+	.when("/prestador/dados-pessoais", {templateUrl : 'view/prestador/conteudo/dados-pessoais.html', controller: 'PrestadorController'})
 	.when("/prestador/banco", {templateUrl : 'view/prestador/conteudo/banco.html'})
 	.when("/prestador/profissional", {templateUrl : 'view/prestador/conteudo/profissional.html'})
 	.when("/prestador/configuracao", {templateUrl : 'view/prestador/conteudo/configuracao.html'})

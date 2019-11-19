@@ -2,6 +2,8 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	
 	$scope.prestador = {};
 	$scope.prestadores = [];
+	$scope.prestadordetalhe = [];
+	
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todos os prestadores
 	carregarPrestadores = function(){
@@ -15,6 +17,20 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	};
 	
 	carregarPrestadores();
+	
+	//Dados do Cliente Logado
+	prestadorLogadoDetalhe = function(){
+		$http({method: 'GET',url: 'http://localhost:8080/pres/buscar/'+ 1})
+		 .then(function successCallback(response) {
+		     $scope.prestadordetalhe = response.data
+		 }, function errorCallback(response) {
+	    	 console.log(response.data)
+	    	 console.log(response.status)
+		 });
+	}
+	
+	prestadorLogadoDetalhe();
+
 	
 	//Salvar Prestador 
 	$scope.salvarPrestador = function(){

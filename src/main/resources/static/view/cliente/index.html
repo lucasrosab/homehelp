@@ -22,7 +22,6 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/cliente/dados-pessoais">Dados Pessoais</a>
-						<a class="dropdown-item" href="/cliente/pagamento">Pagamento</a>
 						<a class="dropdown-item" href="/cliente/configuracao">Configurações</a> 
 						<a class="dropdown-item" href="/">Sair</a>
 					</div>
@@ -32,19 +31,30 @@
 	</nav>
 </header>
 <div class="container">
+
+	<div class="toast" style="position: absolute; top: 15px; right: 15px;">
+		<div class="toast-header">
+			<strong class="mr-auto">{{status}}</strong>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="toast-body">{{mensagem}}</div>
+	</div>
+	
 	<div class="row" style="padding-top: 10px;">
 		<div class="col-12 col-xl-3">
 			<div class="card text-center">
 				<img src="img/hidraulica.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Hidráulica</h5>
-					<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button>-->
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button> 
+					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="RTLUUSG6R2S7J">
 						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
 						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-						</form>						
+					</form>	-->
 				</div>
 			</div>
 		</div>
@@ -54,14 +64,13 @@
 				<img src="img/reparo.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Reparos</h5>
-					<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button>-->
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button> 
+					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="66WZT3E6H4G9N">
 						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
 						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-						</form>
-						
+					</form> -->
 				</div>
 			</div>
 		</div>
@@ -70,14 +79,14 @@
 			<div class="card text-center">
 				<img src="img/acabamento.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-title">Acabamento</h5>					
-					<!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>-->
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<h5 class="card-title">Acabamento</h5>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>
+					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="EB5QKXJNBJEVE">
 						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
 						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-						</form>
+					</form> -->
 				</div>
 			</div>
 		</div>
@@ -87,14 +96,13 @@
 				<img src="img/eletrica.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Eletricista</h5>
-					<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>-->
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>
+					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="XMXLCUYA258P6">
 						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
 						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-						</form>
-						
+					</form> -->
 				</div>
 			</div>
 		</div>
@@ -113,18 +121,18 @@
 			            <div class="row">
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Horário</label>
-			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horario" required>
+			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorarioHidro" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horario" required>
 			                </div>
 			                <div class="col-12 col-xl-6 form-group">
 			                    <label for="EnderecoHidraulica">Endereço</label>
-			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEndereco" ng-model="hidraulica.endereco" required disabled readonly>
-			                    <small id="passwordHelpBlock" class="form-text text-muted">
+			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEnderecoHidro" ng-model="hidraulica.endereco" required>
+			                    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
 									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
-								</small>
+								</small>  -->
 			                </div>
 			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="TipoHidraulica">Tipo de Serviço</label>
-			                    <select class="custom-select" ng-model="hidraulica.tipo" name="txtTipo" required>
+			                    <select class="custom-select" ng-model="hidraulica.tipo_servico" name="txtTipoHidro" required>
 									<option value=""></option>
 									<option value="Instalação de Tomada">Instalação de Tomada</option>
 									<option value="Troca de chuveiro">Troca de chuveiro</option>
@@ -133,37 +141,12 @@
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
 									<div class="col-12 col-xl-2">
-										<button type="button" class="btn btn-success" ng-disabled="formSolicitaHidraulica.$invalid" ng-click="solicitarHidraulica()">Contratar</button>
+										<button type="button" class="btn btn-success" ng-click="solicitarHidraulica()">Contratar</button>
 									</div>	
 								</div>
 			                </div>
 			           </div>
 	               </form>
-	               <!-- 
-		                <div class="col-12 table-responsive">
-		                    <table class="table table-dark">
-		                        <thead>
-		                            <tr>
-		                                <th scope="col">#</th>
-		                                <th scope="col">Nome</th>
-		                                <th scope="col">Preço</th>
-		                                <th scope="col">Opçãoo</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr ng-repeat="disponivel in profissionalDisponivel">
-		                                <th scope="row" ng-show="disponivel.status">{{disponivel.id}}</th>
-		                                <td ng-show="disponivel.status" ng-model="solicitacao.prestador">{{disponivel.prestador}}</td>
-		                                <td ng-show="disponivel.status">{{disponivel.status}}</td>
-		                                <td ng-show="disponivel.status">
-		                                    <button type="button" class="btn btn-success" ng-click="solicitarHidraulica()">Contratar</button>
-		                                </td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-		                </div>
-		         
-		         -->
 		        </div>
 		    </div>
 		</div>
@@ -174,42 +157,40 @@
 		<div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
-		            <h5 class="modal-title" id="HidraulicaModal">Reparos</h5>
+		            <h5 class="modal-title" id="ReparosModal">Reparos</h5>
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		            <div class="row">
-		                <div class="form-group col-4">
-		                    <label for="horario">Horário</label>
-		                    <input type="text" class="form-control" id="horario" data-mask="00/00/0000" data-mask-reverse="true" ng-model="solicitacao.horario">
-		                </div>
-		                <div class="col-8 form-group">
-		                    <label for="endereco">Endereço</label>
-		                    <input type="text" class="form-control" id="endereco" ng-model="solicitacao.endereco">
-		                </div>
-		                <div class="col-12 table-responsive">
-		                    <table class="table table-dark">
-		                        <thead>
-		                            <tr>
-		                                <th scope="col">#</th>
-		                                <th scope="col">Nome</th>
-		                                <th scope="col">Preço</th>
-		                                <th scope="col">Opção</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr ng-repeat="disponivel in profissionalDisponivel">
-		                                <th scope="row" ng-show="disponivel.status">{{disponivel.id}}</th>
-		                                <td ng-show="disponivel.status" ng-model="solicitacao.prestador">{{disponivel.prestador}}</td>
-		                                <td ng-show="disponivel.status">{{disponivel.status}}</td>
-		                                <td ng-show="disponivel.status">
-		                                    <button type="button" class="btn btn-success" ng-click="solicitarHidraulica()">Contratar</button>
-		                                </td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-		                </div>
-		            </div>
+		        	<form novalidade name="formSolicitaReparos">
+			            <div class="row">
+			                <div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioReparos">Horário</label>
+			                    <input type="text" class="form-control" id="HorarioReparos" name="txtHorarioRep" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="reparo.horario" required>
+			                </div>
+			                <div class="col-12 col-xl-6 form-group">
+			                    <label for="EnderecoReparos">Endereço</label>
+			                    <input type="text" class="form-control" id="EnderecoReparos" name="txtEnderecoRep" ng-model="reparo.endereco" required>
+			                    <!--  <small id="passwordHelpBlock" class="form-text text-muted">
+									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
+								</small>  -->
+			                </div>
+			                <div class="col-12 col-xl-4 form-group">
+			                    <label for="TipoReparos">Tipo de Serviço</label>
+			                    <select class="custom-select" ng-model="reparo.tipo_servico" name="txtTipoRep" required>
+									<option value=""></option>
+									<option value="Instalação de Tomada">Parede</option>
+									<option value="Troca de chuveiro">Vazamento</option>
+								</select>
+			                </div>
+			                <div class="col-12 col-xl-12 form-group">
+								<div class="row justify-content-center">
+									<div class="col-12 col-xl-2">
+										<button type="button" class="btn btn-success" ng-click="solicitarReparos()">Contratar</button>
+									</div>	
+								</div>
+			                </div>
+			           </div>
+	               </form>
 		        </div>
 		    </div>
 		</div>
@@ -220,42 +201,40 @@
 		<div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
-		            <h5 class="modal-title" id="HidraulicaModal">Acabamentos</h5>
+		            <h5 class="modal-title" id="AcabamentoModal">Acabamento</h5>
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		            <div class="row">
-		                <div class="col-4 form-group">
-		                    <label for="horario">Horário</label>
-		                    <input type="text" class="form-control" id="horario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="solicitacao.horario">
-		                </div>
-		                <div class="col-8 form-group">
-		                    <label for="horario">Endereço</label>
-		                    <input type="text" class="form-control" id="endereco" ng-model="solicitacao.endereco">
-		                </div>
-		                <div class="col-12 table-responsive">
-		                    <table class="table table-dark">
-		                        <thead>
-		                            <tr>
-		                                <th scope="col">#</th>
-		                                <th scope="col">Nome</th>
-		                                <th scope="col">Preço</th>
-		                                <th scope="col">Opção</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr ng-repeat="disponivel in profissionalDisponivel">
-		                                <th scope="row" ng-show="disponivel.status">{{disponivel.id}}</th>
-		                                <td ng-show="disponivel.status" ng-model="solicitacao.prestador">{{disponivel.prestador}}</td>
-		                                <td ng-show="disponivel.status">{{disponivel.status}}</td>
-		                                <td ng-show="disponivel.status">
-		                                    <button type="button" class="btn btn-success" ng-click="solicitarAcabamento()">Contratar</button>
-		                                </td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-		                </div>
-		            </div>
+		        	<form novalidade name="formSolicitaAcabamento">
+			            <div class="row">
+			                <div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioAcabamento">Horário</label>
+			                    <input type="text" class="form-control" id="HorarioAcabamento" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="acabamento.horario" required>
+			                </div>
+			                <div class="col-12 col-xl-6 form-group">
+			                    <label for="EnderecoAcabamento">Endereço</label>
+			                    <input type="text" class="form-control" id="EnderecoAcabamento" name="txtEndereco" ng-model="acabamento.endereco" required>
+			                    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
+								</small>  -->
+			                </div>
+			                <div class="col-12 col-xl-4 form-group">
+			                    <label for="TipoAcabamento">Tipo de Serviço</label>
+			                    <select class="custom-select" ng-model="acabamento.tipo_servico" name="txtTipo" required>
+									<option value=""></option>
+									<option value="Instalação de Tomada">Instalação de Tomada</option>
+									<option value="Troca de chuveiro">Troca de chuveiro</option>
+								</select>
+			                </div>
+			                <div class="col-12 col-xl-12 form-group">
+								<div class="row justify-content-center">
+									<div class="col-12 col-xl-2">
+										<button type="button" class="btn btn-success" ng-click="solicitarAcabamento()">Contratar</button>
+									</div>	
+								</div>
+			                </div>
+			           </div>
+	               </form>
 		        </div>
 		    </div>
 		</div>
@@ -266,45 +245,46 @@
 		<div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
-		            <h5 class="modal-title" id="HidraulicaModal">Eletricista</h5>
+		            <h5 class="modal-title" id="EletricistaModal">Eletricista</h5>
+		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		            <div class="row">
-		                <div class="col-4 form-group">
-		                    <label for="horario">Horário</label>
-		                    <input type="text" class="form-control" id="horario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="solicitacao.horario">
-		                </div>
-		                <div class="col-8 form-group">
-		                    <label for="endereco">Endereço</label>
-		                    <input type="text" class="form-control" id="endereco" ng-model="solicitacao.endereco">
-		                </div>
-		                <div class="col-12 table-responsive">
-		                    <table class="table table-dark">
-		                        <thead>
-		                            <tr>
-		                                <th scope="col">#</th>
-		                                <th scope="col">Nome</th>
-		                                <th scope="col">Preço</th>
-		                                <th scope="col">Opção</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr ng-repeat="disponivel in profissionalDisponivel">
-		                                <th scope="row" ng-show="disponivel.status">{{disponivel.id}}</th>
-		                                <td ng-show="disponivel.status" ng-model="solicitacao.prestador">{{disponivel.prestador}}</td>
-		                                <td ng-show="disponivel.status">{{disponivel.status}}</td>
-		                                <td ng-show="disponivel.status">
-		                                    <button type="button" class="btn btn-success" ng-click="solicitarHidraulica()">Contratar</button>
-		                                </td>
-		                            </tr>
-		                        </tbody> 
-		                    </table>
-		                </div>
-		            </div>
+		        	<form novalidade name="formSolicitaHidraulica">
+			            <div class="row">
+			                <div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioEletricista">Horário</label>
+			                    <input type="text" class="form-control" id="HorarioEletricista" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="eletricista.horario" required>
+			                </div>
+			                <div class="col-12 col-xl-6 form-group">
+			                    <label for="EnderecoEletricista">Endereço</label>
+			                    <input type="text" class="form-control" id="EnderecoEletricista" name="txtEndereco" ng-model="eletricista.endereco" required>
+			                    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
+								</small>  -->
+			                </div>
+			                <div class="col-12 col-xl-4 form-group">
+			                    <label for="TipoEletricista">Tipo de Serviço</label>
+			                    <select class="custom-select" ng-model="eletricista.tipo_servico" name="txtTipo" required>
+									<option value=""></option>
+									<option value="Instalação de Tomada">Instalação de Tomada</option>
+									<option value="Troca de chuveiro">Troca de chuveiro</option>
+								</select>
+			                </div>
+			                <div class="col-12 col-xl-12 form-group">
+								<div class="row justify-content-center">
+									<div class="col-12 col-xl-2">
+										<button type="button" class="btn btn-success" ng-click="solicitarEletricista()">Contratar</button>
+									</div>	
+								</div>
+			                </div>
+			           </div>
+	               </form>
 		        </div>
 		    </div>
 		</div>
 	</div>
 </div>
+
+
 
 <script src="js/lib/jquery.mask.min.js"></script>
