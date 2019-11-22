@@ -47,14 +47,16 @@ public class LoginPrestadorController {
 				.compact();
 		
 		
-		return	new LoginResponse(token);
+		return	new LoginResponse(token, presAutenticado);
 	}		
 	
 	private class LoginResponse{
 		public String token;
+		public Prestador pres;
 		 
-		public LoginResponse(String token ){
-			this.token=token; 
+		public LoginResponse(String token, Prestador pres){
+			this.token = token; 
+			this.pres = pres;
 		 }
 		
 	}

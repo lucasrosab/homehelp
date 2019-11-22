@@ -56,14 +56,14 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="historico in solicitacoes">
-							<td ng-show="historico.cliente.id == 1">{{historico.id}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.prestador.nome}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.tipo_servico}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.endereco}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.horario}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.preco}}</td>
-							<td ng-show="historico.cliente.id == 1">{{historico.status}}</td>
-							<td ng-show="historico.cliente.id == 1 && historico.status == 'Disponivel'">
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.id}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.prestador.nome}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.tipo_servico}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.endereco}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.horario}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.preco}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.status}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id && historico.status == 'Disponivel'">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetalhesSolicitacaoModal">Detalhes</button>
 							</td>
 						</tr>

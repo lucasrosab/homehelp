@@ -5,6 +5,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.acabamento = {};
 	$scope.eletricista = {};
 	$rootScope.solicitacoes = [];
+	$rootScope.cliLogado;
 	
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todas as solicitacões no geral
@@ -13,7 +14,6 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		 $http({method: 'GET', url: 'http://localhost:8080/solicitar/todas'})
 		 .then(function successCallback(response) {
 			 $rootScope.solicitacoes = response.data
-			 console.log($rootScope.solicitacoes);
 		 }, function errorCallback(response) {
 
 		 });

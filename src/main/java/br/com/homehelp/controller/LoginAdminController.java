@@ -49,14 +49,16 @@ public class LoginAdminController {
 				.compact();
 		
 		
-		return	new LoginResponse(token);
+		return	new LoginResponse(token, admAutenticado);
 	}		
 	
 	private class LoginResponse{
 		public String token;
+		public Administrador admin;
 		 
-		public LoginResponse(String token ){
-			this.token=token; 
+		public LoginResponse(String token, Administrador admin ){
+			this.token = token; 
+			this.admin = admin;
 		 }
 		
 	}
