@@ -54,4 +54,37 @@ app.controller("DemandaController", function($http, $scope, $rootScope){
     	 
 	}
 	
+	$scope.cancelar = function(reparos){
+		$scope.cancelar = reparos
+		$scope.cancelar.status = "Disponivel"
+		$scope.cancelar.prestador = null	
+		
+		$http({
+            method: "PUT",  
+            url: "/solicitar/alterar",  
+            datatype: "json",  
+            data: $scope.cancelar
+    	  }).then(function mySuccess(response) {
+    		  
+    	  }, function myError(response) {
+
+    	  });
+	}
+	
+	$scope.finalizar = function(reparos){
+		$scope.finalizar = reparos
+		$scope.finalizar.status = "Encerrada"
+		
+		$http({
+            method: "PUT",  
+            url: "/solicitar/alterar",  
+            datatype: "json",  
+            data: $scope.finalizar
+    	  }).then(function mySuccess(response) {
+    		  
+    	  }, function myError(response) {
+
+    	  });
+	}
+	
 })

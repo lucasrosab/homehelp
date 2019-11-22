@@ -20,7 +20,6 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/prestador/dados-pessoais">Dados Pessoais</a>
 					 	<a class="dropdown-item" href="/prestador/banco">Dados Bancários</a>
-				 		<a class="dropdown-item" href="/prestador/profissional">Profissional</a>
 				 		<a class="dropdown-item" href="/prestador/configuracao">Configuração</a> 
 						<a class="dropdown-item" href="/">Sair</a>
 					</div>
@@ -53,8 +52,9 @@
                                 <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.endereco}}</td>
                                 <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.preco}}</td>
                                 <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.status}}</td>
-                                <td ng-show="reparos.prestador.id == presLogado.pres.id && reparos.status == 'Em Andamento'">
-                                    <button type="button" class="btn btn-warning">Finalizar</button>
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id">
+                                    <button type="button" class="btn btn-danger" ng-show="reparos.status == 'Em Andamento'" ng-click="cancelar(reparos)">Cancelar</button>
+                                    <button type="button" class="btn btn-success" ng-show="reparos.status == 'Em Andamento'" ng-click="finalizar(reparos)">Finalizar</button>
                                 </td>
                             </tr>
                         </tbody>
