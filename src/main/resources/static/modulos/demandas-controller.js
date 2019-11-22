@@ -36,4 +36,22 @@ app.controller("DemandaController", function($http, $scope, $rootScope){
     	  });
 	}
 
+	$scope.aceitar = function(demanda){
+		$scope.dados = demanda
+		$scope.dados.prestador = {id: $rootScope.presLogado.pres.id}
+		$scope.dados.status = "Em Andamento"
+			
+		$http({
+            method: "PUT",  
+            url: "/solicitar/alterar",  
+            datatype: "json",  
+            data: $scope.dados
+    	  }).then(function mySuccess(response) {
+    		  
+    	  }, function myError(response) {
+
+    	  });
+    	 
+	}
+	
 })

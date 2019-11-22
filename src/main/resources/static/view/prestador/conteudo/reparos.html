@@ -40,7 +40,6 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Endereço</th>
                                 <th scope="col">Valor</th>
@@ -49,24 +48,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lucas Rosa</td>
-                                <td>Rua Ebenezer 513 - Jardim Maranata - Aparecida de Goiânia - GO</td>
-                                <td>R$ 200,00</td>
-                                <td>Em Andamento</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#DetalhesSolicitacaoModal">Detalhes</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Pedro Fontenele</td>
-                                <td>28/09/2019 12:00</td>
-                                <td>R$ 100,00</td>
-                                <td>Finalizada</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#DetalhesSolicitacaoModal">Detalhes</button>
+                            <tr ng-repeat="reparos in demandasDisponiveis">
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.cliente.nome}}</td>
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.endereco}}</td>
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.preco}}</td>
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id">{{reparos.status}}</td>
+                                <td ng-show="reparos.prestador.id == presLogado.pres.id && reparos.status == 'Em Andamento'">
+                                    <button type="button" class="btn btn-warning">Finalizar</button>
                                 </td>
                             </tr>
                         </tbody>

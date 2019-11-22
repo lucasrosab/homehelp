@@ -25,7 +25,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/prestador/banco", {templateUrl : 'view/prestador/conteudo/banco.html'})
 	.when("/prestador/profissional", {templateUrl : 'view/prestador/conteudo/profissional.html'})
 	.when("/prestador/configuracao", {templateUrl : 'view/prestador/conteudo/configuracao.html'})
-	.when("/prestador/reparos", {templateUrl : 'view/prestador/conteudo/reparos.html'})
+	.when("/prestador/reparos", {templateUrl : 'view/prestador/conteudo/reparos.html', controller: 'DemandaController'})
 	
 	//Administrador
 	.when("/administrador/inicio", {templateUrl : 'view/administrador/index.html'})

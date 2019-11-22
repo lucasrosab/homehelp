@@ -56,11 +56,11 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="demanda in demandasDisponiveis">
-						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.cliente.nome}}</td>
-						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.endereco}}</td>
-						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.dia}} - {{demanda.horario}}</td>
-						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">
-							<button type="button" class="btn btn-success">Aceitar</button>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.cliente.nome}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.endereco}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.dia}} - {{demanda.horario}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">
+							<button type="button" class="btn btn-success" ng-click="aceitar(demanda)">Aceitar</button>
 						</td>
 					</tr>
 				</tbody>
