@@ -28,7 +28,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		$scope.hidraulica.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.hidraulica})
 	    .then(function successCallback(response) {
-	    	
+	    	redirectSolicitacao('#HidraulicaModal');
 	    }, function errorCallback(response) {
 	    	
 	    });
@@ -41,7 +41,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		$scope.reparo.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.reparo})
 	    .then(function successCallback(response) {
-	    	
+	    	redirectSolicitacao('#ReparosModal');
 	    }, function errorCallback(response) {
 	    		    	
 	    });
@@ -54,7 +54,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		$scope.acabamento.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.acabamento})
 	    .then(function successCallback(response) {
-	    	
+	    	redirectSolicitacao('#AcabamentoModal');
 	    }, function errorCallback(response) {
 	    	
 	    });
@@ -67,14 +67,12 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		$scope.eletricista.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.eletricista})
 	    .then(function successCallback(response) {
-	    	
+	    	redirectSolicitacao('#EletricistaModal');
 	    }, function errorCallback(response) {
 	    	
 	    });
 
 	}	
-	
-	
 	
 	//Alterar Prestador
 	$scope.alterarPrestador = function(prestador){
@@ -119,6 +117,13 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
     	var dNow = new Date();
     	var localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear();
     	return localdate;
+    }
+    
+    function redirectSolicitacao(id) {
+		$(id).modal('hide')
+	    $('body').removeClass('modal-open');
+		$('.modal-backdrop').remove(); 
+    	$location.path('/cliente/solicitacoes')
     }
     
 })

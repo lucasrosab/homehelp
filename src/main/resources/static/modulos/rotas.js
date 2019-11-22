@@ -14,8 +14,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/recuperar-cliente", {templateUrl : 'view/cliente/reset.html'})
 	.when("/cliente/inicio", {templateUrl : 'view/cliente/index.html', controller: 'SolicitacaoController'})
 	.when("/cliente/dados-pessoais", {templateUrl : 'view/cliente/conteudo/dados-pessoais.html', controller: 'ClienteController'})
-	.when("/cliente/pagamento", {templateUrl : 'view/cliente/conteudo/pagamento.html'})
-	.when("/cliente/configuracao", {templateUrl : 'view/cliente/conteudo/configuracao.html'})
+	.when("/cliente/configuracao", {templateUrl : 'view/cliente/conteudo/configuracao.html', controller: 'ClienteController'})
 	.when("/cliente/solicitacoes", {templateUrl : 'view/cliente/conteudo/solicitacao.html', controller: 'SolicitacaoController'})
 
 	//Prestador
