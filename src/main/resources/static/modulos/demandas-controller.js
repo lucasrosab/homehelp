@@ -1,8 +1,8 @@
-app.controller("DemandaController", function($http, $scope){
+app.controller("DemandaController", function($http, $scope, $rootScope){
 		
 	$scope.demandasDisponiveis = []
-	$scope.isAtivo = []
-
+	$rootScope.solicitacoes
+	
 	function demandas() {
     	$http({
   		  method: 'GET',
@@ -17,39 +17,23 @@ app.controller("DemandaController", function($http, $scope){
 	demandas();
 
 	$scope.status = function(){
-		$scope.status = 'true'
-
+		$scope.prestador = $rootScope.presLogado.pres
+		if($rootScope.presLogado.pres.status_prestador){
+			$scope.prestador.status_prestador = false
+		} else {
+			$scope.prestador.status_prestador = true
+		}
+		
 		$http({
             method: "PUT",  
-            url: "/prestador/status/" + 1,  
+            url: "/pres/alterar",  
             datatype: "json",  
-            data: JSON.stringify($scope.status)
+            data: $scope.prestador
     	  }).then(function mySuccess(response) {
-    		  console.log("Sucesso: " + response.data)
+    		  
     	  }, function myError(response) {
-    	    console.log("Erro: " + response.statusText)
+
     	  });
 	}
-
-	function statusPrestador() {
-    	$http({
-    		  method: 'GET',
-    		  url: '/prestador/status/'+1,
-		}).then(function successCallback(response) {
-			$scope.isAtivo = response.data
-
-			//Recupera o valor do botao
-			if($scope.isAtivo.status){
-				$scope.valor = "Disponível"
-			} else {
-				$scope.valor = "Indisponível"
-			}
-		  }, function errorCallback(response) {
-
-		  });
-	}
-
-	statusPrestador();
-
 
 })

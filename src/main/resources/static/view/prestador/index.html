@@ -15,7 +15,7 @@
 				</li>
 				<li class="nav-item dropdown ">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-						<img src="../../img/administrador.jpg" class="d-inline-block align-top img-fluid float-left usuario rounded-circle" alt="usuario-homehelp" width="125px"> &nbsp;&nbsp;Matheus Lopes
+						<img src="../../img/administrador.jpg" class="d-inline-block align-top img-fluid float-left usuario rounded-circle" alt="usuario-homehelp" width="125px"> &nbsp;{{presLogado.pres.nome}}
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/prestador/dados-pessoais">Dados Pessoais</a>
@@ -37,10 +37,7 @@
 		<div class="col-12 ">
 			<div class="row justify-content-center">
 				<div class="col-4">
-					<button type="button" class="btn btn-lg btn-block"
-						ng-class="isAtivo.status ? 'btn-success' : 'btn-dark'"
-						id="StatusPrestador" value="{{isAtivo.status}}"
-						ng-click="status()">{{valor}}</button>
+					<button type="button" class="btn btn-lg btn-block" ng-class="{{presLogado.pres.status_prestador ? 'btn-success' : 'btn-dark'}}" id="StatusPrestador" value="{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}" ng-click="status()">{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}</button>
 				</div>
 			</div>
 		</div>
@@ -59,10 +56,10 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="demanda in demandasDisponiveis">
-						<td>{{demanda.cliente}}</td>
-						<td>{{demanda.endereco}}</td>
-						<td>{{demanda.horario}}</td>
-						<td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.cliente.nome}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.endereco}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">{{demanda.dia}} - {{demanda.horario}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel'">
 							<button type="button" class="btn btn-success">Aceitar</button>
 						</td>
 					</tr>

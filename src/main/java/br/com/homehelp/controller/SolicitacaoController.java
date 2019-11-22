@@ -65,5 +65,14 @@ public class SolicitacaoController {
 		Solicitacao solicitacaoAlterado = solicitacaoService.alterar(solicitacao);
 		return new ResponseEntity<>(solicitacaoAlterado, HttpStatus.OK);
 	}
+	
+	@RequestMapping(method = RequestMethod.PATCH, value = "/alterar-dados/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Solicitacao> alterarDadosSolicitacao(@PathVariable Integer id) {
+
+		Solicitacao solicitacao = solicitacaoService.buscarPorId(id);
+		Solicitacao solicitacaoAlterado = solicitacaoService.alterar(solicitacao);
+		
+		return new ResponseEntity<>(solicitacaoAlterado, HttpStatus.OK);
+	}
 
 }

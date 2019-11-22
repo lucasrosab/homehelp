@@ -1,8 +1,10 @@
-app.controller("PrestadorController", function($scope, $http, $location){
+app.controller("PrestadorController", function($scope, $http, $location, $rootScope){
 	
 	$scope.prestador = {};
 	$scope.prestadores = [];
 	$scope.prestadordetalhe = [];
+	
+	$rootScope.presLogado;
 	
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todos os prestadores
@@ -11,26 +13,11 @@ app.controller("PrestadorController", function($scope, $http, $location){
 		 .then(function successCallback(response) {
 		     $scope.prestadores = response.data
 		 }, function errorCallback(response) {
-	    	 console.log(response.data)
-	    	 console.log(response.status)
+
 		 });
 	};
 	
 	carregarPrestadores();
-	
-	//Dados do Cliente Logado
-	prestadorLogadoDetalhe = function(){
-		$http({method: 'GET',url: 'http://localhost:8080/pres/buscar/'+ 1})
-		 .then(function successCallback(response) {
-		     $scope.prestadordetalhe = response.data
-		 }, function errorCallback(response) {
-	    	 console.log(response.data)
-	    	 console.log(response.status)
-		 });
-	}
-	
-	prestadorLogadoDetalhe();
-
 	
 	//Salvar Prestador 
 	$scope.salvarPrestador = function(){
@@ -41,9 +28,7 @@ app.controller("PrestadorController", function($scope, $http, $location){
 		    	$scope.formCadastroPrestador.$setPristine(true)
 		    	$('#InfoCadPrestadorModal').modal('show');
 		    }, function errorCallback(response) {
-		    	mensagem("Preencha todos os campos", "Erro")
-		    	console.log(response.data)
-		    	console.log(response.status)
+
 		    });
 		} else {
 			console.log("Erro")
@@ -63,13 +48,12 @@ app.controller("PrestadorController", function($scope, $http, $location){
 	//Excluir Prestador
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirPrestador= function(prestador){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + prestador.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + $rootScope.presLogado.prestador.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.prestadores.indexOf(cliente)
 	   	 $scope.prestadores.splice(pos, 1);
 	    }, function errorCallback(response) {
-	   	 console.log(response.data)
-	   	 console.log(response.status)
+
 	    });
 	}
 	//-----------------------------------------------------------------------------------------------//
