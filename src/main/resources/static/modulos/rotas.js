@@ -16,7 +16,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/cliente/dados-pessoais", {templateUrl : 'view/cliente/conteudo/dados-pessoais.html', controller: 'ClienteController'})
 	.when("/cliente/pagamento", {templateUrl : 'view/cliente/conteudo/pagamento.html'})
 	.when("/cliente/configuracao", {templateUrl : 'view/cliente/conteudo/configuracao.html'})
-	.when("/cliente/solicitacoes", {templateUrl : 'view/cliente/conteudo/solicitacao.html'})
+	.when("/cliente/solicitacoes", {templateUrl : 'view/cliente/conteudo/solicitacao.html', controller: 'SolicitacaoController'})
 
 	//Prestador
 	.when("/login/prestador", {templateUrl : 'view/prestador/login.html', controller: 'LoginController'})

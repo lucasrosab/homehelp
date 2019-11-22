@@ -46,6 +46,8 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Profissional</th>
+							<th scope="col">Tipo de Serviço</th>
+							<th scope="col">Endereço</th>
 							<th scope="col">Horário</th>
 							<th scope="col">Valor</th>
 							<th scope="col">Status</th>
@@ -53,14 +55,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="historico in solicitacoesCliente">
-							<td ng-show="historico.idcliente == 2">{{historico.id}}</td>
-							<td ng-show="historico.idcliente == 2">{{historico.prestador}}</td>
-							<td ng-show="historico.idcliente == 2">{{historico.horario}}</td>
-							<td ng-show="historico.idcliente == 2">{{historico.valor}}</td>
-							<td ng-show="historico.idcliente == 2">{{historico.status}}</td>
-							<td ng-show="historico.idcliente == 2">
-								<button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html';">Voltar</button>
+						<tr ng-repeat="historico in solicitacoes">
+							<td ng-show="historico.cliente.id == 1">{{historico.id}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.prestador.nome}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.tipo_servico}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.endereco}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.horario}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.preco}}</td>
+							<td ng-show="historico.cliente.id == 1">{{historico.status}}</td>
+							<td ng-show="historico.cliente.id == 1 && historico.status == 'Disponivel'">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetalhesSolicitacaoModal">Detalhes</button>
 							</td>
 						</tr>
 					</tbody>
@@ -70,54 +74,7 @@
 				<a class="btn btn-primary" href="/cliente/inicio" role="button">Voltar</a>
 			</div>
 
-			<!-- Modal Detalhes Solicitação-->
-			<div class="modal fade" id="DetalhesSolicitacaoModal" tabindex="-1" role="dialog" aria-labelledby="DetalhesSolicitacaoModal" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				        <div class="modal-header">
-				            <h5 class="modal-title" id="DetalhesSolicitacaoModal">Detalhes da Solicitação</h5>
-				            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        </div>
-				        <div class="modal-body">
-				            <form action="">
-				                <div class="row">
-				                    <div id="map"></div>
-				                    <div class="form-group col-6">
-				                        <label for="DetalheDataSolicitacao">Horário</label>
-				                        <input type="text" class="form-control" id="DetalheHorarioSolicitacao" placeholder="30/09/2019 12:20" disabled>
-				                    </div>
-				                    <div class="form-group col-6">
-				                        <label for="DetalheTotalSolicitacao">Total</label>
-				                        <input type="text" class="form-control" id="DetalheTotalSolicitacao" placeholder="R$ 200,00" disabled>
-				                    </div>
-				                    <div class="form-group col-12">
-				                        <label for="DetalheProfissionalSolicitacao">Profissional</label>
-				                        <input type="text" class="form-control" id="DetalheProfissionalSolicitacao" placeholder="Júlio Batista" disabled>
-				                    </div>
-				                    <div class="form-group col-12">
-				                        <label for="DetalheTipoSolicitacao">Tipo de Serviço</label>
-				                        <input type="text" class="form-control" id="DetalheTipoSolicitacao" placeholder="Bombeiro" disabled>
-				                    </div>
-				                    <div class="form-group col-12">
-				                        <label for="DetalheEnderecoSolicitacao">Endereço</label>
-				                        <input type="text" class="form-control" id="DetalheEnderecoSolicitacao" placeholder="Casa" disabled>
-				                    </div>
-				                    <div class="form-group col-12">
-				                        <label for="DetalhePagamentoSolicitacao">Forma de Pagamento</label>
-				                        <input type="text" class="form-control" id="DetalhePagamentoSolicitacao" placeholder="Dinheiro" disabled>
-				                    </div>
-				                    <div class="form-group col-12">
-				                        <label for="DetalheStatusSolicitacao">Status</label>
-				                        <input type="text" class="form-control" id="DetalheStatusSolicitacao" placeholder="Em Andamento" disabled>
-				                    </div>
-				                </div>
-				            </form>
-				        </div>
-				        <div class="modal-footer">
-				            <button type="button" class="btn btn-primary" data-dismiss="modal">Voltar</button>
-				        </div>
-				    </div>
-				</div>
+			
 			</div>
 		</div>
 	</div>

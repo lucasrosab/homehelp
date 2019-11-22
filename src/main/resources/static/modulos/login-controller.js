@@ -1,4 +1,4 @@
-app.controller("LoginController", function($scope, $http, $location){
+app.controller("LoginController", function($scope, $http, $location, $rootScope){
 	
 	$scope.userCliente = {}
 	$scope.userPrestador = {}
@@ -8,10 +8,11 @@ app.controller("LoginController", function($scope, $http, $location){
 	$scope.tokenPrestador = "";
 	$scope.tokenAdministrador = "";
 	
+	$rootScope.cliLogado = [];
+	
 	$scope.autenticarCliente = function(){
 		$http.post("/auth-cli", $scope.userCliente).then(function(response){
-			console.log("Sucesso " + response);
-			$scope.tokenCliente= response.data.token;
+			$rootScope.cliLogado = response.data;
 			localStorage.setItem("userToken", response.data.token);
 			$location.path('/cliente/inicio')
 		} , function(response){

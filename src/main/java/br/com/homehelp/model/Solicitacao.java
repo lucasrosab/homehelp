@@ -29,6 +29,8 @@ public class Solicitacao {
 	private String preco;
 	
 	private String tipo_servico;
+	
+	private String categoria;
 
 	public Integer getId() {
 		return id;
@@ -100,5 +102,13 @@ public class Solicitacao {
 
 	public void setTipo_servico(String tipo_servico) {
 		this.tipo_servico = tipo_servico;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	} 		
 }

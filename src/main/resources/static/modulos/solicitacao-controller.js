@@ -1,22 +1,21 @@
-app.controller("SolicitacaoController", function($scope, $http, $location){
+app.controller("SolicitacaoController", function($scope, $http, $location, $rootScope){
 	
 	$scope.hidraulica = {};
 	$scope.reparo = {};
 	$scope.acabamento = {};
 	$scope.eletricista = {};
-	
-	$scope.solicitacoes = [];
+	$rootScope.solicitacoes = [];
 	
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todas as solicitacões no geral
 	carregarTodasSolicitacoes = function(){
 		
-		 $http({method: 'GET', url: 'http://localhost:8080/solicitacoes'})
+		 $http({method: 'GET', url: 'http://localhost:8080/solicitar/todas'})
 		 .then(function successCallback(response) {
-			 $scope.solicitacoes = response.data
+			 $rootScope.solicitacoes = response.data
+			 console.log($rootScope.solicitacoes);
 		 }, function errorCallback(response) {
-	    	 console.log(response.data)
-	    	 console.log(response.status)
+
 		 });
 	};
 	
@@ -24,50 +23,53 @@ app.controller("SolicitacaoController", function($scope, $http, $location){
 	
 	//Solicitar Hidráulica 
 	$scope.solicitarHidraulica = function(){
+		$scope.hidraulica.cliente = {id: $rootScope.cliLogado.cliente.id};
+		$scope.hidraulica.categoria = "Hidraulica"
+		$scope.hidraulica.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.hidraulica})
 	    .then(function successCallback(response) {
-	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
+	    	
 	    }, function errorCallback(response) {
 	    	
-	    	console.log(response.data)
-	    	console.log(response.status)
 	    });
 	}	 
 	
 	//Solicitar Reparos 
 	$scope.solicitarReparos = function(){
+		$scope.reparo.cliente = {id: $rootScope.cliLogado.cliente.id};
+		$scope.reparo.categoria = "Reparo"
+		$scope.reparo.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.reparo})
 	    .then(function successCallback(response) {
-	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
-	    }, function errorCallback(response) {
 	    	
-	    	console.log(response.data)
-	    	console.log(response.status)
+	    }, function errorCallback(response) {
+	    		    	
 	    });
 	}	
 	
 	//Solicitar Acabamento 
 	$scope.solicitarAcabamento = function(){
-			$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.acabamento})
-		    .then(function successCallback(response) {
-		    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
-		    }, function errorCallback(response) {
-		    	
-		    	console.log(response.data)
-		    	console.log(response.status)
-		    });
+		$scope.acabamento.cliente = {id: $rootScope.cliLogado.cliente.id};
+		$scope.acabamento.categoria = "Acabamento"
+		$scope.acabamento.dia = RetornaDataAtual();
+		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.acabamento})
+	    .then(function successCallback(response) {
+	    	
+	    }, function errorCallback(response) {
+	    	
+	    });
 	}
 	
 	//Solicitar Eletricista 
 	$scope.solicitarEletricista = function(){
-
+		$scope.eletricista.cliente = {id: $rootScope.cliLogado.cliente.id};
+		$scope.eletricista.categoria = "Eletricista"
+		$scope.eletricista.dia = RetornaDataAtual();
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.eletricista})
 	    .then(function successCallback(response) {
-	    	mensagem("Sua solicitação foi criada com sucesso", "Sucesso")
+	    	
 	    }, function errorCallback(response) {
 	    	
-	    	console.log(response.data)
-	    	console.log(response.status)
 	    });
 
 	}	
@@ -92,8 +94,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location){
 	   	 pos = $scope.prestadores.indexOf(cliente)
 	   	 $scope.prestadores.splice(pos, 1);
 	    }, function errorCallback(response) {
-	   	 console.log(response.data)
-	   	 console.log(response.status)
+	   	 
 	    });
 	}
 	//-----------------------------------------------------------------------------------------------//
@@ -113,5 +114,11 @@ app.controller("SolicitacaoController", function($scope, $http, $location){
 		$('.modal-backdrop').remove(); 
 		$location.path('/cliente/dados-pessoais')
     }
-
+    
+    function RetornaDataAtual(){
+    	var dNow = new Date();
+    	var localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear();
+    	return localdate;
+    }
+    
 })

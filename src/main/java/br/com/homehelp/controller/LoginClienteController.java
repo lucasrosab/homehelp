@@ -47,15 +47,16 @@ public class LoginClienteController {
 				.compact();
 		
 		
-		return	new LoginResponse(token);
+		return	new LoginResponse(token, cliAutenticado);
 	}		
 	
 	private class LoginResponse{
 		public String token;
+		public Cliente cliente;
 		 
-		public LoginResponse(String token ){
+		public LoginResponse(String token, Cliente cli){
 			this.token=token; 
+			this.cliente=cli; 
 		 }
-		
 	}
 }
