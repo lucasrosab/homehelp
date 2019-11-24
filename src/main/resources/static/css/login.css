@@ -2,3 +2,13 @@ body {
     background: url("../img/bg-pattern.png"), #42a5f5 !important;
     background: url("../img/bg-pattern.png"), linear-gradient(to left, #42a5f5, #ffffff) !important;
 }
+
+.bg-login-image-cli {
+    background: url("../img/login-cliente.jpg");
+    background-size: 100% 110%;
+}
+
+.bg-login-image-pres {
+    background: url("../img/login-prestador.jpg");
+    background-size: 100% 110%;
+}
