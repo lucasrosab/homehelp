@@ -39,9 +39,9 @@
 		<div class="toast-body">{{mensagem}}</div>
 	</div>
 	
-	<form class="needs-validation" novalidate name="formUpdateDadosCliente" style="background-color: #ffffff5e; margin-top: 2%; height: 100%;">
+	<form class="needs-validation" novalidate name="formUpdateDadosCliente" style="background-color: #ffffff5e; margin-top: 2%; height: 100%;" ng-submit="alterarCliente()">
 		<div class="row">
-			<input type="hidden" value="{{value="{{clientedetalhe.id}}"}}"/>
+			<input type="hidden" ng-model="cliLogado.cliente.id"/>
 			<!-- Dados Pessoais -->
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 				<div class="form-group">
@@ -53,25 +53,25 @@
 				<!-- Nome do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteNome">Nome Completo</label> 
-					<input type="text" maxlength="50" class="form-control" placeholder="Nome" id="DadosClienteNome" title="Nome" value="{{cliLogado.cliente.nome}}" readonly disabled>
+					<input type="text" maxlength="50" class="form-control" placeholder="Nome" id="DadosClienteNome" name="txtUpdateCliNome" title="Nome" ng-model="cliLogado.cliente.nome" readonly disabled>
 				</div>
 				
 				<!-- Data de Nascimento do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteDataNascimento">Data de Nascimento</label> 
-					<input type="text" class="form-control" id="DadosClienteDataNascimento" title="Data de Nascimento" value="{{cliLogado.cliente.dataNascimento}}" readonly disabled>
+					<input type="text" class="form-control" id="DadosClienteDataNascimento" name="txtUpdateCliDataNascimento" title="Data de Nascimento" ng-model="cliLogado.cliente.dataNascimento" readonly disabled>
 				</div>
 				
 				<!-- Sexo do Cliente -->
 				<div class="form-group">
-					<label for="DadosClienteSexo">Sexo</label> 
-					<input type="text" class="form-control" id="DadosClienteSexo" title="Sexo" value="{{cliLogado.cliente.sexo}}" readonly disabled>
+					<label for="DadosClienteSexo">Gênero</label> 
+					<input type="text" class="form-control" id="DadosClienteSexo" name="txtUpdateCliGenero" title="Sexo" ng-model="cliLogado.cliente.sexo" readonly disabled>
 				</div>
 				
 				<!-- CPF do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteCPF">CPF</label> 
-					<input type="text" class="form-control" id="DadosClienteCPF" title="CPF" value="{{cliLogado.cliente.cpf}}" readonly disabled>
+					<input type="text" class="form-control" id="DadosClienteCPF" name="txtUpdateCliCPF" title="CPF" ng-model="cliLogado.cliente.cpf" readonly disabled>
 				</div>
 				
 				<div class="form-group">
@@ -83,13 +83,14 @@
 				<!-- Cidade do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteCidade">Cidade</label>  
-					<input type="text" class="form-control" id="DadosClienteCidade" title="Cidade" value="{{cliLogado.cliente.cidade}}" readonly disabled>		
+					<input type="text" class="form-control" id="DadosClienteCidade" name="txtUpdateCliCidade" title="Cidade" ng-model="cliLogado.cliente.cidade" readonly disabled>		
 				</div>
 				
 				<!-- Endereço do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteEndereco">Endereço Completo</label> 
-					<input type="text" maxlength="50" class="form-control" placeholder="Endereço" id="DadosClienteEndereco" title="Nome" value="{{cliLogado.cliente.endereco}}" readonly disabled>
+					<span ng-show="formUpdateDadosCliente.txtUpdateCliEndereco.$error.required" style="color: red;"><i>- Obrigatório</i></span>
+					<input type="text" maxlength="50" class="form-control" placeholder="Endereço" id="DadosClienteEndereco" name="txtUpdateCliEndereco" title="Nome" ng-model="cliLogado.cliente.endereco">
 				</div>
 			</div>
 
@@ -104,13 +105,13 @@
 				<!-- Celular do Cliente -->					
 				<div class="form-group">			
 					<label for="DadosClienteCelular">Celular</label> 
-					<input type="text" class="form-control" id="DadosClienteCelular" title="Celular" value="{{cliLogado.cliente.celular}}" readonly disabled>	
+					<input type="text" class="form-control" id="DadosClienteCelular" name="txtUpdateCliCelular" title="Celular" ng-model="cliLogado.cliente.celular" readonly disabled>	
 				</div>
 				
 				<!-- Email do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteEmail">E-mail</label> 
-					<input type="email" class="form-control" placeholder="Email" id="DadosClienteEmail" title="Email" value="{{cliLogado.cliente.email}}" readonly disabled>
+					<input type="email" class="form-control" placeholder="Email" id="DadosClienteEmail" name="txtUpdateCliEmail" title="Email" ng-model="cliLogado.cliente.email" readonly disabled>
 				</div>
 
 				<!-- Login -->
@@ -121,7 +122,10 @@
 				<!-- Senha do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteSenha">Senha</label> 
-					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" title="Senha" value="{{cliLogado.cliente.senha}}" readonly disabled> 
+					<span ng-show="formUpdateDadosCliente.txtUpdateCliSenha.$error.required && formUpdateDadosCliente.txtUpdateCliSenha.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<span ng-show="formUpdateDadosCliente.txtUpdateCliSenha.$error.minlength" style="color: red;"><i>- A senha deverá ter no mínimo 8 caracteres</i></span>
+					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" name="txtUpdateCliSenha" title="Senha" ng-model="cliLogado.cliente.senha" ng-minlength="8" maxlength="20" ng-model-options="{ updateOn: 'blur' }">
+					<small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small> 
 				</div>
 				
 			</div>

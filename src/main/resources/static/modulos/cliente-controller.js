@@ -40,8 +40,20 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 	}	 
 	
 	//Alterar Cliente
-	$scope.alterarCliente = function(cliente){
-		$scope.cliente = angular.copy(cliente)
+	$scope.alterarCliente = function(){
+		$scope.apdatecli = $scope.cliLogado.cliente
+		if($scope.formUpdateDadosCliente.$valid){
+			$http({method: 'PUT',url: 'http://localhost:8080/cli/alterar',data:$scope.apdatecli})
+		    .then(function successCallback(response) {
+		    	carregarClientes();
+	            mensagem("Dados Alterados com Sucesso", "Sucesso")
+		    }, function errorCallback(response) {
+		    	console.log(response.data)
+		    	console.log(response.status)
+		    });
+		} else {
+			mensagem("Preencha todos os campo", "Erro")
+		}
 	}
 	
 	$scope.cancelarAlteracaoCliente = function(){
