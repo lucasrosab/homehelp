@@ -28,6 +28,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/prestador/reparos", {templateUrl : 'view/prestador/conteudo/reparos.html', controller: 'DemandaController'})
 	
 	//Administrador
+	.when("/login/administrador", {templateUrl : 'view/administrador/login.html'})
 	.when("/administrador/inicio", {templateUrl : 'view/administrador/index.html'})
 	
 	.otherwise({redirectTo: "/"})

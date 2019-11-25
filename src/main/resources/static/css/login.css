@@ -12,3 +12,8 @@ body {
     background: url("../img/login-prestador.jpg");
     background-size: 100% 110%;
 }
+
+.bg-login-image-adm {
+    background: url("../img/login-administrador.jpg");
+    background-size: 100% 110%;
+}
