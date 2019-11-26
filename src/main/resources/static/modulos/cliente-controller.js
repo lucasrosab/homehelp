@@ -12,8 +12,7 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 		 .then(function successCallback(response) {
 		     $scope.clientes = response.data
 		 }, function errorCallback(response) {
-	    	 console.log(response.data)
-	    	 console.log(response.status)
+
 		 });
 	};
 	
@@ -29,10 +28,9 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 		    .then(function successCallback(response) {
 		    	carregarClientes();
 	            mensagem("Cadastrado com Sucesso", "Sucesso")
-	            $location.path('/login')
+	            $location.path('/login/cliente')
 		    }, function errorCallback(response) {
-		    	console.log(response.data)
-		    	console.log(response.status)
+
 		    });
 		} else {
 			mensagem("Preencha todos os campo", "Erro")
@@ -41,15 +39,14 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 	
 	//Alterar Cliente
 	$scope.alterarCliente = function(){
-		$scope.apdatecli = $scope.cliLogado.cliente
+		$scope.updatecli = $scope.cliLogado.cliente
 		if($scope.formUpdateDadosCliente.$valid){
-			$http({method: 'PUT',url: 'http://localhost:8080/cli/alterar',data:$scope.apdatecli})
+			$http({method: 'PUT',url: 'http://localhost:8080/cli/alterar',data:$scope.updatecli})
 		    .then(function successCallback(response) {
 		    	carregarClientes();
 	            mensagem("Dados Alterados com Sucesso", "Sucesso")
 		    }, function errorCallback(response) {
-		    	console.log(response.data)
-		    	console.log(response.status)
+
 		    });
 		} else {
 			mensagem("Preencha todos os campo", "Erro")
@@ -69,8 +66,7 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 	   	 pos = $scope.clientes.indexOf(cliente)
 	   	 $scope.clientes.splice(pos, 1);
 	    }, function errorCallback(response) {
-	   	 console.log(response.data)
-	   	 console.log(response.status)
+
 	    });
 	}
 	//-----------------------------------------------------------------------------------------------//

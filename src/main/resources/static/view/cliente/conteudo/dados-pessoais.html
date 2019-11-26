@@ -122,16 +122,14 @@
 				<!-- Senha do Cliente -->
 				<div class="form-group">
 					<label for="DadosClienteSenha">Senha</label> 
-					<span ng-show="formUpdateDadosCliente.txtUpdateCliSenha.$error.required && formUpdateDadosCliente.txtUpdateCliSenha.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<span ng-show="formUpdateDadosCliente.txtUpdateCliSenha.$error.minlength" style="color: red;"><i>- A senha deverá ter no mínimo 8 caracteres</i></span>
-					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" name="txtUpdateCliSenha" title="Senha" ng-model="cliLogado.cliente.senha" ng-minlength="8" maxlength="20" ng-model-options="{ updateOn: 'blur' }">
+					<input type="password" class="form-control" placeholder="******" id="DadosClienteSenha" name="txtUpdateCliSenha" title="Senha" ng-model="cliLogado.cliente.senha" ng-minlength="8" maxlength="20">
 					<small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small> 
 				</div>
-				
 			</div>
 			<div class="col-12" align="center">
 				<a class="btn btn-primary" href="/cliente/inicio" role="button">Voltar</a>
-				<button type="submit" class="btn btn-success">Salvar</button>
+				<button type="submit" class="btn btn-success" ng-disabled="formUpdateDadosCliente.$invalid">Salvar</button>
 			</div>
 		</div>
 	</form>

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Type;
 
 @Entity
-public class Administrador {
+public class Administrador { 
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
