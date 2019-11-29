@@ -47,6 +47,7 @@
 							<th scope="col">Profissional</th>
 							<th scope="col">Tipo de Serviço</th>
 							<th scope="col">Endereço</th>
+							<th scope="col">Dia</th>
 							<th scope="col">Horário</th>
 							<th scope="col">Valor</th>
 							<th scope="col">Status</th>
@@ -58,11 +59,12 @@
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.prestador.nome}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.tipo_servico}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.endereco}}</td>
+							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.dia}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.horario}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.preco}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.status}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id && historico.status == 'Disponivel'">
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetalhesSolicitacaoModal">Detalhes</button>
+								<button type="button" class="btn btn-primary" ng-show="historico.status == 'Disponivel'">Cancelar</button>
 							</td>
 						</tr>
 					</tbody>
@@ -70,9 +72,6 @@
 			</div>
 			<div class="col-12" style="margin-top: 2%">
 				<a class="btn btn-primary" href="/cliente/inicio" role="button">Voltar</a>
-			</div>
-
-			
 			</div>
 		</div>
 	</div>

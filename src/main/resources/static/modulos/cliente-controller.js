@@ -125,7 +125,16 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
           evt.preventDefault();
         }
       }
-	
-	
-	
+	/*
+	function validaData(data){
+		
+		//Data
+		var dia = data.substring(0, 2) 
+		var mes = data.substring(4, 6)
+		var ano = data.substring(8, 12)
+		
+		return console.log("Dia:" + dia + ",Mes" + mes ",Ano" ano)
+		
+	}
+	*/
 })

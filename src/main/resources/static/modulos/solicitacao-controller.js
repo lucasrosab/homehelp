@@ -7,6 +7,17 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$rootScope.solicitacoes = [];
 	$rootScope.cliLogado;
 	
+	$scope.hidraulica.dia = RetornaDataAtual();
+	$scope.reparo.dia = RetornaDataAtual();
+	$scope.acabamento.dia = RetornaDataAtual();
+	$scope.eletricista.dia = RetornaDataAtual();
+	
+	$scope.hidraulica.endereco = $rootScope.cliLogado.cliente.endereco
+	$scope.reparo.endereco = $rootScope.cliLogado.cliente.endereco
+	$scope.acabamento.endereco = $rootScope.cliLogado.cliente.endereco
+	$scope.eletricista.endereco = $rootScope.cliLogado.cliente.endereco
+	
+	
 	//-----------------------------------------------------------------------------------------------//
 	//Carregar todas as solicitacões no geral
 	carregarTodasSolicitacoes = function(){
@@ -25,7 +36,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.solicitarHidraulica = function(){
 		$scope.hidraulica.cliente = {id: $rootScope.cliLogado.cliente.id};
 		$scope.hidraulica.categoria = "Hidraulica"
-		$scope.hidraulica.dia = RetornaDataAtual();
+		
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.hidraulica})
 	    .then(function successCallback(response) {
 	    	redirectSolicitacao('#HidraulicaModal');
@@ -38,7 +49,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.solicitarReparos = function(){
 		$scope.reparo.cliente = {id: $rootScope.cliLogado.cliente.id};
 		$scope.reparo.categoria = "Reparo"
-		$scope.reparo.dia = RetornaDataAtual();
+		
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.reparo})
 	    .then(function successCallback(response) {
 	    	redirectSolicitacao('#ReparosModal');
@@ -51,7 +62,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.solicitarAcabamento = function(){
 		$scope.acabamento.cliente = {id: $rootScope.cliLogado.cliente.id};
 		$scope.acabamento.categoria = "Acabamento"
-		$scope.acabamento.dia = RetornaDataAtual();
+		
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.acabamento})
 	    .then(function successCallback(response) {
 	    	redirectSolicitacao('#AcabamentoModal');
@@ -64,7 +75,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.solicitarEletricista = function(){
 		$scope.eletricista.cliente = {id: $rootScope.cliLogado.cliente.id};
 		$scope.eletricista.categoria = "Eletricista"
-		$scope.eletricista.dia = RetornaDataAtual();
+		
 		$http({method: 'POST',url: 'http://localhost:8080/solicitar/nova',data:$scope.eletricista})
 	    .then(function successCallback(response) {
 	    	redirectSolicitacao('#EletricistaModal');
@@ -73,11 +84,6 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	    });
 
 	}	
-	
-	//Alterar Prestador
-	$scope.alterarPrestador = function(prestador){
-		$scope.prestador = angular.copy(prestador)
-	}
 	
 	$scope.cancelarAlteracaoPrestador = function(){
 		$scope.prestador = {}

@@ -110,7 +110,7 @@
 
 	<!-- Hidráulica -->
 	<div class="modal" id="HidraulicaModal" tabindex="-1" role="dialog" aria-labelledby="HidraulicaModal" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-xl" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
 		            <h5 class="modal-title" id="HidraulicaModal">Hidráulica</h5>
@@ -119,11 +119,15 @@
 		        <div class="modal-body">
 		        	<form novalidade name="formSolicitaHidraulica">
 			            <div class="row">
+   			                <div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioHidraulica">Dia</label>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="hidraulica.dia" disabled readonly required>
+			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Horário</label>
 			                    <input type="text" class="form-control" id="HorarioHidraulica" name="txtHorarioHidro" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="hidraulica.horario" required>
 			                </div>
-			                <div class="col-12 col-xl-6 form-group">
+			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="EnderecoHidraulica">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEnderecoHidro" ng-model="hidraulica.endereco" required>
 			                    <small id="passwordHelpBlock" class="form-text text-muted">
@@ -154,7 +158,7 @@
 
 	<!-- Reparos -->
 	<div class="modal fade" id="ReparosModal" tabindex="-1" role="dialog" aria-labelledby="ReparosModal" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-xl" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
 		            <h5 class="modal-title" id="ReparosModal">Reparos</h5>
@@ -163,11 +167,15 @@
 		        <div class="modal-body">
 		        	<form novalidade name="formSolicitaReparos">
 			            <div class="row">
+			               	<div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioHidraulica">Dia</label>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="reparo.dia" disabled readonly required>
+			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioReparos">Horário</label>
 			                    <input type="text" class="form-control" id="HorarioReparos" name="txtHorarioRep" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="reparo.horario" required>
 			                </div>
-			                <div class="col-12 col-xl-6 form-group">
+			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="EnderecoReparos">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoReparos" name="txtEnderecoRep" ng-model="reparo.endereco" required>
 			                    <!--  <small id="passwordHelpBlock" class="form-text text-muted">
@@ -198,7 +206,7 @@
 
 	<!-- Acabamento -->
 	<div class="modal fade" id="AcabamentoModal" tabindex="-1" role="dialog" aria-labelledby="AcabamentoModal" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-xl" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
 		            <h5 class="modal-title" id="AcabamentoModal">Acabamento</h5>
@@ -207,11 +215,15 @@
 		        <div class="modal-body">
 		        	<form novalidade name="formSolicitaAcabamento">
 			            <div class="row">
+			               	<div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioHidraulica">Dia</label>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="acabamento.dia" disabled readonly required>
+			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioAcabamento">Horário</label>
 			                    <input type="text" class="form-control" id="HorarioAcabamento" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="acabamento.horario" required>
 			                </div>
-			                <div class="col-12 col-xl-6 form-group">
+			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="EnderecoAcabamento">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoAcabamento" name="txtEndereco" ng-model="acabamento.endereco" required>
 			                    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
@@ -242,7 +254,7 @@
 
 	<!-- Eletricista -->
 	<div class="modal fade" id="EletricistaModal" tabindex="-1" role="dialog" aria-labelledby="EletricistaModal" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-xl" role="document">
 		    <div class="modal-content">
 		        <div class="modal-header">
 		            <h5 class="modal-title" id="EletricistaModal">Eletricista</h5>
@@ -251,11 +263,15 @@
 		        <div class="modal-body">
 		        	<form novalidade name="formSolicitaHidraulica">
 			            <div class="row">
+			               	<div class="col-12 col-xl-2 form-group">
+			                    <label for="HorarioHidraulica">Dia</label>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="eletricista.dia" disabled readonly required>
+			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioEletricista">Horário</label>
 			                    <input type="text" class="form-control" id="HorarioEletricista" name="txtHorario" data-mask="00:00" placeholder="00:00" data-mask-selectonfocus="true" ng-model="eletricista.horario" required>
 			                </div>
-			                <div class="col-12 col-xl-6 form-group">
+			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="EnderecoEletricista">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoEletricista" name="txtEndereco" ng-model="eletricista.endereco" required>
 			                    <!-- <small id="passwordHelpBlock" class="form-text text-muted">

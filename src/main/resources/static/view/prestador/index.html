@@ -47,7 +47,7 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th scope="col">Cliente</th>
+						<th scope="col">Tipo de Serviço</th>
 						<th scope="col">Endereço</th>
 						<th scope="col">Horário</th>
 						<th scope="col">Opção</th>
@@ -55,7 +55,7 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="demanda in demandasDisponiveis">
-						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.cliente.nome}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.tipo_servico}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.endereco}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.dia}} - {{demanda.horario}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">
