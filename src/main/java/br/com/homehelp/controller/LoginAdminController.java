@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.homehelp.model.Administrador;
-import br.com.homehelp.model.Prestador;
 import br.com.homehelp.service.LoginAdministradorService;
-import br.com.homehelp.service.LoginPrestadorService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -59,7 +57,6 @@ public class LoginAdminController {
 		public LoginResponse(String token, Administrador admin ){
 			this.token = token; 
 			this.admin = admin;
-		 }
-		
+		}
 	}
 }

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.homehelp.model.Cliente;
 import br.com.homehelp.service.ClienteService;
 
-
 @RestController
 @RequestMapping("/cli")
 public class ClienteController {
@@ -65,8 +64,4 @@ public class ClienteController {
 		Cliente clienteAlterado = clienteService.alterar(cliente);
 		return new ResponseEntity<>(clienteAlterado, HttpStatus.OK);
 	}
-
-
-	
-
 }
