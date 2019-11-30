@@ -35,8 +35,8 @@
 		</div>
 		<div class="col-12 ">
 			<div class="row justify-content-center">
-				<div class="col-4">
-					<button type="button" class="btn btn-lg btn-block" ng-class="{{presLogado.pres.status_prestador ? 'btn-success' : 'btn-dark'}}" id="StatusPrestador" value="{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}" ng-click="status()">{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}</button>
+				<div class="col-12 col-xl-4">
+					<button type="button" class="btn btn-lg" ng-class="{{presLogado.pres.status_prestador ? 'btn-success' : 'btn-dark'}}" id="StatusPrestador" value="{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}" ng-click="status()">{{presLogado.pres.status_prestador ? 'Disponível' : 'Indisponível' }}</button>
 				</div>
 			</div>
 		</div>
@@ -50,6 +50,7 @@
 						<th scope="col">Tipo de Serviço</th>
 						<th scope="col">Endereço</th>
 						<th scope="col">Horário</th>
+						<th scope="col">Preço</th>
 						<th scope="col">Opção</th>
 					</tr>
 				</thead>
@@ -58,6 +59,7 @@
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.tipo_servico}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.endereco}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.dia}} - {{demanda.horario}}</td>
+						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">{{demanda.preco}}</td>
 						<td ng-show="presLogado.pres.status_prestador == true && demanda.status == 'Disponivel' && presLogado.pres.habilidade == demanda.categoria">
 							<button type="button" class="btn btn-success" ng-click="aceitar(demanda)">Aceitar</button>
 						</td>
