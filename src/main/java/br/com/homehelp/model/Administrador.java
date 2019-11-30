@@ -20,7 +20,7 @@ public class Administrador {
 	@Column(length = 100)
 	private String sobrenome;
 
-	@Column(length = 15, nullable = false)
+	@Column(length = 15, nullable = false, unique = true)
 	private String cpf;
 
 	@Column(length = 10)
@@ -29,13 +29,13 @@ public class Administrador {
 	@Column(length = 20, nullable = false)
 	private String telefone;
 
-	@Column(length = 250, nullable = false)
+	@Column(length = 250, nullable = false, unique = true)
 	private String email;
 
 	@Column(length = 20, nullable = false)
 	private String senha;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private int matricula;
 	
 	@Column(columnDefinition = "TINYINT") 

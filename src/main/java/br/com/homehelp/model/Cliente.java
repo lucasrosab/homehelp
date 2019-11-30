@@ -23,7 +23,7 @@ public class Cliente {
 	@Column(length = 30, nullable = false)
 	private String sexo;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 20, nullable = false, unique = true)
 	private String cpf;
 
 	@Column(length = 20, nullable = false)
@@ -35,7 +35,7 @@ public class Cliente {
 	@Column(length = 20, nullable = false)
 	private String celular;
 
-	@Column(length = 250, nullable = false)
+	@Column(length = 250, nullable = false, unique = true) 
 	private String email;
 
 	@Column(length = 20, nullable = false)
