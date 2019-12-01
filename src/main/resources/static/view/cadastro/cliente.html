@@ -28,7 +28,7 @@
 				<div class="form-group">
 					<label for="ClienteNome">Nome Completo</label> 
 					<span ng-show="formCadastroCliente.txtNome.$error.required && formCadastroCliente.txtNome.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" class="form-control" placeholder="Nome" id="ClienteNome" name="txtNome" title="Nome" ng-model="cliente.nome" ng-keypress="apenasLetras()" required>
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="ClienteNome" name="txtNome" title="Nome" ng-model="cliente.nome" ng-keypress="apenasLetras()" required>
 				</div>
 				
 				<!-- Data de Nascimento do Cliente -->
@@ -78,7 +78,7 @@
 				<div class="form-group">			
 					<label for="ClienteEndereco">Endereço Completo</label> 
 					<span ng-show="formCadastroCliente.txtEndereco.$error.required && formCadastroCliente.txtEndereco.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" class="form-control" placeholder="Nome" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="cliente.endereco" required>
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="cliente.endereco" required>
 				</div>
 			</div>
 
@@ -102,7 +102,7 @@
 					<label for="ClienteEmail">E-mail</label> 
 					<span ng-show="formCadastroCliente.txtEmail.$error.required && formCadastroCliente.txtEmail.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<span ng-show="formCadastroCliente.txtEmail.$error.email" style="color: red;"><i>- Email Inválido</i></span>
-					<input type="email" class="form-control" placeholder="Email" id="ClienteEmail" name="txtEmail" title="Email" ng-model="cliente.email" required>
+					<input type="email" minlength="4" maxlength="250" class="form-control" placeholder="Email" id="ClienteEmail" name="txtEmail" title="Email" ng-model="cliente.email" required>
 				</div>
 
 				<!-- Login -->

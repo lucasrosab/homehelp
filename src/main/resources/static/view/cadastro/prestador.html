@@ -31,7 +31,7 @@
 				<div class="form-group">
 					<label for="PrestadorNome">Nome</label>
 					<span ng-show="formCadastroPrestador.txtNome.$error.required && formCadastroPrestador.txtNome.$dirty" style="color: red;"><i>- Obrigatório</i></span> 
-					<input type="text" class="form-control" placeholder="Nome" id="PrestadorNome" name="txtNome" title="Nome" ng-model="prestador.nome" ng-keypress="apenasLetras()" required>
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="PrestadorNome" name="txtNome" title="Nome" ng-model="prestador.nome" ng-keypress="apenasLetras()" required>
 				</div>
 				
 				<!-- Data de Nascimento do Prestador -->
@@ -97,7 +97,7 @@
 					<label for="ClienteEmail">E-mail</label> 
 					<span ng-show="formCadastroPrestador.txtEmail.$error.required && formCadastroPrestador.txtEmail.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<span ng-show="formCadastroPrestador.txtEmail.$error.email" style="color: red;"><i>- Email Inválido</i></span>
-					<input type="email" class="form-control" placeholder="Email" id="PrestadorEmail" name="txtEmail" title="Email" ng-model="prestador.email" required>
+					<input type="email" minlength="4" maxlength="250" class="form-control" placeholder="Email" id="PrestadorEmail" name="txtEmail" title="Email" ng-model="prestador.email" required>
 				</div>
 			
 				<!-- Titulo Login -->

@@ -14,10 +14,10 @@
 								</div>
 								<form class="user" ng-submit="autenticarPrestador()">
 									<div class="form-group">
-										<input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email" ng-model="userPrestador.email">
+										<input type="email" minlength="4" maxlength="250" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email" ng-model="userPrestador.email">
 									</div>
 									<div class="form-group">
-										<input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha" ng-model="userPrestador.senha">	
+										<input type="password" minlength="8" maxlength="20" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha" ng-model="userPrestador.senha">	
 									</div>
 									<button type="submit" class="btn btn-primary">Login</button>
 								</form>
