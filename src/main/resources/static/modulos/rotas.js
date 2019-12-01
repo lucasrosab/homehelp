@@ -22,7 +22,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/recuperar-prestador", {templateUrl : 'view/prestador/reset.html'})
 	.when("/prestador/inicio", {templateUrl : 'view/prestador/index.html', controller: 'DemandaController'})
 	.when("/prestador/dados-pessoais", {templateUrl : 'view/prestador/conteudo/dados-pessoais.html', controller: 'PrestadorController'})
-	.when("/prestador/banco", {templateUrl : 'view/prestador/conteudo/banco.html'})
+	.when("/prestador/banco", {templateUrl : 'view/prestador/conteudo/banco.html', controller: 'ContaController'})
 	.when("/prestador/profissional", {templateUrl : 'view/prestador/conteudo/profissional.html'})
 	.when("/prestador/configuracao", {templateUrl : 'view/prestador/conteudo/configuracao.html'})
 	.when("/prestador/reparos", {templateUrl : 'view/prestador/conteudo/reparos.html', controller: 'DemandaController'})
