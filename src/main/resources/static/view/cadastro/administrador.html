@@ -1,106 +1,101 @@
 <link href="css/dashboard.css" rel="stylesheet"/>
 <link href="css/administrador.css" rel="stylesheet"/>
-	<body id="page-top">
-		<!-- Conteúdo -->
-		<div id="wrapper">
+    <body id="page-top">
+        <!-- Conteúdo -->
+        <div id="wrapper">
 
-           <!-- Sidebar Inicio-->
-           <ul class="navbar-nav bg-homehelp sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar Inicio-->
+            <ul class="navbar-nav bg-homehelp sidebar sidebar-dark accordion" id="accordionSidebar">
 
-               <!-- Sidebar - Topo -->
-               <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/administrador/inicio">
-                   <div class="sidebar-brand-icon">
-                       <i class="fas fa-cogs"></i>
-                   </div>
-                   <div class="sidebar-brand-text mx-3">HomeHelp Admin</div>
-               </a>
+                <!-- Sidebar - Topo -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/administrador/inicio">
+                    <div class="sidebar-brand-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">HomeHelp Admin</div>
+                </a>
 
-               <!-- Divider Topo-->
-               <hr class="sidebar-divider my-0">
+                <!-- Divider Topo-->
+                <hr class="sidebar-divider my-0">
 
-               <!-- Sidebar Item - Dashboard -->
-               <li class="nav-item active">
-                   <a class="nav-link" href="/administrador/inicio"><i class="fas fa-home"></i><span>Início</span></a>
-               </li>
+                <!-- Sidebar Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/administrador/inicio"><i class="fas fa-home"></i><span>Início</span></a>
+                </li>
 
-               <!-- Divider Usuários-->
-               <hr class="sidebar-divider">
+                <!-- Divider Usuários-->
+                <hr class="sidebar-divider">
 
-               <!-- Titulo Sessão Usuários -->
-               <div class="sidebar-heading">Usuários</div>
+                <!-- Titulo Sessão Usuários -->
+                <div class="sidebar-heading">Usuários</div>
 
-               <!-- Cliente -->
-               <li class="nav-item">
-                   <a class="nav-link" href="/administrador/cliente"><i class="fas fa-user"></i><span>Cliente</span></a>
-               </li>
+                <!-- Cliente -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/administrador/cliente"><i class="fas fa-user"></i><span>Cliente</span></a>
+                </li>
 
-               <!-- Prestador -->
-               <li class="nav-item">
-                   <a class="nav-link" href="/administrador/prestador"><i class="fas fa-people-carry"></i><span>Prestador</span></a>
-               </li>
+                <!-- Prestador -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/administrador/prestador"><i class="fas fa-people-carry"></i><span>Prestador</span></a>
+                </li>
 
-               <!-- Administrador -->
-               <li class="nav-item">
-                   <a class="nav-link" href="/cadastro/administrador"><i class="fas fa-user-cog"></i><span>Administrador</span></a>
-               </li>
+                <!-- Administrador -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastro/administrador"><i class="fas fa-user-cog"></i><span>Administrador</span></a>
+                </li>
 
-               <!-- Divider Habilidades e Serviços-->
-               <hr class="sidebar-divider">
+                <!-- Divider Habilidades e Serviços-->
+                <hr class="sidebar-divider">
 
-               <!-- Titulo Habilidades e Serviços -->
-               <div class="sidebar-heading">Solicitações e Serviços</div>
+                <!-- Titulo Habilidades e Serviços -->
+                <div class="sidebar-heading">Solicitações</div>
 
-               <!-- Habilidades -->
-               <li class="nav-item">
-                   <a class="nav-link" href="habilidades.html"><i class="fas fa-book"></i><span>Solicitações</span></a>
-               </li>
+                <!-- Habilidades -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/administrador/solicitacao"><i class="fas fa-book"></i><span>Solicitações</span></a>
+                </li>
+            </ul>
+            <!-- Fim Sidebar -->
+            
+            <!-- Area de Conteudo -->
+            <div id="content-wrapper" class="d-flex flex-column">
 
-               <!-- Serviços -->
-               <li class="nav-item">
-                   <a class="nav-link" href="servicos.html"><i class="fas fa-briefcase"></i><span>Serviços</span></a>
-               </li>
-           </ul>
-           <!-- Fim Sidebar -->
+                <!-- Conteúdo Principal -->
+                <div id="content">
 
-           <!-- Area de Conteudo -->
-           <div id="content-wrapper" class="d-flex flex-column">
+                    <!-- Menu -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-               <!-- Conteúdo Principal -->
-               <div id="content">
+                        <!-- Botão Recolher Menu Responsivo -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                          <i class="fa fa-bars"></i>
+                        </button>
 
-                   <!-- Menu -->
-                   <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                        <!-- Conteúdo Menu -->
+                        <ul class="navbar-nav ml-auto">
+                            <div class="topbar-divider d-none d-sm-block"></div>
 
-                       <!-- Botão Recolher Menu Responsivo -->
-                       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                         <i class="fa fa-bars"></i>
-                       </button>
+                            <!-- Usuário -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{adminLogado.admin.nome}}</span>
+                                    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                </a>
+                                <!-- Dropdown - Informações -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <!-- Dados Pessoais-->
+                                    <a class="dropdown-item" href="/administrador/dados-pessoais"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Dados Pessoais</a>
 
-                       <!-- Conteúdo Menu -->
-                       <ul class="navbar-nav ml-auto">
-                           <div class="topbar-divider d-none d-sm-block"></div>
+                                    <!-- Divisor Menu -->
+                                    <div class="dropdown-divider"></div>
 
-                           <!-- Usuário -->
-                           <li class="nav-item dropdown no-arrow">
-                               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                   <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{adminLogado.admin.nome}}</span>
-                                   <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-                               </a>
-                               <!-- Dropdown - Informações -->
-                               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                   <!-- Dados Pessoais-->
-                                   <a class="dropdown-item" href="/administrador/dados-pessoais"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Dados Pessoais</a>
-
-                                   <!-- Divisor Menu -->
-                                   <div class="dropdown-divider"></div>
-
-                                   <!-- Sair -->
-                                   <a class="dropdown-item" href="/login/administrador" ><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Sair</a>
-                               </div>
-                           </li>
-                       </ul>
-                   </nav>
-                   <!-- Fim Menu -->
+                                    <!-- Sair -->
+                                    <a class="dropdown-item" href="/" ><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Fim Menu -->
 
 <div class="container">
 	
