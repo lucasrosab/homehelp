@@ -1,6 +1,6 @@
 app.controller("ContaController", function($scope, $http, $location, $rootScope){
 	$scope.conta = {};
-	$scope.contas = [];
+	$rootScope.contas = [];
 	$scope.contadetalhe = [];
 	$rootScope.presLogado;
 	
@@ -9,7 +9,7 @@ app.controller("ContaController", function($scope, $http, $location, $rootScope)
 	carregarContas = function(){
 		 $http({method: 'GET',url: 'http://localhost:8080/conta/todas'})
 		 .then(function successCallback(response) {
-		     $scope.contas = response.data
+			 $rootScope.contas = response.data
 		     console.log($scope.contas)
 		 }, function errorCallback(response) {
 
@@ -53,6 +53,7 @@ app.controller("ContaController", function($scope, $http, $location, $rootScope)
 
 	    });
 	}
+	
 	//-----------------------------------------------------------------------------------------------//
 	// Funções e Validações
 	

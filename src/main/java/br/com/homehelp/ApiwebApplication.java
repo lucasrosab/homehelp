@@ -14,7 +14,7 @@ public class ApiwebApplication {
 	public FilterRegistrationBean filtroJwt(){
 		FilterRegistrationBean frb = new FilterRegistrationBean();
 		frb.setFilter(new TokenFilter());
-		frb.addUrlPatterns("/admin/*"); 
+		frb.addUrlPatterns("/teste/*");  
 		return frb;
 	}
 

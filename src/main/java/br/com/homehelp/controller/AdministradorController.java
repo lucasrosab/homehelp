@@ -17,6 +17,7 @@ import br.com.homehelp.model.Cliente;
 import br.com.homehelp.service.AdministradorService;
 
 @RestController
+@RequestMapping("/admin")
 public class AdministradorController {
 
 	@Autowired

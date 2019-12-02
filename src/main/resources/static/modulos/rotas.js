@@ -8,6 +8,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/cadastro/opcao", {templateUrl : 'view/cadastro/opcao.html'})
 	.when("/cadastro/prestador", {templateUrl : 'view/cadastro/prestador.html', controller: 'PrestadorController'})
 	.when("/cadastro/cliente", {templateUrl : 'view/cadastro/cliente.html', controller: 'ClienteController'})
+	.when("/cadastro/administrador", {templateUrl : 'view/cadastro/administrador.html', controller: 'AdministradorController'})
 	
 	//Cliente
 	.when("/login/cliente", {templateUrl : 'view/cliente/login.html', controller: 'LoginController'})
@@ -28,8 +29,11 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/prestador/reparos", {templateUrl : 'view/prestador/conteudo/reparos.html', controller: 'DemandaController'})
 	
 	//Administrador
-	.when("/login/administrador", {templateUrl : 'view/administrador/login.html'})
-	.when("/administrador/inicio", {templateUrl : 'view/administrador/index.html'})
+	.when("/login/administrador", {templateUrl : 'view/administrador/login.html', controller: 'LoginController'})
+	.when("/administrador/inicio", {templateUrl : 'view/administrador/index.html', controller: 'AdministradorController'})
+	.when("/administrador/dados-pessoais", {templateUrl : 'view/administrador/dados-pessoais.html', controller: 'AdministradorController'})
+	.when("/administrador/cliente", {templateUrl : 'view/administrador/dados-pessoais.html', controller: 'ClienteController'})
+	.when("/administrador/prestador", {templateUrl : 'view/administrador/dados-pessoais.html', controller: 'PrestadorController'})
 	
 	.otherwise({redirectTo: "/"})
 	  

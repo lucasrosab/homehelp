@@ -1,7 +1,6 @@
 <link href="css/dashboard.css" rel="stylesheet"/>
 <link href="css/administrador.css" rel="stylesheet"/>
     <body id="page-top">
-
         <!-- Conteúdo -->
         <div id="wrapper">
 
@@ -9,7 +8,7 @@
             <ul class="navbar-nav bg-homehelp sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Topo -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/administrador/inicio">
                     <div class="sidebar-brand-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -21,7 +20,7 @@
 
                 <!-- Sidebar Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i><span>Início</span></a>
+                    <a class="nav-link" href="/administrador/inicio"><i class="fas fa-home"></i><span>Início</span></a>
                 </li>
 
                 <!-- Divider Usuários-->
@@ -42,65 +41,23 @@
 
                 <!-- Administrador -->
                 <li class="nav-item">
-                    <a class="nav-link" href="administrador.html"><i class="fas fa-user-cog"></i><span>Administrador</span></a>
+                    <a class="nav-link" href="/cadastro/administrador"><i class="fas fa-user-cog"></i><span>Administrador</span></a>
                 </li>
 
                 <!-- Divider Habilidades e Serviços-->
                 <hr class="sidebar-divider">
 
                 <!-- Titulo Habilidades e Serviços -->
-                <div class="sidebar-heading">Habilidades e Serviços</div>
+                <div class="sidebar-heading">Solicitações e Serviços</div>
 
                 <!-- Habilidades -->
                 <li class="nav-item">
-                    <a class="nav-link" href="habilidades.html"><i class="fas fa-book"></i><span>Habilidades</span></a>
+                    <a class="nav-link" href="habilidades.html"><i class="fas fa-book"></i><span>Solicitações</span></a>
                 </li>
 
                 <!-- Serviços -->
                 <li class="nav-item">
                     <a class="nav-link" href="servicos.html"><i class="fas fa-briefcase"></i><span>Serviços</span></a>
-                </li>
-
-                <!-- Divider Instituições Financeiras-->
-                <hr class="sidebar-divider">
-
-                <!-- Titulo Sessão Instituições Financeiras -->
-                <div class="sidebar-heading">Instituições Financeiras</div>
-
-                <!-- Bancos -->
-                <li class="nav-item">
-                    <a class="nav-link" href="bancos.html"><i class="fas fa-university"></i><span>Bancos</span></a>
-                </li>
-
-                <!-- Operadoras de Cartão de Crédito -->
-                <li class="nav-item">
-                    <a class="nav-link" href="cartao.html"><i class="fas fa-credit-card"></i><span>Cartão de Crédito</span></a>
-                </li>
-
-                <!-- Divider Localização-->
-                <hr class="sidebar-divider">
-
-                <!-- Titulo Sessão Localização -->
-                <div class="sidebar-heading">Localização</div>
-
-                <!-- País -->
-                <li class="nav-item">
-                    <a class="nav-link" href="pais.html"><i class="fas fa-globe"></i><span>País</span></a>
-                </li>
-
-                <!-- Estado -->
-                <li class="nav-item">
-                    <a class="nav-link" href="estado.html"><i class="fas fa-map"></i><span>Estado</span></a>
-                </li>
-
-                <!-- Cidade -->
-                <li class="nav-item">
-                    <a class="nav-link" href="cidade.html"><i class="fas fa-city"></i><span>Cidade</span></a>
-                </li>
-
-                <!-- Tipo de Endereço -->
-                <li class="nav-item">
-                    <a class="nav-link" href="tipo.html"><i class="fas fa-map-pin"></i><span>Tipo de Endereço</span></a>
                 </li>
             </ul>
             <!-- Fim Sidebar -->
@@ -126,7 +83,7 @@
                             <!-- Usuário -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Usuário.Logado}}</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{adminLogado.admin.nome}}</span>
                                     <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                                 </a>
                                 <!-- Dropdown - Informações -->

@@ -30,7 +30,7 @@ app.controller("LoginController", function($scope, $http, $location, $rootScope)
 	
 	$scope.autenticarAdministrador = function(){
 		$http.post("/auth-adm", $scope.userAdministrador).then(function(response){
-			$rootScope.adminLogado = response.data.token;
+			$rootScope.adminLogado = response.data;
 			localStorage.setItem("userToken", response.data.token);
 			$location.path('/administrador/inicio')
 		} , function(response){
