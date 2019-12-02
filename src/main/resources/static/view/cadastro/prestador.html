@@ -38,7 +38,7 @@
 				<div class="form-group">
 					<label for="PrestadorDataNascimento">Data de Nascimento</label> 
 					<span ng-show="formCadastroPrestador.txtDtNasc.$error.required && formCadastroPrestador.txtDtNasc.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" class="form-control" id="PrestadorDataNascimento" name="txtDtNasc" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" ng-model="prestador.dataNascimento" required>
+					<input type="text" class="form-control" id="PrestadorDataNascimento" name="txtDtNasc" title="Data de Nascimento" ng-model="prestador.dataNascimento" required>
 				</div>
 				
 				<!-- Sexo do Prestador -->

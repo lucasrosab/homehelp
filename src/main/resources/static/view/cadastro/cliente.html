@@ -35,7 +35,7 @@
 				<div class="form-group">
 					<label for="ClienteDataNascimento">Data de Nascimento</label> 
 					<span ng-show="formCadastroCliente.txtDtNasc.$error.required && formCadastroCliente.txtDtNasc.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" class="form-control" id="ClienteDataNascimento" name="txtDtNasc" title="Data de Nascimento" data-mask="00/00/0000" placeholder="00/00/0000" data-mask-selectonfocus="true" ng-model="cliente.dataNascimento" required>
+					<input type="text" class="form-control" id="ClienteDataNascimento" name="txtDtNasc" title="Data de Nascimento" ng-model="cliente.dataNascimento" required>
 				</div>
 				
 				<!-- Sexo do Gênero -->

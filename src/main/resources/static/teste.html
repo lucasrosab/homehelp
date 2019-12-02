@@ -114,13 +114,16 @@
             var anoMenorIdade = now.getFullYear() - 18
             var dataMenorIdade = Date.parse(hojeMes + "/" + hojeDia + "/" + anoMenorIdade)
             var hoje = Date.parse(hojeMes + "/" + hojeDia + "/" + hojeAno)
-
+			var dataAntiga Date.parse(hojeMes + "/" + hojeDia + "/" + 1920)
+            
             if (dataFormatada > hoje) {
                 return 2
             } else if (dataFormatada == hoje) {
                 return 3
             } else if (dataFormatada > dataMenorIdade) {
                 return 4
+            } else if (dataFormatada <= dataAntiga) {
+            	return 5
             }
         }
     </script>

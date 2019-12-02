@@ -131,5 +131,85 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 		$('.modal-backdrop').remove(); 
     	$location.path('/cliente/solicitacoes')
     }
+
+    $("#txtHorarioHidro").mask("23:59", {
+        placeholder: "__:__",
+        selectOnFocus: true,
+        clearIfNotMatch: true,
+        translation: {
+            2: {
+                pattern: /[0-2]/
+            },
+            3: {
+                pattern: /[0-9]/
+            },
+            5: {
+                pattern: /[0-5]/
+            },
+            9: {
+                pattern: /[0-9]/
+            }
+        }
+    });    
+   
+    $("#HorarioReparos").mask("23:59", {
+        placeholder: "__:__",
+        selectOnFocus: true,
+        clearIfNotMatch: true,
+        translation: {
+            2: {
+                pattern: /[0-2]/
+            },
+            3: {
+                pattern: /[0-9]/
+            },
+            5: {
+                pattern: /[0-5]/
+            },
+            9: {
+                pattern: /[0-9]/
+            }
+        }
+    });
+    
+    $("#HorarioAcabamento").mask("23:59", {
+        placeholder: "__:__",
+        selectOnFocus: true,
+        clearIfNotMatch: true,
+        translation: {
+            2: {
+                pattern: /[0-2]/
+            },
+            3: {
+                pattern: /[0-9]/
+            },
+            5: {
+                pattern: /[0-5]/
+            },
+            9: {
+                pattern: /[0-9]/
+            }
+        }
+    });
+    
+    $("#HorarioEletricista").mask("23:59", {
+        placeholder: "__:__",
+        selectOnFocus: true,
+        clearIfNotMatch: true,
+        translation: {
+            2: {
+                pattern: /[0-2]/
+            },
+            3: {
+                pattern: /[0-9]/
+            },
+            5: {
+                pattern: /[0-5]/
+            },
+            9: {
+                pattern: /[0-9]/
+            }
+        }
+    });
     
 })
