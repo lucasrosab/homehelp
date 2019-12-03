@@ -3,6 +3,8 @@ app.config(function($routeProvider,$locationProvider) {
 	$routeProvider
 	//Página Inicial
 	.when("/", {templateUrl : 'view/conteudo.html', controller: 'MainController'})
+	.when("/perguntas-frequentes", {templateUrl : 'view/perguntas-frequentes.html', controller: ''})
+	.when("/termos-condicoes", {templateUrl : 'view/termos-condicoes.html', controller: ''})
 
 	//Cadastro
 	.when("/cadastro/opcao", {templateUrl : 'view/cadastro/opcao.html'})
