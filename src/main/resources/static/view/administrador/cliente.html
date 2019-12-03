@@ -188,10 +188,8 @@
 					<input type="password" class="form-control" placeholder="******" id="ClienteSenha" name="txtSenha" title="Senha" ng-model="cliente.senha" ng-minlength="8" maxlength="20" required>
 				</div>
 		</div>
-
 		<a class="btn btn-primary" href="/cadastro/opcao" role="button">Voltar</a>
-		<button type="button" class="btn btn-success" ng-disabled="formCadastroCliente.$invalid" ng-click="salvarCliente()">Cadastrar</button>
-
+		<button type="button" class="btn btn-success" ng-disabled="formCadastroCliente.$invalid" ng-click="salvarClienteAdmin()">Cadastrar</button>
 	</form>
 </div>
 <script src="js/lib/jquery.mask.min.js"></script>

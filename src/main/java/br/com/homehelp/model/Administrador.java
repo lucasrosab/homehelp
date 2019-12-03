@@ -17,9 +17,6 @@ public class Administrador {
 	@Column(length = 150, nullable = false)
 	private String nome;
 
-	@Column(length = 100)
-	private String sobrenome;
-
 	@Column(length = 15, nullable = false, unique = true)
 	private String cpf;
 
@@ -27,7 +24,7 @@ public class Administrador {
 	private String sexo;
 
 	@Column(length = 20, nullable = false)
-	private String telefone;
+	private String celular;
 
 	@Column(length = 250, nullable = false, unique = true)
 	private String email;
@@ -58,14 +55,6 @@ public class Administrador {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
 	public String getCpf() {
 		return cpf;
 	}
@@ -80,14 +69,6 @@ public class Administrador {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 
 	public String getEmail() {
@@ -121,5 +102,12 @@ public class Administrador {
 	public void setStatus_conta(boolean status_conta) {
 		this.status_conta = status_conta;
 	}
-	
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	} 
 }

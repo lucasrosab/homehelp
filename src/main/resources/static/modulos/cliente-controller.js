@@ -43,6 +43,33 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 		}
 	}	 
 	
+	//Salvar Cliente Administrador
+	$scope.salvarClienteAdmin = function(){
+		if(validarCPF($scope.cliente.cpf) == false) {
+			mensagem("Insira um CPF Válido", "Erro")
+		} else if (verificadata($scope.cliente.dataNascimento) == 2) {
+			mensagem("Insira uma data menor que a data atual", "Erro")
+        } else if (verificadata($scope.cliente.dataNascimento) == 3) {
+            mensagem("Insira uma data diferente da atual", "Erro")
+        } else if (verificadata($scope.cliente.dataNascimento) == 4) {
+            mensagem("Para se cadastrar, é preciso possuir no mínimo 18 anos", "Erro")
+        } else if (verificadata($scope.cliente.dataNascimento) == 5) {
+            mensagem("Insira um ano válido", "Erro")
+        } else if($scope.formCadastroCliente.$valid){
+			$http({method: 'POST',url: 'http://localhost:8080/cli/novo',data:$scope.cliente})
+		    .then(function successCallback(response) {
+		    	carregarClientes();
+		    	mensagem("Cliente Cadastrador com Sucesso", "Sucesso")
+		    	$scope.cliente = {}
+		    }, function errorCallback(response) {
+		    	mensagem("Cliente não Cadastrado", "Erro")
+		    });
+		} else {
+			mensagem("Preencha todos os campo", "Erro")
+		}
+	}	
+	
+	
 	//Alterar Cliente
 	$scope.alterarCliente = function(){
 		$scope.updatecli = $scope.cliLogado.cliente

@@ -24,7 +24,6 @@ app.controller("AdministradorController", function($scope, $http, $location, $ro
 	    .then(function successCallback(response) {
 	    	carregarAdministradores();
             mensagem("Cadastrado com Sucesso", "Sucesso")
-            $location.path('/login/cliente')
 	    }, function errorCallback(response) {
 
 	    });
