@@ -96,3 +96,131 @@
                         </ul>
                     </nav>
                     <!-- Fim Menu -->
+
+<div class="container-fluid">
+	<div class="toast" style="position: absolute; top: 15px; right: 15px;">
+		<div class="toast-header">
+			<strong class="mr-auto">{{status}}</strong>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="toast-body">{{mensagem}}</div>
+	</div>
+
+	<form style="background-color: #ffffff5e; margin-top: 2%; height: 100%; padding: 2%" novalidate name="formCadastroPrestador">
+		<div class="row">
+				<!-- Nome do Prestador -->
+				<div class="form-group col-xl-4">
+					<label for="PrestadorNome">Nome</label>
+					<span ng-show="formCadastroPrestador.txtNome.$error.required && formCadastroPrestador.txtNome.$dirty" style="color: red;"><i>- Obrigatório</i></span> 
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="PrestadorNome" name="txtNome" title="Nome" ng-model="prestador.nome" ng-keypress="apenasLetras()" required>
+				</div>
+				
+				<!-- Data de Nascimento do Prestador -->
+				<div class="form-group col-xl-2">
+					<label for="PrestadorDataNascimento">Data de Nascimento</label> 
+					<span ng-show="formCadastroPrestador.txtDtNasc.$error.required && formCadastroPrestador.txtDtNasc.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<input type="text" class="form-control" id="PrestadorDataNascimento" name="txtDtNasc" title="Data de Nascimento" ng-model="prestador.dataNascimento" required>
+				</div>
+				
+				<!-- Sexo do Prestador -->
+				<div class="form-group col-xl-3">
+					<label for="PrestadorSexo">Gênero</label>
+					<span ng-show="formCadastroPrestador.txtSexo.$error.required && formCadastroPrestador.txtSexo.$dirty" style="color: red;"><i>- Obrigatório</i></span> 
+					<select class="custom-select" title="Selecionar o Sexo" id="PrestadorSexo" name="txtSexo" ng-model="prestador.sexo" required>
+						<option value=""></option>
+						<option value="Masculino" title="Masculino">Masculino</option>
+						<option value="Feminino" title="Feminino">Feminino</option>
+						<option value="Outros e Indefinido" title="Outros e Indefinido">Outros e Indefinido</option>
+					</select>
+				</div>
+				
+				<!-- CPF do Prestador -->
+				<div class="form-group col-xl-3">
+					<label for="PrestadorCPF">CPF</label> 
+					<span ng-show="formCadastroPrestador.txtCPF.$error.required && formCadastroPrestador.txtCPF.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<input type="text" class="form-control" id="PrestadorCPF" name="txtCPF" title="CPF" data-mask="000.000.000-00" placeholder="000.000.000-00" data-mask-selectonfocus="true" ng-model="prestador.cpf" required>
+				</div>
+				
+				<!-- Tipo de Prestador -->
+				<div class="form-group col-xl-3">
+					<label for="PrestadorTipo">Tipo de serviço a ser prestado</label> 
+					<span ng-show="formCadastroPrestador.txtTipo.$error.required && formCadastroPrestador.txtTipo.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<select class="custom-select" title="Selecionar tipo de serviço" id="PrestadorTipo" name="txtTipo" ng-model="prestador.habilidade" required>
+						<option value=""></option>
+						<option value="Hidraulica" title="Hidraulica">Hidraulica</option>
+						<option value="Reparo" title="Reparos">Reparo</option>
+						<option value="Acabamento" title="Acabamento">Acabamento</option>
+						<option value="Eletricista" title="Eletricista">Eletricista</option>
+					</select>
+				</div>
+
+				<!-- Celular do Prestador -->
+				<div class="form-group col-xl-3">
+					<label for="PrestadorCelular">Celular</label> 
+					<span ng-show="formCadastroPrestador.txtCelular.$error.required && formCadastroPrestador.txtCelular.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<input type="text" class="form-control" id="PrestadorCelular" name="txtCelular" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="prestador.celular" required>
+				</div>
+				
+				<!-- Email do Prestador -->
+				<div class="form-group col-xl-3">
+					<label for="ClienteEmail">E-mail</label> 
+					<span ng-show="formCadastroPrestador.txtEmail.$error.required && formCadastroPrestador.txtEmail.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<span ng-show="formCadastroPrestador.txtEmail.$error.email" style="color: red;"><i>- Email Inválido</i></span>
+					<input type="email" minlength="4" maxlength="250" class="form-control" placeholder="Email" id="PrestadorEmail" name="txtEmail" title="Email" ng-model="prestador.email" required>
+				</div>
+			
+				<!-- Senha do Prestador-->
+				<div class="form-group col-xl-3">
+					<label for="PrestadorSenha">Senha</label> 
+					<span ng-show="formCadastroPrestador.txtSenha.$error.required && formCadastroPrestador.txtSenha.$dirty" style="color: red;"><i>- Obrigatório</i></span>
+					<span ng-show="formCadastroPrestador.txtSenha.$error.minlength" style="color: red;"><i>- A senha deverá ter no mínimo 8 caracteres</i></span>
+					<input type="password" class="form-control" placeholder="******" id="PrestadorSenha" name="txtSenha" title="Senha" ng-model="prestador.senha" ng-minlength="8" maxlength="20" required> 
+					<small id="passwordHelpBlock" class="form-text text-muted">Sua senha deverá possuir entre 8-20 caracteres de comprimento</small>
+				</div>
+			</div>
+			
+			<a class="btn btn-primary" href="/cadastro/opcao" role="button">Voltar</a>
+			<button type="button" value="submit" ng-disabled="formCadastroPrestador.$invalid"  ng-click="salvarPrestador()" class="btn btn-success">Cadastrar</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- Modal Login -->
+<div class="modal" id="InfoCadPrestadorModal" tabindex="-1" role="dialog" aria-labelledby="InfoCadPrestadorModal" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="InfoCadPrestadorModal">Informação</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>		
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-12 col-xl-12" style="width: 18rem;">
+						<p>Você foi cadastrado com sucesso!</p>
+						<p>Porém, para que seu cadastro seja finalizado e liberado, voce deverá realizar os seguintes passos a seguir:</p>
+						<ol>
+							<li>Enviar os documentos abaixo em anexo para o seguinte email: verificacao.prestador@gmail.com</li>
+							<ul>
+								<li>Comprovante de Residência</li>
+								<li>Atestado de Nada Consta Criminal</li>
+								<li>Identidade</li>
+							</ul>
+							<li>Após o envio, aguardar o prazo de 2 dias úteis para a homologação</li>
+						</ol>
+						<p>Será enviado um email, informando a liberação da sua conta, caso esteja tudo de acordo.</p>
+					</div>
+				</div>
+			</div>
+		   <div class="modal-footer">
+				<button class="btn btn-primary" type="button" id="InfoCardastroPres" ng-click="InfoPrestador()">Voltar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/lib/jquery.mask.min.js"></script>
