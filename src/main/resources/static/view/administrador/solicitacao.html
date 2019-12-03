@@ -19,7 +19,7 @@
                 <hr class="sidebar-divider my-0">
 
                 <!-- Sidebar Item - Dashboard -->
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/administrador/inicio"><i class="fas fa-home"></i><span>Início</span></a>
                 </li>
 
@@ -51,7 +51,7 @@
                 <div class="sidebar-heading">Solicitações</div>
 
                 <!-- Habilidades -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/administrador/solicitacao"><i class="fas fa-book"></i><span>Solicitações</span></a>
                 </li>
             </ul>
@@ -96,3 +96,36 @@
                         </ul>
                     </nav>
                     <!-- Fim Menu -->
+<br>
+<br>
+<div class="col-12 table-responsive">
+	<table class="table">
+	    <thead class="thead-dark">
+	        <tr>
+	            <th scope="col">Cliente</th>
+	            <th scope="col">Tipo de Serviço</th>
+				<th scope="col">Endereço</th>
+				<th scope="col">Dia</th>
+				<th scope="col">Horário</th>
+				<th scope="col">Valor</th>
+				<th scope="col">Status</th>
+		    </tr>
+		</thead>
+	    <tbody>
+	        <tr ng-repeat="reparos in demandasDisponiveis">
+	            <td>{{reparos.cliente.nome}}</td>
+	            <td>{{reparos.tipo_servico}}</td>
+	            <td>{{reparos.endereco}}</td>
+	            <td>{{reparos.dia}}</td>
+	            <td>{{reparos.horario}}</td>
+	            <td>{{reparos.preco}}</td>
+	            <td>{{reparos.status}}</td>
+	        </tr>
+	    </tbody>
+	</table>
+</div>
+<script src="js/lib/jquery.mask.min.js"></script>
+
+                    
+                    
+                    

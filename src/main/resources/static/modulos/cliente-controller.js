@@ -62,7 +62,7 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 		    	mensagem("Cliente Cadastrador com Sucesso", "Sucesso")
 		    	$scope.cliente = {}
 		    }, function errorCallback(response) {
-		    	mensagem("Cliente não Cadastrado", "Erro")
+		    	mensagem("Cliente ja cadastrado", "Erro")
 		    });
 		} else {
 			mensagem("Preencha todos os campo", "Erro")
@@ -94,7 +94,7 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 	//Excluir Cliente
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirCliente= function(cliente){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/cli/excluir/' + $rootScope.cliLogado.cliente.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/cli/excluir/' + cliente.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.clientes.indexOf(cliente)
 	   	 $scope.clientes.splice(pos, 1);

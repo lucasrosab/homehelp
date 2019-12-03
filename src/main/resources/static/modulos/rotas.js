@@ -34,8 +34,7 @@ app.config(function($routeProvider,$locationProvider) {
 	.when("/administrador/dados-pessoais", {templateUrl : 'view/administrador/dados-pessoais.html', controller: 'AdministradorController'})
 	.when("/administrador/cliente", {templateUrl : 'view/administrador/cliente.html', controller: 'ClienteController'})
 	.when("/administrador/prestador", {templateUrl : 'view/administrador/prestador.html', controller: 'PrestadorController'})
-	.when("/administrador/solicitacao", {templateUrl : 'view/administrador/solicitacao.html', controller: 'SolicitacaoController'})
-	
+	.when("/administrador/solicitacao", {templateUrl : 'view/administrador/solicitacao.html', controller: 'DemandaController'})
 	.otherwise({redirectTo: "/"})
 	  
 	$locationProvider.html5Mode(true);

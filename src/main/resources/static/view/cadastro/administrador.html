@@ -115,21 +115,18 @@
 				<!-- Nome do Cliente -->
 				<div class="form-group col-xl-4">
 					<label for="ClienteNome">Nome Completo</label> 
-					<span ng-show="formCadastroCliente.txtNome.$error.required && formCadastroCliente.txtNome.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="ClienteNome" name="txtNome" title="Nome" ng-model="admin.nome" ng-keypress="apenasLetras()" required>
 				</div>
 				
 				<!-- Data de Nascimento do Cliente -->
 				<div class="form-group col-xl-2">
 					<label for="ClienteDataNascimento">Data de Nascimento</label> 
-					<span ng-show="formCadastroCliente.txtDtNasc.$error.required && formCadastroCliente.txtDtNasc.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<input type="text" class="form-control" id="ClienteDataNascimento" name="txtDtNasc" title="Data de Nascimento" ng-model="admin.dataNascimento" required>
 				</div>
 				
 				<!-- Sexo do Gênero -->
 				<div class="form-group col-xl-3">
-					<label for="ClienteSexo">Gênero</label>
-					<span ng-show="formCadastroCliente.txtSexo.$error.required && formCadastroCliente.txtSexo.$dirty" style="color: red;"><i>- Obrigatório</i></span> 
+					<label for="ClienteSexo">Gênero</label> 
 					<select class="custom-select" title="Selecione o Gênero" id="ClienteSexo" name="txtSexo" ng-model="admin.sexo"  required>
 						<option value=""></option>
 						<option value="Masculino" title="Masculino">Masculino</option>
@@ -141,45 +138,66 @@
 				<!-- CPF do Cliente -->
 				<div class="form-group col-xl-3">
 					<label for="ClienteCPF">CPF</label> 
-					<span ng-show="formCadastroCliente.txtCPF.$error.required && formCadastroCliente.txtCPF.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<input type="text" class="form-control" id="ClienteCPF" name="txtCPF" title="CPF" data-mask="000.000.000-00" placeholder="000.000.000-00" data-mask-selectonfocus="true" ng-model="admin.cpf" required>
 				</div>
 						
 				<!-- Endereço do Cliente -->					
-				<div class="form-group col-xl-9">			
+				<div class="form-group col-xl-2">			
 					<label for="ClienteEndereco">Matrícula</label> 
-					<span ng-show="formCadastroCliente.txtEndereco.$error.required && formCadastroCliente.txtEndereco.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Endereço" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="admin.matricula" required>
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Matricula" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="admin.matricula" required>
 				</div>
 
 
 				<!-- Celular do Cliente -->					
 				<div class="form-group col-xl-3">			
 					<label for="ClienteCelular">Celular</label> 
-					<span ng-show="formCadastroCliente.txtCelular.$error.required && formCadastroCliente.txtCelular.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<input type="text" class="form-control" id="ClienteCelular" name="txtCelular" title="Celular" data-mask="(00)00000-0000" placeholder="(00)00000-0000" data-mask-selectonfocus="true" ng-model="admin.celular" required>	
 				</div>
 				
 				<!-- Email do Cliente -->
-				<div class="form-group col-xl-6">
+				<div class="form-group col-xl-4">
 					<label for="ClienteEmail">E-mail</label> 
-					<span ng-show="formCadastroCliente.txtEmail.$error.required && formCadastroCliente.txtEmail.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<span ng-show="formCadastroCliente.txtEmail.$error.email" style="color: red;"><i>- Email Inválido</i></span>
 					<input type="email" minlength="4" maxlength="250" class="form-control" placeholder="Email" id="ClienteEmail" name="txtEmail" title="Email" ng-model="admin.email" required>
 				</div>
 				
 				<!-- Senha do Cliente -->
 				<div class="form-group col-xl-3">
 					<label for="ClienteSenha">Senha</label> 
-					<span ng-show="formCadastroCliente.txtSenha.$error.required && formCadastroCliente.txtSenha.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<span ng-show="formCadastroCliente.txtSenha.$error.minlength" style="color: red;"><i>- A senha deverá ter no mínimo 8 caracteres</i></span>
 					<input type="password" class="form-control" placeholder="******" id="ClienteSenha" name="txtSenha" title="Senha" ng-model="admin.senha" ng-minlength="8" maxlength="20" required>
 				</div>
 		</div>
-		<a class="btn btn-primary" href="/cadastro/opcao" role="button">Voltar</a>
+		<a class="btn btn-primary" href="/administrador/inicio" role="button">Voltar</a>
 		<button type="button" class="btn btn-success" ng-disabled="formCadastroCliente.$invalid" ng-click="salvarAdministrador()">Cadastrar</button>
 	</form>
 </div>
-
+<br>
+<br>
+<div class="col-12 table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Matrícula</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Data Nascimento</th>
+				<th scope="col">CPF</th>
+				<th scope="col">Email</th>
+				<th scope="col">Opção</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="adm in administradores">
+				<td ng-show="adminLogado.admin.id != adm.id">{{adm.matricula}}</td>
+				<td ng-show="adminLogado.admin.id != adm.id">{{adm.nome}}</td>
+				<td ng-show="adminLogado.admin.id != adm.id">{{adm.dataNascimento}}</td>
+				<td ng-show="adminLogado.admin.id != adm.id">{{adm.cpf}}</td>
+				<td ng-show="adminLogado.admin.id != adm.id">{{adm.email}}</td>
+				<td ng-show="adminLogado.admin.id != adm.id">
+					<button type="button" class="btn btn-warning" ng-click="excluirAdmin(adm)">Excluir</button>
+					<button type="button" class="btn btn-danger" ng-click="excluirAdmin(adm)">Excluir</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <script src="js/lib/jquery.mask.min.js"></script>

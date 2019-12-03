@@ -6,6 +6,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	$scope.eletricista = {};
 	$rootScope.solicitacoes = [];
 	$rootScope.cliLogado;
+	$rootScope.adminLogado;
 	
 	$scope.hidraulica.dia = RetornaDataAtual();
 	$scope.reparo.dia = RetornaDataAtual();
@@ -105,11 +106,11 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
 	 
 	//Excluir Prestador
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
-	$scope.excluirPrestador= function(prestador){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/prestador' + prestador.id})
+	$scope.excluirSolicitacao= function(solicitacao){
+	 $http({method: 'DELETE',url: 'http://localhost:8080/solicitar/excluir/' + solicitacao.id})
 	    .then(function successCallback(response) {
-	   	 pos = $scope.prestadores.indexOf(cliente)
-	   	 $scope.prestadores.splice(pos, 1);
+	   	 pos = $scope.solicitacoes.indexOf(solicitacao)
+	   	 $scope.solicitacoes.splice(pos, 1);
 	    }, function errorCallback(response) {
 	   	 
 	    });

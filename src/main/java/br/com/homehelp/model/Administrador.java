@@ -33,7 +33,10 @@ public class Administrador {
 	private String senha;
 	
 	@Column(nullable = false, unique = true)
-	private int matricula;
+	private String matricula;
+	
+	@Column(length = 10, nullable = false)
+	private String dataNascimento;
 	
 	@Column(columnDefinition = "TINYINT") 
 	@Type(type = "org.hibernate.type.NumericBooleanType")
@@ -87,27 +90,36 @@ public class Administrador {
 		this.senha = senha;
 	}
 
-	public int getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(int matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
-	}
+	} 
 
 	public boolean isStatus_conta() {
 		return status_conta;
 	}
 
-	public void setStatus_conta(boolean status_conta) {
+	public void setStatus_conta(boolean status_conta) { 
 		this.status_conta = status_conta;
 	}
-
+	
 	public String getCelular() {
 		return celular;
 	}
 
 	public void setCelular(String celular) {
 		this.celular = celular;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	} 
+		
 }

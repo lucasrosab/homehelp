@@ -45,6 +45,32 @@ app.controller("PrestadorController", function($scope, $http, $location, $rootSc
 		}
 	}	 
 	
+	//Salvar Prestador Admin
+	$scope.salvarPrestadorAdmin = function(){
+		if(validarCPF($scope.prestador.cpf) == false) {
+			mensagem("Insira um CPF Válido", "Erro")
+		} else if (verificadata($scope.prestador.dataNascimento) == 2) {
+			mensagem("Insira uma data menor que a data atual", "Erro")
+        } else if (verificadata($scope.prestador.dataNascimento) == 3) {
+            mensagem("Insira uma data diferente da atual", "Erro")
+        } else if (verificadata($scope.prestador.dataNascimento) == 4) {
+            mensagem("Para se cadastrar, é preciso possuir no mínimo 18 anos", "Erro")
+        } else if (verificadata($scope.prestador.dataNascimento) == 5) {
+            mensagem("Insira um ano válido", "Erro")
+        } else if($scope.formCadastroPrestador.$valid){
+			$http({method: 'POST',url: 'http://localhost:8080/pres/novo',data:$scope.prestador})
+		    .then(function successCallback(response) {
+		    	carregarPrestadores();
+		    	mensagem("Prestador Cadastrador com Sucesso", "Sucesso")
+		    	$scope.prestador = {}
+		    }, function errorCallback(response) {
+		    	mensagem("Prestador já cadastrado", "Erro")
+		    });
+		} else {
+			console.log("Erro")
+		}
+	}	
+	
 	//Alterar Prestador
 	$scope.alterarPrestador = function(){
 		$scope.updatepres = $scope.presLogado.pres
@@ -69,7 +95,7 @@ app.controller("PrestadorController", function($scope, $http, $location, $rootSc
 	//Excluir Prestador
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirPrestador= function(prestador){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + $rootScope.presLogado.prestador.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + prestador.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.prestadores.indexOf(cliente)
 	   	 $scope.prestadores.splice(pos, 1);
@@ -141,7 +167,7 @@ app.controller("PrestadorController", function($scope, $http, $location, $rootSc
         }
       }
     
-    $("#PrestadorDataNascimento").mask("39/12/2999", {
+    $("#PrestadorDataNascimento").mask("39/19/2999", {
         placeholder: "__/__/____",
         selectOnFocus: true,
         clearIfNotMatch: true,
