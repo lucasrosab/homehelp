@@ -97,7 +97,7 @@ app.controller("PrestadorController", function($scope, $http, $location, $rootSc
 	$scope.excluirPrestador= function(prestador){
 	 $http({method: 'DELETE',url: 'http://localhost:8080/pres/excluir/' + prestador.id})
 	    .then(function successCallback(response) {
-	   	 pos = $scope.prestadores.indexOf(cliente)
+	   	 pos = $scope.prestadores.indexOf(prestador)
 	   	 $scope.prestadores.splice(pos, 1);
 	    }, function errorCallback(response) {
 

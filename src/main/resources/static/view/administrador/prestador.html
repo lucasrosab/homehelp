@@ -197,6 +197,7 @@
 				<td>{{pres.email}}</td>
 				<td>{{pres.celular}}</td>
 				<td>
+					<button type="button" class="btn btn-danger" ng-show="pres.status_conta == false" ng-click="ativarPrestador(pres)">Ativar</button>
 					<button type="button" class="btn btn-danger" ng-click="excluirPrestador(pres)">Excluir</button>
 				</td>
 			</tr>

@@ -62,7 +62,7 @@ app.controller("AdministradorController", function($scope, $http, $location, $ro
 	//Excluir Admin
 	//Ao chamar essa funcao, passar o valor como parametro para a exclusao 
 	$scope.excluirAdmin= function(admin){
-	 $http({method: 'DELETE',url: 'http://localhost:8080/admin/excluir/' + $rootScope.adminLogado.admin.id})
+	 $http({method: 'DELETE',url: 'http://localhost:8080/admin/excluir/' + admin.id})
 	    .then(function successCallback(response) {
 	   	 pos = $scope.administradores.indexOf(admin)
 	   	 $scope.administradores.splice(pos, 1);
