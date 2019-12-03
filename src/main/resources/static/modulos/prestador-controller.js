@@ -103,6 +103,20 @@ app.controller("PrestadorController", function($scope, $http, $location, $rootSc
 
 	    });
 	}
+	
+	
+	$scope.ativarPrestador = function(pres){
+		pres.status_conta = true
+		$http({method: 'PUT',url: 'http://localhost:8080/pres/alterar',data: pres})
+	    .then(function successCallback(response) {
+	    	carregarPrestadores();
+            mensagem("Dados Alterados com Sucesso", "Sucesso")
+	    }, function errorCallback(response) {
+
+	    });
+	}
+	
+	
 	//-----------------------------------------------------------------------------------------------//
 	// Funções e Validações
 	
