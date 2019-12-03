@@ -14,7 +14,8 @@ app.controller("LoginController", function($scope, $http, $location, $rootScope)
 			localStorage.setItem("userToken", response.data.token);
 			$location.path('/cliente/inicio')
 		} , function(response){
-			
+			mensagem("Usuário/Senha inválidos", "Erro")
+			 
 		});
 	}
 	
@@ -24,7 +25,7 @@ app.controller("LoginController", function($scope, $http, $location, $rootScope)
 			localStorage.setItem("userToken", response.data.token);
 			$location.path('/prestador/inicio')
 		} , function(response){
-			
+			mensagem("Usuário/Senha inválidos", "Erro")
 		});
 	}
 	
@@ -34,8 +35,16 @@ app.controller("LoginController", function($scope, $http, $location, $rootScope)
 			localStorage.setItem("userToken", response.data.token);
 			$location.path('/administrador/inicio')
 		} , function(response){
-			
+			mensagem("Usuário/Senha inválidos", "Erro")
 		});
 	}
+	
+    //Função para carregar o tipo de mensagem ao cadastrar
+    function mensagem(mensagem, status) {
+        $scope.mensagem = mensagem
+        $scope.status = status
+        $('.toast').toast({ delay: 3000 });
+        $('.toast').toast('show');
+    }
 	
 })

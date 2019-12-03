@@ -1,4 +1,4 @@
-app.controller("DemandaController", function($http, $scope, $rootScope){
+app.controller("DemandaController", function($http, $scope, $rootScope, $location){
 		
 	$scope.demandasDisponiveis = []
 	$rootScope.solicitacoes
@@ -47,7 +47,7 @@ app.controller("DemandaController", function($http, $scope, $rootScope){
             datatype: "json",  
             data: $scope.dados
     	  }).then(function mySuccess(response) {
-    		  
+		    	$('#solicitacaoAceitaModal').modal('show')
     	  }, function myError(response) {
 
     	  });
@@ -87,4 +87,10 @@ app.controller("DemandaController", function($http, $scope, $rootScope){
     	  });
 	}
 	
+	$scope.ir = function(){
+		$('#solicitacaoAceitaModal').modal('hide')
+	    $('body').removeClass('modal-open');
+		$('.modal-backdrop').remove(); 
+		$location.path('/prestador/reparos')
+	}
 })

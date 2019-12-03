@@ -2,13 +2,10 @@
 <header>
 	<!-- Menu Superior-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-		<a class="navbar-brand" href="/cliente/inicio"><img
-			src="../../img/logo-nome.png"
-			class="d-inline-block align-top img-fluid float-left"
-			alt="logo-homehelp" style="width: 150px;"></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-			aria-expanded="false" aria-label="Toggle navigation">
+		<a class="navbar-brand" href="/cliente/inicio">
+			<img src="../../img/logo-nome.png" class="d-inline-block align-top img-fluid float-left" alt="logo-homehelp" style="width: 150px;">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -49,12 +46,6 @@
 				<div class="card-body">
 					<h5 class="card-title">Hidráulica</h5>
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HidraulicaModal">Solicitar</button> 
-					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="RTLUUSG6R2S7J">
-						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-					</form>	-->
 				</div>
 			</div>
 		</div>
@@ -65,12 +56,6 @@
 				<div class="card-body">
 					<h5 class="card-title">Reparos</h5>
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReparosModal">Solicitar</button> 
-					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="66WZT3E6H4G9N">
-						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-					</form> -->
 				</div>
 			</div>
 		</div>
@@ -81,12 +66,6 @@
 				<div class="card-body">
 					<h5 class="card-title">Acabamento</h5>
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AcabamentoModal">Solicitar</button>
-					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="EB5QKXJNBJEVE">
-						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-					</form> -->
 				</div>
 			</div>
 		</div>
@@ -97,12 +76,6 @@
 				<div class="card-body">
 					<h5 class="card-title">Eletricista</h5>
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EletricistaModal">Solicitar</button>
-					<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="XMXLCUYA258P6">
-						<input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-					</form> -->
 				</div>
 			</div>
 		</div>
@@ -117,11 +90,11 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		        	<form novalidade name="formSolicitaHidraulica">
+		        	<form novalidate name="formSolicitarHidraulica">
 			            <div class="row">
    			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Dia</label>
-			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="hidraulica.dia" disabled readonly required>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="hidraulica.dia" disabled readonly>
 			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Horário</label>
@@ -130,9 +103,11 @@
 			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="EnderecoHidraulica">Endereço</label>
 			                    <input type="text" class="form-control" id="EnderecoHidraulica" name="txtEnderecoHidro" ng-model="hidraulica.endereco" required>
+			                    <!-- 
 			                    <small id="passwordHelpBlock" class="form-text text-muted">
 									Caso deseje alterar o endereço, altere <button type="button" class="btn btn-link" ng-click="mudarEmail()">aqui</button></a>
 								</small>
+								 -->
 			                </div>
 			                <div class="col-12 col-xl-4 form-group">
 			                    <label for="TipoHidraulica">Tipo de Serviço</label>
@@ -145,7 +120,7 @@
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
 									<div class="col-12 col-xl-2">
-										<button type="button" class="btn btn-success" ng-click="solicitarHidraulica()">Contratar</button>
+										<button type="button" class="btn btn-success" ng-disabled="formSolicitarHidraulica.$invalid" ng-click="solicitarHidraulica()">Contratar</button>
 									</div>	
 								</div>
 			                </div>
@@ -165,11 +140,11 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		        	<form novalidade name="formSolicitaReparos">
+		        	<form novalidate name="formSolicitarReparos">
 			            <div class="row">
 			               	<div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Dia</label>
-			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="reparo.dia" disabled readonly required>
+			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="reparo.dia" disabled readonly>
 			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioReparos">Horário</label>
@@ -193,7 +168,7 @@
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
 									<div class="col-12 col-xl-2">
-										<button type="button" class="btn btn-success" ng-click="solicitarReparos()">Contratar</button>
+										<button type="button" class="btn btn-success" ng-disabled="formSolicitarReparos.$invalid" ng-click="solicitarReparos()">Contratar</button>
 									</div>	
 								</div>
 			                </div>
@@ -213,11 +188,11 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		        	<form novalidade name="formSolicitaAcabamento">
+		        	<form novalidate name="formSolicitarAcabamento">
 			            <div class="row">
 			               	<div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Dia</label>
-			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="acabamento.dia" disabled readonly required>
+			                    <input type="text" class="form-control" id="DiaEletricista" name="txtDiaHidro" ng-model="acabamento.dia" disabled readonly>
 			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioAcabamento">Horário</label>
@@ -241,7 +216,7 @@
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
 									<div class="col-12 col-xl-2">
-										<button type="button" class="btn btn-success" ng-click="solicitarAcabamento()">Contratar</button>
+										<button type="button" class="btn btn-success" ng-disabled="formSolicitarAcabamento.$invalid" ng-click="solicitarAcabamento()">Contratar</button>
 									</div>	
 								</div>
 			                </div>
@@ -261,11 +236,11 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        </div>
 		        <div class="modal-body">
-		        	<form novalidade name="formSolicitaHidraulica">
+		        	<form novalidade name="formSolicitarEletrica">
 			            <div class="row">
 			               	<div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioHidraulica">Dia</label>
-			                    <input type="text" class="form-control" id="DiaHidraulica" name="txtDiaHidro" ng-model="eletricista.dia" disabled readonly required>
+			                    <input type="text" class="form-control" id="DiaEletricista" name="txtDiaHidro" ng-model="eletricista.dia" disabled readonly>
 			                </div>
 			                <div class="col-12 col-xl-2 form-group">
 			                    <label for="HorarioEletricista">Horário</label>
@@ -289,7 +264,7 @@
 			                <div class="col-12 col-xl-12 form-group">
 								<div class="row justify-content-center">
 									<div class="col-12 col-xl-2">
-										<button type="button" class="btn btn-success" ng-click="solicitarEletricista()">Contratar</button>
+										<button type="button" class="btn btn-success" ng-disabled="formSolicitarEletrica.$invalid" ng-click="solicitarEletricista()">Contratar</button>
 									</div>	
 								</div>
 			                </div>
@@ -300,7 +275,5 @@
 		</div>
 	</div>
 </div>
-
-
 
 <script src="js/lib/jquery.mask.min.js"></script>

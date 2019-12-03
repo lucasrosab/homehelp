@@ -47,3 +47,5 @@ a:hover{
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link :hover{
     text-decoration: none;
 }
+
+#botao1, #botao2, #botao3, #botao4, #botao5, #botao6, #botao7, #botao8, #botao9, #botao10, #botao11, #botao12, #botao13, #botao14, #botao15, #botao16, #botao17, #botao18, #botao18, #botao19 {display:none;}

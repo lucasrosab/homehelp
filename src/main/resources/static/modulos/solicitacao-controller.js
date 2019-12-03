@@ -132,7 +132,7 @@ app.controller("SolicitacaoController", function($scope, $http, $location, $root
     	$location.path('/cliente/solicitacoes')
     }
 
-    $("#txtHorarioHidro").mask("23:59", {
+    $("#HorarioHidraulica").mask("23:59", {
         placeholder: "__:__",
         selectOnFocus: true,
         clearIfNotMatch: true,

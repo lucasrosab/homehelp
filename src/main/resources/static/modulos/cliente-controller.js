@@ -34,8 +34,7 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
 			$http({method: 'POST',url: 'http://localhost:8080/cli/novo',data:$scope.cliente})
 		    .then(function successCallback(response) {
 		    	carregarClientes();
-	            mensagem("Cadastrado com Sucesso", "Sucesso")
-	            $location.path('/login/cliente')
+		    	$('#entendidoModal').modal('show')
 		    }, function errorCallback(response) {
 
 		    });
@@ -182,4 +181,12 @@ app.controller("ClienteController", function($scope, $http, $location, $rootScop
         	return 5
         }
     }
+
+	$scope.entendido = function(){
+		$('#entendidoModal').modal('hide')
+	    $('body').removeClass('modal-open');
+		$('.modal-backdrop').remove(); 
+		$location.path('/login/cliente')
+	}
+
 })

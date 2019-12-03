@@ -65,7 +65,7 @@
 				
 				<!-- Cidade do Cliente -->					
 				<div class="form-group">			
-					<label for="ClienteCidade">Cidade</label>  
+					<label for="ClienteCidade">Bairro</label>  
 					<span ng-show="formCadastroCliente.txtCidade.$error.required && formCadastroCliente.txtCidade.$dirty" style="color: red;"><i>- Obrigatório</i></span>
 					<select class="custom-select" title="Selecione a Cidade" id="ClienteCidade" name="txtCidade" ng-model="cliente.cidade" required>
 						<option value=""></option>
@@ -78,7 +78,7 @@
 				<div class="form-group">			
 					<label for="ClienteEndereco">Endereço Completo</label> 
 					<span ng-show="formCadastroCliente.txtEndereco.$error.required && formCadastroCliente.txtEndereco.$dirty" style="color: red;"><i>- Obrigatório</i></span>
-					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Nome" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="cliente.endereco" required>
+					<input type="text" minlength="4" maxlength="150" class="form-control" placeholder="Endereço" id="ClienteEndereco" name="txtEndereco" title="Endereco" ng-model="cliente.endereco" required>
 				</div>
 			</div>
 
@@ -135,3 +135,22 @@
 	</form>
 </div>
 <script src="js/lib/jquery.mask.min.js"></script>
+
+<div class="modal fade" id="entendidoModal" tabindex="-1" role="dialog" aria-labelledby="entendidoModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="entendidoModal">Parabéns</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Sua conta foi criada com sucesso! Agora basta acessar para contratar um profissional</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="entendido()">Vamos lá!</button>
+      </div>
+    </div>
+  </div>
+</div>
