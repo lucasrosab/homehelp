@@ -41,12 +41,9 @@
 
         app.controller("ValidacaoController", function($scope) {
                     $scope.data = {}
-
-
                     if ((verificadata($scope.hidraulica.data) == 3) && (verificahora($scope.hidraulica.horario) == 1 || verificahora($scope.hidraulica.horario) == 6)) {
                         console.log("Insira um horário válido")
                     }
-
                     function verificahora(hora) {
                         var horario = hora.substring(0, 2);
                         var minutos = hora.substring(3, 5);
