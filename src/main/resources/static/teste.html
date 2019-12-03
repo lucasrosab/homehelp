@@ -40,92 +40,42 @@
         var app = angular.module("app", [])
 
         app.controller("ValidacaoController", function($scope) {
-            $scope.data = {}
+                    $scope.data = {}
 
 
-            $("#data").mask("39/12/2999", {
-                placeholder: "__/__/____",
-                selectOnFocus: true,
-                clearIfNotMatch: true,
-                translation: {
-                    1: {
-                        pattern: /[0-1]/
-                    },
-                    2: {
-                        pattern: /[0-2]/
-                    },
-                    3: {
-                        pattern: /[0-3]/
-                    },
-                    4: {
-                        pattern: /[0-4]/
-                    },
-                    9: {
-                        pattern: /[0-9]/
+                    if ((verificadata($scope.hidraulica.data) == 3) && (verificahora($scope.hidraulica.horario) == 1 || verificahora($scope.hidraulica.horario) == 6)) {
+                        console.log("Insira um horário válido")
                     }
-                }
-            });
 
-            $("#hora").mask("23:59", {
-                placeholder: "__:__",
-                selectOnFocus: true,
-                clearIfNotMatch: true,
-                translation: {
-                    2: {
-                        pattern: /[0-2]/
-                    },
-                    3: {
-                        pattern: /[0-9]/
-                    },
-                    5: {
-                        pattern: /[0-5]/
-                    },
-                    9: {
-                        pattern: /[0-9]/
+                    function verificahora(hora) {
+                        var horario = hora.substring(0, 2);
+                        var minutos = hora.substring(3, 5);
+                        console.log("A hora atual é: " + horario + ":" + minutos)
+
+                        var now = new Date();
+                        var hojeHora = now.getHours();
+                        var hojeMinutos = now.getMinutes();
+
+                        if (horario > 23 || minutos > 59) {
+                            console.log("Insira uma hora válida")
+                            return 2
+                        } else if (horario < hojeHora) {
+                            console.log("horario inválido, insira uma hora maior que a atual")
+                            return 3
+                        } else if (horario == hojeHora) {
+                            console.log("Insira uma hora maior que a atual")
+                            return 4
+                        } else if ((horario == hojeHora) && (minutos < hojeMinutos)) {
+                            console.log("Insira uma hora maior que a atual")
+                            return 5
+                        } else if ((horario < hojeHora) || (minutos < hojeMinutos)) {
+                            console.log("Insira uma hora maior que a atual")
+                            return 6
+                        }
+
+                        //Se a hora for maior que a atual e a data for igual a hora = agenda
+                        //Se a data for maior que a atual, a hora pode ser qualquer
                     }
-                }
-            });
-
-            $scope.validar = function() {
-                if (verificadata($scope.data.nascimento) == 2) {
-                    console.log("Insira uma data menor que a data atual")
-                } else if (verificadata($scope.data.nascimento) == 3) {
-                    console.log("Insira uma data diferente da atual")
-                } else if (verificadata($scope.data.nascimento) == 4) {
-                    console.log("Pessoa Menor de idade")
-                }
-            }
-            $scope.limpar = function() {
-                $scope.data = {}
-            }
-        })
-
-        function verificadata(data) {
-            var dia = data.substring(0, 2);
-            var mes = data.substring(3, 5);
-            var ano = data.substring(6, 10);
-            var dataFormatada = Date.parse(mes + "/" + dia + "/" + ano);
-
-
-            var now = new Date()
-            var hojeDia = now.getDay() + 1
-            var hojeMes = now.getMonth() + 1
-            var hojeAno = now.getFullYear()
-            var anoMenorIdade = now.getFullYear() - 18
-            var dataMenorIdade = Date.parse(hojeMes + "/" + hojeDia + "/" + anoMenorIdade)
-            var hoje = Date.parse(hojeMes + "/" + hojeDia + "/" + hojeAno)
-			var dataAntiga Date.parse(hojeMes + "/" + hojeDia + "/" + 1920)
-            
-            if (dataFormatada > hoje) {
-                return 2
-            } else if (dataFormatada == hoje) {
-                return 3
-            } else if (dataFormatada > dataMenorIdade) {
-                return 4
-            } else if (dataFormatada <= dataAntiga) {
-            	return 5
-            }
-        }
     </script>
 </body>
 
