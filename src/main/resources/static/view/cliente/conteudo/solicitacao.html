@@ -64,7 +64,7 @@
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.preco}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id">{{historico.status}}</td>
 							<td ng-show="historico.cliente.id == cliLogado.cliente.id && historico.status == 'Disponivel'">
-								<button type="button" class="btn btn-primary" ng-show="historico.status == 'Disponivel'">Cancelar</button>
+								<button type="button" class="btn btn-primary" ng-show="historico.status == 'Disponivel'" ng-click="excluirSolicitacao(historico)">Cancelar</button>
 							</td>
 						</tr>
 					</tbody>
